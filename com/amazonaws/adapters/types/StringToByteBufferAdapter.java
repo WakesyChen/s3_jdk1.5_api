@@ -15,6 +15,7 @@
  */
 package com.amazonaws.adapters.types;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
 import com.amazonaws.annotation.SdkProtectedApi;
@@ -28,8 +29,14 @@ public class StringToByteBufferAdapter implements TypeAdapter<String, ByteBuffer
         if (source == null) {
             return null;
         } else {
-            return ByteBuffer.wrap(source.getBytes(StringUtils.UTF8));
+            try {
+				return ByteBuffer.wrap(source.getBytes(StringUtils.UTF8));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
+		return null;
     }
 
 }

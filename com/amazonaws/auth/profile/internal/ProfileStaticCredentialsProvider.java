@@ -66,7 +66,7 @@ public class ProfileStaticCredentialsProvider implements AWSCredentialsProvider 
             return new BasicAWSCredentials(profile.getAwsAccessIdKey(),
                                            profile.getAwsSecretAccessKey());
         } else {
-            if (profile.getAwsSessionToken().isEmpty()) {
+            if (profile.getAwsSessionToken() == "") {
                 throw new SdkClientException(String.format(
                         "Unable to load credentials into profile [%s]: AWS Session Token is empty.",
                         profile.getProfileName()));

@@ -20,6 +20,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -104,8 +105,14 @@ public abstract class PersistableTransfer {
             String serialized) {
         if (serialized == null)
             return null;
-        ByteArrayInputStream byteStream = new ByteArrayInputStream(
-                serialized.getBytes(UTF8));
+        ByteArrayInputStream byteStream = null;
+		try {
+			byteStream = new ByteArrayInputStream(
+			        serialized.getBytes(UTF8));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         try{
             return deserializeFrom(byteStream);
         }finally{

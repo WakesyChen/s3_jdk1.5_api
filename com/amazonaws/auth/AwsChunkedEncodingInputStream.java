@@ -320,7 +320,8 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         }
         else {
             if (chunkSizeInBytes < chunkData.length) {
-                chunkData = Arrays.copyOf(chunkData, chunkSizeInBytes);
+//                chunkData = Arrays.copyOf(chunkData, chunkSizeInBytes);
+                chunkData = new String(chunkData).substring(0, chunkSizeInBytes).getBytes();
             }
             byte[] signedChunkContent = createSignedChunk(chunkData);
             currentChunkIterator = new ChunkContentIterator(signedChunkContent);

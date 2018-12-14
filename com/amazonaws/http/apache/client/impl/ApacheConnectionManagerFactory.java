@@ -156,7 +156,7 @@ public class ApacheConnectionManagerFactory implements
                 context.init(null, new TrustManager[]{new TrustingX509TrustManager()}, null);
                 return context;
             } catch (Exception e) {
-                throw new IOException(e.getMessage(), e);
+                throw new IOException(e.getMessage()+ e);
             }
         }
 

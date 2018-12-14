@@ -291,6 +291,6 @@ public class DateUtils {
      * of milliseconds since epoch.
      */
     public static long numberOfDaysSinceEpoch(long milliSinceEpoch) {
-        return TimeUnit.MILLISECONDS.toDays(milliSinceEpoch);
+        return TimeUnit.MILLISECONDS.toMillis(milliSinceEpoch) / 1440;
     }
 }

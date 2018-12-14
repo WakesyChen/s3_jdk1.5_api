@@ -31,6 +31,7 @@ import com.amazonaws.util.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -391,7 +392,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         }
         if (log.isDebugEnabled()) {
             log.debug("Generating a new signing key as the signing key not available in the cache for the date "
-                    + TimeUnit.DAYS.toMillis(daysSinceEpochSigningDate));
+                    + TimeUnit.MILLISECONDS.toMillis(daysSinceEpochSigningDate)/1440);
         }
         byte[] signingKey = newSigningKey(credentials,
                 signerRequestParams.getFormattedSigningDate(),
@@ -424,8 +425,17 @@ public class AWS4Signer extends AbstractAWSSigner implements
      */
     protected final byte[] computeSignature(String stringToSign,
             byte[] signingKey, AWS4SignerRequestParams signerRequestParams) {
-        return sign(stringToSign.getBytes(Charset.forName("UTF-8")), signingKey,
-                SigningAlgorithm.HmacSHA256);
+        try {
+			return sign(stringToSign.getBytes("UTF-8"), signingKey,
+			        SigningAlgorithm.HmacSHA256);
+		} catch (SdkClientException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     /**
@@ -622,8 +632,14 @@ public class AWS4Signer extends AbstractAWSSigner implements
      */
     protected byte[] newSigningKey(AWSCredentials credentials,
             String dateStamp, String regionName, String serviceName) {
-        byte[] kSecret = ("AWS4" + credentials.getAWSSecretKey())
-                .getBytes(Charset.forName("UTF-8"));
+        byte[] kSecret = null;
+		try {
+			kSecret = ("AWS4" + credentials.getAWSSecretKey())
+			        .getBytes("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         byte[] kDate = sign(dateStamp, kSecret, SigningAlgorithm.HmacSHA256);
         byte[] kRegion = sign(regionName, kDate, SigningAlgorithm.HmacSHA256);
         byte[] kService = sign(serviceName, kRegion,

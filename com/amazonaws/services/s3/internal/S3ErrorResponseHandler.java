@@ -29,6 +29,7 @@ import org.apache.commons.logging.LogFactory;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 import javax.xml.stream.XMLInputFactory;
@@ -89,8 +90,13 @@ public class S3ErrorResponseHandler implements
             return createExceptionFromHeaders(httpResponse, null);
         }
 
-        XMLStreamReader reader
-            = XmlUtils.getXmlInputFactory().createXMLStreamReader(new ByteArrayInputStream(content.getBytes(UTF8)));
+        XMLStreamReader reader = null;
+		try {
+			reader = XmlUtils.getXmlInputFactory().createXMLStreamReader(new ByteArrayInputStream(content.getBytes(UTF8)));
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
         try {
             /*

@@ -33,7 +33,7 @@ public class CRC32MismatchException extends IOException {
      *            The underlying cause of this exception.
      */
     public CRC32MismatchException(String message, Throwable t) {
-        super(message, t);
+        super(message);
     }
 
     /**

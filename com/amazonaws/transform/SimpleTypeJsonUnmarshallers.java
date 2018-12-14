@@ -50,7 +50,7 @@ public class SimpleTypeJsonUnmarshallers {
             String stringValue = super.unmarshall(unmarshallerContext);
             return !unmarshallerContext.isInsideResponseHeader()
                    ? stringValue
-                   : new String(Base64.decode(stringValue), Charset.forName("utf-8"));
+                   : new String(Base64.decode(stringValue),"utf-8");
         }
 
         private static final JsonValueStringUnmarshaller INSTANCE = new JsonValueStringUnmarshaller();
@@ -275,7 +275,7 @@ public class SimpleTypeJsonUnmarshallers {
             if (charString == null) return null;
 
             charString = charString.trim();
-            if (charString.isEmpty() || charString.length() > 1)
+            if (charString == "" || charString.length() > 1)
                 throw new SdkClientException("'" + charString
                         + "' cannot be converted to Character");
             return Character.valueOf(charString.charAt(0));

@@ -83,7 +83,7 @@ public class BasicProfileConfigLoader {
     private AllProfiles loadProfiles(InputStream is) throws IOException {
         ProfilesConfigFileLoaderHelper helper = new ProfilesConfigFileLoaderHelper();
         Map<String, Map<String, String>> allProfileProperties = helper
-                .parseProfileProperties(new Scanner(is, StringUtils.UTF8.name()));
+                .parseProfileProperties(new Scanner(is, StringUtils.UTF8));
 
         // Convert the loaded property map to credential objects
         Map<String, BasicProfile> profilesByName = new LinkedHashMap<String, BasicProfile>();

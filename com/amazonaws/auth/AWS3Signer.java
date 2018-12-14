@@ -16,6 +16,7 @@ package com.amazonaws.auth;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,12 +92,17 @@ public class AWS3Signer extends AbstractAWSSigner {
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
-        byte[] bytesToSign;
+        byte[] bytesToSign = null;
         String stringToSign;
         if (isHttps) {
             request.addHeader(NONCE_HEADER, nonce);
             stringToSign = date + nonce;
-            bytesToSign = stringToSign.getBytes(UTF8);
+            try {
+				bytesToSign = stringToSign.getBytes(UTF8);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } else {
             String path = SdkHttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
 

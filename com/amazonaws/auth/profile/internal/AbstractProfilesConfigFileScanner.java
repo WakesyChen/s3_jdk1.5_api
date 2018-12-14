@@ -94,7 +94,7 @@ public abstract class AbstractProfilesConfigFileScanner {
                 String line = scanner.nextLine().trim();
 
                 // Empty or comment lines
-                if (line.isEmpty() || line.startsWith("#")) {
+                if (line == "" || line.startsWith("#")) {
                     onEmptyOrCommentLine(currentProfileName, line);
                     continue;
                 }
@@ -165,8 +165,8 @@ public abstract class AbstractProfilesConfigFileScanner {
 
         String propertyKey   = pair[0].trim();
         String propertyValue = pair[1].trim();
-
-        return new AbstractMap.SimpleImmutableEntry<String, String>(propertyKey, propertyValue);
+        return null;
+//        return new AbstractMap.SimpleImmutableEntry<String, String>(propertyKey, propertyValue);
     }
 
 }

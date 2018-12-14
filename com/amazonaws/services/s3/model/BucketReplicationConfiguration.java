@@ -128,7 +128,7 @@ public class BucketReplicationConfiguration implements Serializable {
      */
     public BucketReplicationConfiguration addRule(String id,
             ReplicationRule rule) {
-        if (id == null || id.trim().isEmpty()) {
+        if (id == null || id.trim() == "") {
             throw new IllegalArgumentException(
                     "Rule id cannot be null or empty.");
         }

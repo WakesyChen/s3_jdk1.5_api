@@ -113,7 +113,7 @@ public class PathMarshallers {
     private static class IdempotencyPathMarshaller implements PathMarshaller {
         
         public String marshall(String resourcePath, String paramName, String pathValue) {
-            if (pathValue != null && pathValue.isEmpty()) {
+            if (pathValue != null && pathValue == "") {
                 throw new IllegalArgumentException(paramName + " must not be empty. If not set a value will be auto generated");
             }
             return resourcePath.replace(String.format("{%s}", paramName),

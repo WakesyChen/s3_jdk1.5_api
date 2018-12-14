@@ -260,7 +260,7 @@ public class SimpleTypeStaxUnmarshallers {
             if (charString == null) return null;
 
             charString = charString.trim();
-            if (charString.isEmpty() || charString.length() > 1)
+            if (charString == "" || charString.length() > 1)
                 throw new SdkClientException("'" + charString
                         + "' cannot be converted to Character");
             return Character.valueOf(charString.charAt(0));

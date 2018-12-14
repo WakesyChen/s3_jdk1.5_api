@@ -97,7 +97,7 @@ public abstract class EndpointDiscoveryRefreshCache<K> {
                     return null;
                 }
             }
-        }, refreshPeriod, TimeUnit.MINUTES);
+        }, refreshPeriod, TimeUnit.MILLISECONDS);
     }
 
     public void shutdown() {

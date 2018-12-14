@@ -30,6 +30,7 @@ import com.amazonaws.util.StringUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
@@ -79,7 +80,13 @@ public abstract class AbstractAWSSigner implements Signer {
      */
     protected String signAndBase64Encode(String data, String key,
             SigningAlgorithm algorithm) throws SdkClientException {
-        return signAndBase64Encode(data.getBytes(UTF8), key, algorithm);
+        try {
+			return signAndBase64Encode(data.getBytes(UTF8), key, algorithm);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     /**
@@ -274,7 +281,12 @@ public abstract class AbstractAWSSigner implements Signer {
             if (encodedParameters == null)
                 return new byte[0];
 
-            return encodedParameters.getBytes(UTF8);
+            try {
+				return encodedParameters.getBytes(UTF8);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 
         return getBinaryRequestPayloadWithoutQueryParams(request);
@@ -343,8 +355,13 @@ public abstract class AbstractAWSSigner implements Signer {
             if (encodedParameters == null)
                 return new ByteArrayInputStream(new byte[0]);
 
-            return new ByteArrayInputStream(
-                    encodedParameters.getBytes(UTF8));
+            try {
+				return new ByteArrayInputStream(
+				        encodedParameters.getBytes(UTF8));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 
         return getBinaryRequestPayloadStreamWithoutQueryParams(request);
@@ -370,7 +387,7 @@ public abstract class AbstractAWSSigner implements Signer {
     }
 
     protected String getCanonicalizedResourcePath(String resourcePath, boolean urlEncode) {
-        if (resourcePath == null || resourcePath.isEmpty()) {
+        if (resourcePath == null || resourcePath == "") {
             return "/";
         } else {
             String value = urlEncode ? SdkHttpUtils.urlEncode(resourcePath, true) : resourcePath;
@@ -440,7 +457,13 @@ public abstract class AbstractAWSSigner implements Signer {
      * @return The converted String object.
      */
     protected String newString(byte[] bytes) {
-        return new String(bytes, UTF8);
+        try {
+			return new String(bytes, UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     /**

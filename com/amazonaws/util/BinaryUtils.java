@@ -106,10 +106,8 @@ public class BinaryUtils {
         }
 
         if (bb.hasArray()) {
-            return Arrays.copyOfRange(
-                    bb.array(),
-                    bb.arrayOffset(),
-                    bb.arrayOffset() + bb.limit());
+        	return  new String(bb.array()).substring(bb.arrayOffset(), bb.arrayOffset() + bb.limit()).getBytes();
+
         }
 
         ByteBuffer copy = bb.asReadOnlyBuffer();
@@ -141,10 +139,8 @@ public class BinaryUtils {
         }
 
         if (bb.hasArray()) {
-            return Arrays.copyOfRange(
-                    bb.array(),
-                    bb.arrayOffset() + bb.position(),
-                    bb.arrayOffset() + bb.limit());
+        	return new String(bb.array()).substring(bb.arrayOffset() + bb.position(),
+        			bb.arrayOffset() + bb.limit()).getBytes();
         }
 
         byte[] dst = new byte[bb.remaining()];

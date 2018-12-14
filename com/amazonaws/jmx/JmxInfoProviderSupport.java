@@ -16,6 +16,7 @@ package com.amazonaws.jmx;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.management.Attribute;
@@ -36,7 +37,11 @@ public class JmxInfoProviderSupport implements JmxInfoProvider {
             attributes = mbsc.getAttributes(
                 new ObjectName("java.lang:type=OperatingSystem"), 
                 new String[]{"OpenFileDescriptorCount", "MaxFileDescriptorCount"});
-            List<Attribute> attrList = attributes.asList();
+//            List<Attribute> attrList = attributes.asList();
+            List<Attribute> attrList =new ArrayList<Attribute>();
+            for(Object attr : attributes) {
+                attrList.add((Attribute) attr);
+            }
             long openFdCount = (Long)attrList.get(0).getValue();
             long maxFdCount = (Long)attrList.get(1).getValue();
             long[] fdCounts = { openFdCount, maxFdCount};
@@ -75,7 +80,8 @@ public class JmxInfoProviderSupport implements JmxInfoProvider {
     
     public long[] findDeadlockedThreads() {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
-        return threadMXBean.findDeadlockedThreads();
+        return null;
+//        return threadMXBean.findDeadlockedThreads();
     }
 
     

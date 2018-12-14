@@ -32,6 +32,6 @@ public class HttpRequestTimeoutException extends IOException {
     }
 
     public HttpRequestTimeoutException(String message, Throwable throwable) {
-        super(message, throwable);
+        super(message);
     }
 }

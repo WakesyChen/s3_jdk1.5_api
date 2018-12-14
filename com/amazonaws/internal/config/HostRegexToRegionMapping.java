@@ -27,7 +27,7 @@ public class HostRegexToRegionMapping {
 
     public HostRegexToRegionMapping(
             String hostNameRegex, String regionName) {
-        if (hostNameRegex == null || hostNameRegex.isEmpty()) {
+        if (hostNameRegex == null || hostNameRegex == "") {
             throw new IllegalArgumentException(
                     "Invalid HostRegexToRegionMapping configuration: " +
                     "hostNameRegex must be non-empty");
@@ -40,7 +40,7 @@ public class HostRegexToRegionMapping {
                     "hostNameRegex is not a valid regex",
                     e);
         }
-        if (regionName == null || regionName.isEmpty()) {
+        if (regionName == null || regionName == "") {
             throw new IllegalArgumentException(
                     "Invalid HostRegexToRegionMapping configuration: " +
                     "regionName must be non-empty");

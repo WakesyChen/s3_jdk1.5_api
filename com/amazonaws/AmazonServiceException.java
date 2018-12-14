@@ -16,6 +16,7 @@ package com.amazonaws;
 
 import com.amazonaws.util.StringUtils;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 /**
@@ -274,15 +275,27 @@ public class AmazonServiceException extends SdkClientException {
      * @return The raw content of the HTTP response as a String.
      */
     public String getRawResponseContent() {
-        return rawResponse == null ? null : new String(rawResponse, StringUtils.UTF8);
+        try {
+			return rawResponse == null ? null : new String(rawResponse, StringUtils.UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     /**
      * Sets the raw response content.
      */
     public void setRawResponseContent(String rawResponseContent) {
-        this.rawResponse = rawResponseContent == null ? null : rawResponseContent.getBytes
-                (StringUtils.UTF8);
+    	byte[] content = null;
+		try {
+			content = rawResponseContent.getBytes(StringUtils.UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        this.rawResponse = rawResponseContent == null ? null : content;
     }
 
     /**

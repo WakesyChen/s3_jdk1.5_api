@@ -42,6 +42,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
@@ -103,7 +104,13 @@ public class ServiceUtils {
      * @return The byte array contents of the specified string.
      */
     public static byte[] toByteArray(String s) {
-        return s.getBytes(UTF8);
+        try {
+			return s.getBytes(UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
 

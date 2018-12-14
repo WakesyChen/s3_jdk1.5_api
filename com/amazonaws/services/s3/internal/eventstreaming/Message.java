@@ -24,6 +24,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Collections;
@@ -206,7 +207,12 @@ public class Message {
 
         String contentType = contentTypeHeader.getString();
         if (contentType.contains("json") || contentType.contains("text")) {
-            ret.append(new String(payload, StringUtils.UTF8));
+            try {
+				ret.append(new String(payload, StringUtils.UTF8));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } else {
             ret.append(Base64.encodeAsString(payload));
         }

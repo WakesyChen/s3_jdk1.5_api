@@ -193,7 +193,7 @@ public class ProfilesConfigFileWriter {
             ProfilesConfigFileWriterHelper writerHelper = new ProfilesConfigFileWriterHelper(writer, modifications);
 
             if (inPlaceModify) {
-                Scanner existingContent = new Scanner(stashLocation, StringUtils.UTF8.name());
+                Scanner existingContent = new Scanner(stashLocation, StringUtils.UTF8);
                 writerHelper.writeWithExistingContent(existingContent);
             } else {
                 writerHelper.writeWithoutExistingContent();

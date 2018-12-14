@@ -128,7 +128,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
                             handleError(re);
                         }
                     }
-                }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+                }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MILLISECONDS);
             }
         }
     }

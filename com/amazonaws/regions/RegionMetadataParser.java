@@ -121,8 +121,8 @@ public class RegionMetadataParser {
             throw exception;
         } catch (Exception exception) {
             throw new IOException("Unable to parse region metadata file: "
-                                  + exception.getMessage(),
-                                  exception);
+                                  + exception.getMessage()
+                                  + exception);
         } finally {
             try {
                 input.close();

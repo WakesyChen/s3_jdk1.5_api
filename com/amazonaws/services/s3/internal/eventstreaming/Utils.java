@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.internal.eventstreaming;
 import com.amazonaws.util.StringUtils;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
 final class Utils {
@@ -38,7 +39,13 @@ final class Utils {
         checkStringBounds(length, 255);
         byte[] bytes = new byte[length];
         buf.get(bytes);
-        return new String(bytes, StringUtils.UTF8);
+        try {
+			return new String(bytes, StringUtils.UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     static String readString(ByteBuffer buf) {
@@ -46,7 +53,13 @@ final class Utils {
         checkStringBounds(length, 32767);
         byte[] bytes = new byte[length];
         buf.get(bytes);
-        return new String(bytes, StringUtils.UTF8);
+        try {
+			return new String(bytes, StringUtils.UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     static byte[] readBytes(ByteBuffer buf) {

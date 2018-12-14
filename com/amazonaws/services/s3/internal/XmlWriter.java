@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.internal;
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,7 +73,13 @@ public class XmlWriter {
 
     public byte[] getBytes() {
         assert(tags.size() == 0);
-        return this.toString().getBytes(UTF8);
+        try {
+			return this.toString().getBytes(UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
     }
 
     public String toString() {

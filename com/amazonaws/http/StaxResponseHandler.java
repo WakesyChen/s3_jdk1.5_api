@@ -139,7 +139,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      */
     private Exception handleXmlStreamException(XMLStreamException e) throws Exception {
         if (e.getNestedException() instanceof IOException) {
-            return new IOException(e);
+            return new IOException(e.getMessage());
         }
         return e;
     }

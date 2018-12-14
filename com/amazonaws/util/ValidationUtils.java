@@ -85,7 +85,7 @@ public class ValidationUtils {
 
     public static String assertStringNotEmpty(String string, String fieldName) throws IllegalArgumentException {
         assertNotNull(string, fieldName);
-        if (string.isEmpty()) {
+        if (string == "") {
             throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
         }
         return string;

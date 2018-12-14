@@ -291,7 +291,7 @@ public class VersionInfoUtils {
     }
 
     private static void concat(StringBuilder prefix, String suffix, String separator) {
-        if (suffix != null && !suffix.isEmpty()) {
+        if (suffix != null && suffix != "") {
             prefix.append(separator).append(suffix);
         }
     }

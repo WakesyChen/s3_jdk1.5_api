@@ -33,7 +33,8 @@ public class StringUtils {
 
     public static final String COMMA_SEPARATOR = ",";
 
-    public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
+//    public static final Charset UTF8 = Charset.forName(DEFAULT_ENCODING);
+    public static final String UTF8 = DEFAULT_ENCODING;
 
     private static final Locale LOCALE_ENGLISH = Locale.ENGLISH;
 
@@ -214,7 +215,7 @@ public class StringUtils {
      * @return true if the given value is either null or the empty string
      */
     public static boolean isNullOrEmpty(String value) {
-        return value == null || value.isEmpty();
+        return value == null || value == "";
     }
 
     /**

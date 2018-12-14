@@ -79,7 +79,7 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
             Map<String, String> matDesc, String suffix) {
         if (s3ObjectId == null || s3ObjectId instanceof InstructionFileId)
             throw new IllegalArgumentException("Invalid s3 object id");
-        if (suffix == null || suffix.trim().isEmpty())
+        if (suffix == null || suffix.trim() == "")
             throw new IllegalArgumentException("suffix must be specified");
         this.s3ObjectId = s3ObjectId;
         @SuppressWarnings("unchecked")
@@ -103,7 +103,7 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
             EncryptionMaterials encryptionMaterials, String suffix) {
         if (s3ObjectId == null || s3ObjectId instanceof InstructionFileId)
             throw new IllegalArgumentException("Invalid s3 object id");
-        if (suffix == null || suffix.trim().isEmpty())
+        if (suffix == null || suffix.trim() == "")
             throw new IllegalArgumentException("suffix must be specified");
         if (encryptionMaterials == null)
             throw new IllegalArgumentException("encryption materials must be specified");

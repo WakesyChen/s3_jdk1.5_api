@@ -36,7 +36,7 @@ public class SSEAwsKeyManagementParams implements Serializable {
      * specified AWS Key Management System Key Id.
      */
     public SSEAwsKeyManagementParams(String awsKmsKeyId) {
-        if (awsKmsKeyId == null || awsKmsKeyId.trim().isEmpty()) {
+        if (awsKmsKeyId == null || awsKmsKeyId.trim() == "") {
             throw new IllegalArgumentException(
                     "AWS Key Management System Key id cannot be null");
         }

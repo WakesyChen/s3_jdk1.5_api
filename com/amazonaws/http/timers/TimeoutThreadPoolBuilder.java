@@ -39,7 +39,7 @@ public class TimeoutThreadPoolBuilder {
         ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(5, getThreadFactory(name));
         safeSetRemoveOnCancel(executor);
         executor.setKeepAliveTime(5, TimeUnit.SECONDS);
-        executor.allowCoreThreadTimeOut(true);
+//        executor.allowCoreThreadTimeOut(true);
 
         return executor;
     }

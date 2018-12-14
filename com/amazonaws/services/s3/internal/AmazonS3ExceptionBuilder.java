@@ -207,7 +207,7 @@ public class AmazonS3ExceptionBuilder {
      * Adds an entry to the additional information map.
      */
     public void addAdditionalDetail(String key, String detail) {
-        if (detail == null || detail.trim().isEmpty())
+        if (detail == null || detail.trim() == "")
             return;
 
         if (this.additionalDetails == null) {
@@ -215,9 +215,9 @@ public class AmazonS3ExceptionBuilder {
         }
 
         String additionalContent = this.additionalDetails.get(key);
-        if (additionalContent != null && !additionalContent.trim().isEmpty())
+        if (additionalContent != null && additionalContent.trim() != "")
             detail = additionalContent + "-" + detail;
-        if (!detail.isEmpty())
+        if (detail != "")
             additionalDetails.put(key, detail);
     }
 

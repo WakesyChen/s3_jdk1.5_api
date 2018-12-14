@@ -325,6 +325,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -3757,7 +3758,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         rejectNull(key, "Object key must be provided");
         rejectNull(content, "String content must be provided");
 
-        byte[] contentBytes = content.getBytes(StringUtils.UTF8);
+        byte[] contentBytes = null;
+		try {
+			contentBytes = content.getBytes(StringUtils.UTF8);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         InputStream is = new ByteArrayInputStream(contentBytes);
         ObjectMetadata metadata = new ObjectMetadata();

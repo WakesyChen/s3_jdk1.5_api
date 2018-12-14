@@ -115,7 +115,7 @@ public class AmazonS3URI {
         }
 
         String prefix = matcher.group(1);
-        if (prefix == null || prefix.isEmpty()) {
+        if (prefix == null || prefix == "") {
 
             // No bucket name in the authority; parse it from the path.
             this.isPathStyle = true;
@@ -160,7 +160,7 @@ public class AmazonS3URI {
             this.bucket = prefix.substring(0, prefix.length() - 1);
 
             String path = uri.getPath();
-            if (path == null || path.isEmpty() || "/".equals(uri.getPath())) {
+            if (path == null || path == "" || "/".equals(uri.getPath())) {
                 this.key = null;
             } else {
                 // Remove the leading '/'.
