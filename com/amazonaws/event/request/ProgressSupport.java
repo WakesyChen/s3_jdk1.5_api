@@ -37,7 +37,7 @@ public class ProgressSupport extends Progress {
      * when the request contains raw InputStream as the payload in which case
      * the SDK cannot infer the content-length in advance).
      */
-    @Override
+    
     public long getRequestContentLength() {
         return requestContentLength;
     }
@@ -45,7 +45,7 @@ public class ProgressSupport extends Progress {
     /**
      * Adds the number of bytes to be expected in the request.
      */
-    @Override
+    
     public void addRequestContentLength(long contentLength) {
         if (contentLength < 0)
             throw new IllegalArgumentException();
@@ -60,7 +60,7 @@ public class ProgressSupport extends Progress {
     /**
      * Returns the number of bytes that have been transferred in the request.
      */
-    @Override
+    
     public long getRequestBytesTransferred() {
         return requestBytesTransferred;
     }
@@ -70,7 +70,7 @@ public class ProgressSupport extends Progress {
      * number is unknown (e.g. when the client hasn't received the response
      * yet).
      */
-    @Override
+    
     public long getResponseContentLength() {
         return responseContentLength;
     }
@@ -78,7 +78,7 @@ public class ProgressSupport extends Progress {
     /**
      * Adds the number of bytes to be expected in the response.
      */
-    @Override
+    
     public void addResponseContentLength(long contentLength) {
         if (contentLength < 0)
             throw new IllegalArgumentException();
@@ -93,32 +93,32 @@ public class ProgressSupport extends Progress {
     /**
      * Returns the number of bytes that have been transferred in the response.
      */
-    @Override
+    
     public long getResponseBytesTransferred() {
         return responseBytesTransferred;
     }
 
-    @Override
+    
     public void addRequestBytesTransferred(long bytes) {
         synchronized (lock) {
             requestBytesTransferred += bytes;
         }
     }
 
-    @Override
+    
     public void addResponseBytesTransferred(long bytes) {
         synchronized(lock) {
             responseBytesTransferred += bytes;
         }
     }
 
-    @Override
+    
     public String toString() {
         return String.format("Request: %d/%d, Response: %d/%d",
                 requestBytesTransferred, requestContentLength,
                 responseBytesTransferred, responseContentLength);
     }
 
-    @Override
+    
     public final boolean isEnabled() { return true; }
 }

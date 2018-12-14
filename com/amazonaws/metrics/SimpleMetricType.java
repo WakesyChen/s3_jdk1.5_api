@@ -15,14 +15,14 @@
 package com.amazonaws.metrics;
 
 public abstract class SimpleMetricType implements MetricType {
-    @Override public abstract String name();
+     public abstract String name();
 
-    @Override public final int hashCode() { return name().hashCode(); }
-    @Override public final boolean equals(Object o) {
+     public final int hashCode() { return name().hashCode(); }
+     public final boolean equals(Object o) {
         if (!(o instanceof MetricType))
             return false;
         MetricType that = (MetricType)o;
         return this.name().equals(that.name());
     }
-    @Override public final String toString() { return name(); }
+     public final String toString() { return name(); }
 }

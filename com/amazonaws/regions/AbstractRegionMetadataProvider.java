@@ -24,7 +24,7 @@ import java.net.URI;
 public abstract class AbstractRegionMetadataProvider implements
         RegionMetadataProvider {
 
-    @Override
+    
     public Region getRegionByEndpoint(String endpoint) {
         String host = getHost(endpoint);
 

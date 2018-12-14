@@ -120,7 +120,7 @@ public class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
                 request.getContent();
     }
 
-    @Override
+    
     public boolean isChunked() {
         return false;
     }
@@ -134,7 +134,7 @@ public class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
      *
      * @see org.apache.commons.httpclient.methods.RequestEntity#isRepeatable()
      */
-    @Override
+    
     public boolean isRepeatable() {
         return content.markSupported() || inputStreamRequestEntity.isRepeatable();
     }
@@ -151,7 +151,7 @@ public class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
      *
      * @see org.apache.commons.httpclient.methods.RequestEntity#writeRequest(java.io.OutputStream)
      */
-    @Override
+    
     public void writeTo(OutputStream output) throws IOException {
         try {
             if (!firstAttempt && isRepeatable()) content.reset();

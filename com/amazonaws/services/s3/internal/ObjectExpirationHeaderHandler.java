@@ -49,7 +49,7 @@ public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult>
      * com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object,
      * com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public void handle(T result, HttpResponse response) {
         String expirationHeader =
             response.getHeaders().get(Headers.EXPIRATION);

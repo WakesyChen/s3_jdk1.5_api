@@ -33,7 +33,7 @@ public final class InventoryPrefixPredicate extends InventoryFilterPredicate {
         return prefix;
     }
 
-    @Override
+    
     public void accept(InventoryPredicateVisitor inventoryPredicateVisitor) {
         inventoryPredicateVisitor.visit(this);
     }

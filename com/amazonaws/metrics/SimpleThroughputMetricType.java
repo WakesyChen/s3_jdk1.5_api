@@ -21,7 +21,7 @@ public class SimpleThroughputMetricType extends SimpleServiceMetricType implemen
         this.byteCountMetricType = new SimpleServiceMetricType(byteCountMetricName, serviceName);
     }
 
-    @Override public ServiceMetricType getByteCountMetricType() {
+     public ServiceMetricType getByteCountMetricType() {
         return byteCountMetricType;
     }
 }

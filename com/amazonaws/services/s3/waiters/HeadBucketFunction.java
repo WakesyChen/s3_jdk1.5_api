@@ -48,7 +48,7 @@ public class HeadBucketFunction implements
      *        Corresponding request for the operation
      * @return Corresponding result of the operation
      */
-    @Override
+    
     public HeadBucketResult apply(HeadBucketRequest headBucketRequest) {
         return client.headBucket(headBucketRequest);
     }

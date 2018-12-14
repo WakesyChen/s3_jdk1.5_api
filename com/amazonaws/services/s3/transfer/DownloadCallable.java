@@ -106,7 +106,7 @@ final class DownloadCallable implements Callable<File> {
      *
      * @return the downloaded file
      */
-    @Override
+    
     public File call() throws Exception {
         try {
             latch.await();

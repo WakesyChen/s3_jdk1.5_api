@@ -77,7 +77,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
         }
     }
 
-    @Override
+    
     public boolean markSupported() {
         // Cloning of the digest is required to support restoring the prior state of the MD5 calculation when using mark() and
         // reset(). If the digest doesn't support cloning, we have to disable mark/reset support.
@@ -88,7 +88,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
         return digest.digest();
     }
 
-    @Override
+    
     public void mark(int readlimit) {
         if (markSupported()) {
             super.mark(readlimit);
@@ -99,7 +99,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
     /**
      * Resets the wrapped input stream and the in progress message digest.
      */
-    @Override
+    
     public void reset() throws IOException {
         if (markSupported()) {
             super.reset();
@@ -114,7 +114,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
         }
     }
 
-    @Override
+    
     public int read() throws IOException {
         int ch = super.read();
         if (ch != -1) {
@@ -123,7 +123,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
         return ch;
     }
 
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         int result = super.read(b, off, len);
         if (result != -1) {

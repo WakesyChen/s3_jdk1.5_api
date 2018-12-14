@@ -51,12 +51,12 @@ class CipherLite {
      * A no-op implementation.
      */
     static final CipherLite Null = new CipherLite() {
-        @Override
+        
         CipherLite createAuxiliary(long startingBytePos) {
             return this;
         }
 
-        @Override
+        
         CipherLite createInverse() {
             return this;
         }

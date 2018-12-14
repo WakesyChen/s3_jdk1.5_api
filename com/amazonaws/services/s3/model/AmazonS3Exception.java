@@ -162,13 +162,13 @@ public class AmazonS3Exception extends AmazonServiceException implements Seriali
      * Extends the implementation from AmazonServiceException to include
      * additional information on S3's extended request ID.
      */
-    @Override
+    
     public String toString() {
         return super.toString() + ", "
             + "S3 Extended Request ID: " + getExtendedRequestId();
     }
 
-    @Override
+    
     public String getMessage() {
         return getErrorMessage()
                + " (Service: " + getServiceName()

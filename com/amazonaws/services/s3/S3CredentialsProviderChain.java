@@ -29,7 +29,7 @@ class S3CredentialsProviderChain extends DefaultAWSCredentialsProviderChain {
 
     private static Log LOG = LogFactory.getLog(S3CredentialsProviderChain.class);
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         try {
             return super.getCredentials();

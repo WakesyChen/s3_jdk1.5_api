@@ -105,7 +105,7 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
         this.reuseLastProvider = b;
     }
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         if (reuseLastProvider && lastUsedProvider != null) {
             return lastUsedProvider.getCredentials();
@@ -137,7 +137,7 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
                                      + exceptionMessages);
     }
 
-    @Override
+    
     public void refresh() {
         for (AWSCredentialsProvider provider : credentialsProviders) {
             provider.refresh();

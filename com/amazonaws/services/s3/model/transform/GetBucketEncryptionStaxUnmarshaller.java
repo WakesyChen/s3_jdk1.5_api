@@ -39,7 +39,7 @@ public class GetBucketEncryptionStaxUnmarshaller implements Unmarshaller<GetBuck
     private GetBucketEncryptionStaxUnmarshaller() {
     }
 
-    @Override
+    
     public GetBucketEncryptionResult unmarshall(InputStream inputStream) throws Exception {
         StaxUnmarshallerContext context
             = new StaxUnmarshallerContext(XmlUtils.getXmlInputFactory().createXMLEventReader(inputStream));

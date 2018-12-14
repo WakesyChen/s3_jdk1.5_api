@@ -40,7 +40,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         this.contentType = contentType;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeStartArray() {
         try {
             writer.stepIn(IonType.LIST);
@@ -50,7 +50,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeNull() {
         try {
             writer.writeNull();
@@ -60,7 +60,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeEndArray() {
         try {
             writer.stepOut();
@@ -70,7 +70,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeStartObject() {
         try {
             writer.stepIn(IonType.STRUCT);
@@ -80,7 +80,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeEndObject() {
         try {
             writer.stepOut();
@@ -90,13 +90,13 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeFieldName(String fieldName) {
         writer.setFieldName(fieldName);
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(String val) {
         try {
             writer.writeString(val);
@@ -106,7 +106,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(boolean bool) {
         try {
             writer.writeBool(bool);
@@ -116,7 +116,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(long val) {
         try {
             writer.writeInt(val);
@@ -126,7 +126,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(double val) {
         try {
             writer.writeFloat(val);
@@ -136,7 +136,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(float val) {
         try {
             writer.writeFloat(val);
@@ -146,7 +146,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(short val) {
         try {
             writer.writeInt(val);
@@ -156,7 +156,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(int val) {
         try {
             writer.writeInt(val);
@@ -166,7 +166,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(ByteBuffer bytes) {
         try {
             writer.writeBlob(BinaryUtils.copyAllBytesFrom(bytes));
@@ -176,7 +176,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(Date date, TimestampFormat timestampFormat) {
         try {
             writer.writeTimestamp(Timestamp.forDateZ(date));
@@ -186,7 +186,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(BigDecimal value) {
         try {
             writer.writeDecimal(value);
@@ -196,7 +196,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public StructuredJsonGenerator writeValue(BigInteger value) {
         try {
             writer.writeInt(value);
@@ -206,10 +206,10 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public abstract byte[] getBytes();
 
-    @Override
+    
     public String getContentType() {
         return contentType;
     }
@@ -228,7 +228,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
             this.bytes = bytes;
         }
 
-        @Override
+        
         public byte[] getBytes() {
             try {
                 writer.finish();

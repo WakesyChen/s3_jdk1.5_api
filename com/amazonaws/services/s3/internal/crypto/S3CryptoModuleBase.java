@@ -151,7 +151,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     protected abstract long ciphertextLength(long plaintextLength);
 
     //////////////////////// Common Implementation ////////////////////////
-    @Override
+    
     public PutObjectResult putObjectSecurely(PutObjectRequest req) {
         // TODO: consider cloning req before proceeding further to reduce side
         // effects
@@ -218,13 +218,13 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         return result;
     }
 
-    @Override
+    
     public final void abortMultipartUploadSecurely(AbortMultipartUploadRequest req) {
         s3.abortMultipartUpload(req);
         multipartUploadContexts.remove(req.getUploadId());
     }
 
-    @Override
+    
     public final CopyPartResult copyPartSecurely(CopyPartRequest copyPartRequest) {
         String uploadId = copyPartRequest.getUploadId();
         T uploadContext = multipartUploadContexts.get(uploadId);
@@ -238,7 +238,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
     abstract T newUploadContext(InitiateMultipartUploadRequest req,
                                 ContentCryptoMaterial cekMaterial);
 
-    @Override
+    
     public InitiateMultipartUploadResult initiateMultipartUploadSecurely(
         InitiateMultipartUploadRequest req) {
         appendUserAgent(req, USER_AGENT);
@@ -279,7 +279,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      * order. Otherwise, the previous encryption context isn't available to use
      * when encrypting the current part.
      */
-    @Override
+    
     public UploadPartResult uploadPartSecurely(UploadPartRequest req) {
         appendUserAgent(req, USER_AGENT);
         final int blockSize = contentCryptoScheme.getBlockSizeInBytes();
@@ -373,7 +373,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         }
     }
 
-    @Override
+    
     public CompleteMultipartUploadResult completeMultipartUploadSecurely(
         CompleteMultipartUploadRequest req) {
         appendUserAgent(req, USER_AGENT);
@@ -489,7 +489,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         return buildContentCryptoMaterial(kekMaterials, req);
     }
 
-    @Override
+    
     public final void putLocalObjectSecurely(final UploadObjectRequest reqIn,
                                              String uploadId, OutputStream os) throws IOException {
         UploadObjectRequest req = reqIn.clone();
@@ -787,7 +787,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         }
     }
 
-    @Override
+    
     public final PutObjectResult putInstructionFileSecurely(
         PutInstructionFileRequest req) {
         final S3ObjectId id = req.getS3ObjectId();

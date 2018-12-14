@@ -40,7 +40,7 @@ public class MaxAttemptsRetryStrategy implements PollingStrategy.RetryStrategy {
      * @param pollingStrategyContext Provides the polling context required to make the retry decision
      * @return false if the number of re
      */
-    @Override
+    
     public boolean shouldRetry(PollingStrategyContext pollingStrategyContext) {
         return pollingStrategyContext.getRetriesAttempted() < defaultMaxAttempts;
     }

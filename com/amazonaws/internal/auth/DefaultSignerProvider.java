@@ -37,7 +37,7 @@ public class DefaultSignerProvider extends SignerProvider {
         this.defaultSigner = defaultSigner;
     }
 
-    @Override
+    
     public Signer getSigner(SignerProviderContext context) {
     Request<?> request = context.getRequest();
         if (request == null || shouldUseDefaultSigner(request.getOriginalRequest())) {

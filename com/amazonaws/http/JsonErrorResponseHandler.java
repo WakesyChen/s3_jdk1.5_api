@@ -51,12 +51,12 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         this.jsonFactory = jsonFactory;
     }
 
-    @Override
+    
     public boolean needsConnectionLeftOpen() {
         return false;
     }
 
-    @Override
+    
     public AmazonServiceException handle(HttpResponse response) throws Exception {
         JsonContent jsonContent = JsonContent.createJsonContent(response, jsonFactory);
         String errorCode = errorCodeParser.parseErrorCode(response, jsonContent);

@@ -43,7 +43,7 @@ public class SdkMetricsSocket extends DelegateSocket {
         metricsIS.setMetrics(metrics);
     }
 
-    @Override
+    
     public InputStream getInputStream() throws IOException {
         metricsIS = new MetricsInputStream(sock.getInputStream());
         return metricsIS;

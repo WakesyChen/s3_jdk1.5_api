@@ -23,13 +23,13 @@ public class SimpleMaterialProvider implements EncryptionMaterialsProvider,Seria
         new HashMap<Map<String, String>, EncryptionMaterials>();
     private EncryptionMaterials latest;
 
-    @Override
+    
     public EncryptionMaterials getEncryptionMaterials(
             Map<String, String> md) {
         return map.get(md);
     }
 
-    @Override
+    
     public EncryptionMaterials getEncryptionMaterials() {
         return latest;
     }
@@ -52,7 +52,7 @@ public class SimpleMaterialProvider implements EncryptionMaterialsProvider,Seria
         return map.size();
     }
 
-    @Override
+    
     public void refresh() {
     }
 

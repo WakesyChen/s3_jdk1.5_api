@@ -32,7 +32,7 @@ public final class AnalyticsTagPredicate extends AnalyticsFilterPredicate {
         return tag;
     }
 
-    @Override
+    
     public void accept(AnalyticsPredicateVisitor analyticsPredicateVisitor) {
         analyticsPredicateVisitor.visit(this);
     }

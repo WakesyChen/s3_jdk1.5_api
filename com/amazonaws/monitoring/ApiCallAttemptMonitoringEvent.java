@@ -38,25 +38,25 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
     private Long attemptLatency;
     private Long requestLatency;
 
-    @Override
+    
     public ApiCallAttemptMonitoringEvent withApi(String api) {
         this.api = api;
         return this;
     }
 
-    @Override
+    
     public ApiCallAttemptMonitoringEvent withVersion(Integer version) {
         this.version = version;
         return this;
     }
 
-    @Override
+    
     public ApiCallAttemptMonitoringEvent withService(String service) {
         this.service = service;
         return this;
     }
 
-    @Override
+    
     public ApiCallAttemptMonitoringEvent withClientId(String clientId) {
         this.clientId = clientId;
         return this;
@@ -68,7 +68,7 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
      * <p>
      * This is when the request attempt is passed to the http client.
      */
-    @Override
+    
     public ApiCallAttemptMonitoringEvent withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -98,7 +98,7 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
      * @param region The new region value.
      * @return This object for method chaining.
      */
-    @Override
+    
     public ApiCallAttemptMonitoringEvent withRegion(String region) {
         this.region = region;
         return this;
@@ -339,7 +339,7 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
         return this;
     }
 
-    @Override
+    
     public String getType() {
         return API_CALL_ATTEMPT_MONITORING_EVENT_TYPE;
     }

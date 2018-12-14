@@ -58,7 +58,7 @@ public class S3ErrorResponseHandler implements
         Error, Message, Code, RequestId, HostId
     };
 
-    @Override
+    
     public AmazonServiceException handle(HttpResponse httpResponse)
             throws XMLStreamException {
         final AmazonServiceException exception = createException(httpResponse);

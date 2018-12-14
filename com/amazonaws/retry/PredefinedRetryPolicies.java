@@ -157,7 +157,7 @@ public class PredefinedRetryPolicies {
      */
     public static class SDKDefaultRetryCondition implements RetryPolicy.RetryCondition {
 
-        @Override
+        
         public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
                                    AmazonClientException exception,
                                    int retriesAttempted) {

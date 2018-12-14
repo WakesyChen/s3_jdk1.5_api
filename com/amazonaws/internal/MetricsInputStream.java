@@ -41,7 +41,7 @@ public class MetricsInputStream extends DelegateInputStream {
      * {@inheritDoc}
      * Record the read time into the metrics.
      */
-    @Override
+    
     public int read() throws IOException {
         if (metrics != null) {
             metrics.startEvent(Field.HttpSocketReadTime);
@@ -60,7 +60,7 @@ public class MetricsInputStream extends DelegateInputStream {
      *
      * Record the read time into the metrics.
      */
-    @Override
+    
     public int read(byte b[]) throws IOException {
         if (metrics != null) {
             metrics.startEvent(Field.HttpSocketReadTime);
@@ -79,7 +79,7 @@ public class MetricsInputStream extends DelegateInputStream {
      *
      * Record the read time into the metrics.
      */
-    @Override
+    
     public int read(byte b[], int off, int len) throws IOException {
         if (metrics != null) {
             metrics.startEvent(Field.HttpSocketReadTime);

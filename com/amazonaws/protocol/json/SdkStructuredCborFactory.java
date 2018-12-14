@@ -71,7 +71,7 @@ class SdkStructuredCborFactory {
     public static final SdkStructuredJsonFactory SDK_CBOR_FACTORY = new SdkStructuredJsonFactoryImpl(
             CBOR_FACTORY, CBOR_SCALAR_UNMARSHALLERS,
             Collections.<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>>emptyMap()) {
-        @Override
+        
         protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
                                                        String contentType) {
             return new SdkCborGenerator(jsonFactory, contentType);

@@ -52,7 +52,7 @@ public class SelectObjectContentEvent implements Serializable, Cloneable {
             return this;
         }
 
-        @Override
+        
         public void visit(SelectObjectContentEventVisitor visitor) {
             visitor.visit(this);
         }
@@ -86,7 +86,7 @@ public class SelectObjectContentEvent implements Serializable, Cloneable {
             return this;
         }
 
-        @Override
+        
         public void visit(SelectObjectContentEventVisitor visitor) {
             visitor.visit(this);
         }
@@ -120,7 +120,7 @@ public class SelectObjectContentEvent implements Serializable, Cloneable {
             return this;
         }
 
-        @Override
+        
         public void visit(SelectObjectContentEventVisitor visitor) {
             visitor.visit(this);
         }
@@ -130,7 +130,7 @@ public class SelectObjectContentEvent implements Serializable, Cloneable {
      * The Continuation Event.
      */
     public static class ContinuationEvent extends SelectObjectContentEvent {
-        @Override
+        
         public void visit(SelectObjectContentEventVisitor visitor) {
             visitor.visit(this);
         }
@@ -140,13 +140,13 @@ public class SelectObjectContentEvent implements Serializable, Cloneable {
      * The End Event.
      */
     public static class EndEvent extends SelectObjectContentEvent {
-        @Override
+        
         public void visit(SelectObjectContentEventVisitor visitor) {
             visitor.visit(this);
         }
     }
 
-    @Override
+    
     public SelectObjectContentEvent clone() {
         try {
             return (SelectObjectContentEvent) super.clone();

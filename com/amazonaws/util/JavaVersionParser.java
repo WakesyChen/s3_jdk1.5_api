@@ -137,7 +137,7 @@ public class JavaVersionParser {
             return this.knownVersion;
         }
 
-        @Override
+        
         public int compareTo(final JavaVersion other) {
             for (int i = 0; i < this.tokenizedVersion.length; i++) {
                 final int tokenComparison = ComparableUtils.safeCompare(this.tokenizedVersion[i],
@@ -150,7 +150,7 @@ public class JavaVersionParser {
             return 0;
         }
 
-        @Override
+        
         public int hashCode() {
             final int prime = 31;
             int result = 1;
@@ -163,7 +163,7 @@ public class JavaVersionParser {
             return result;
         }
 
-        @Override
+        
         public boolean equals(final Object obj) {
             if (this == obj) {
                 return true;

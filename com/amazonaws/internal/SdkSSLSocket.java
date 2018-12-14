@@ -38,7 +38,7 @@ public class SdkSSLSocket extends DelegateSSLSocket {
         return sock.getInetAddress() + ":" + sock.getPort();
     }
 
-    @Override
+    
     public void connect(SocketAddress endpoint) throws IOException {
         if (log.isDebugEnabled())
             log.debug("connecting to: " + endpoint);
@@ -47,7 +47,7 @@ public class SdkSSLSocket extends DelegateSSLSocket {
             log.debug("connected to: " + endpoint());
     }
 
-    @Override
+    
     public void connect(SocketAddress endpoint, int timeout) throws IOException {
         if (log.isDebugEnabled())
             log.debug("connecting to: " + endpoint);
@@ -56,21 +56,21 @@ public class SdkSSLSocket extends DelegateSSLSocket {
             log.debug("connected to: " + endpoint());
     }
 
-    @Override
+    
     public void close() throws IOException {
         if (log.isDebugEnabled())
             log.debug("closing " + endpoint());
         sock.close();
     }
 
-    @Override
+    
     public void shutdownInput() throws IOException {
         if (log.isDebugEnabled())
             log.debug("shutting down input of " + endpoint());
         sock.shutdownInput();
     }
 
-    @Override
+    
     public void shutdownOutput() throws IOException {
         if (log.isDebugEnabled())
             log.debug("shutting down output of " + endpoint());

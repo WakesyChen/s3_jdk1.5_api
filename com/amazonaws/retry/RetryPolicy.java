@@ -139,7 +139,7 @@ public final class RetryPolicy {
      */
     public interface RetryCondition {
         RetryCondition NO_RETRY_CONDITION = new RetryCondition() {
-            @Override
+            
             public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
                                        AmazonClientException exception,
                                        int retriesAttempted) {
@@ -193,7 +193,7 @@ public final class RetryPolicy {
      */
     public interface BackoffStrategy {
         RetryPolicy.BackoffStrategy NO_DELAY = new BackoffStrategy() {
-            @Override
+            
             public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                              AmazonClientException exception,
                                              int retriesAttempted) {

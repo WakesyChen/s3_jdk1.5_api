@@ -48,7 +48,7 @@ public class CompleteMultipartUploadRetryablePredicate extends SdkPredicate<Amaz
     private static final String ERROR_CODE = "InternalError";
     private static final String RETYABLE_ERROR_MESSAGE = "Please try again.";
 
-    @Override
+    
     public boolean test(AmazonS3Exception exception) {
 
         if (exception == null || exception.getErrorCode() == null ||

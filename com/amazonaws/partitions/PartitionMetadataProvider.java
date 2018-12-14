@@ -47,7 +47,7 @@ public class PartitionMetadataProvider extends AbstractRegionMetadataProvider {
         }
     }
 
-    @Override
+    
     public List<Region> getRegions() {
         final List<Region> regions = new ArrayList<Region>();
 
@@ -61,7 +61,7 @@ public class PartitionMetadataProvider extends AbstractRegionMetadataProvider {
         return Collections.unmodifiableList(regions);
     }
 
-    @Override
+    
     public Region getRegion(String regionName) {
 
         if (regionName == null) return null;
@@ -102,7 +102,7 @@ public class PartitionMetadataProvider extends AbstractRegionMetadataProvider {
         return region;
     }
 
-    @Override
+    
     public List<Region> getRegionsForService(String serviceName) {
         final List<Region> allRegions = getRegions();
         final List<Region> serviceSupportedRegions = new ArrayList<Region>();

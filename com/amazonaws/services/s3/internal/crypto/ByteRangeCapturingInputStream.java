@@ -50,7 +50,7 @@ public class ByteRangeCapturingInputStream extends SdkFilterInputStream {
 		return block;
 	}
 
-	@Override
+	
 	public int read() throws IOException {
 		int data = super.read();
 		if (data == -1) return -1;
@@ -63,7 +63,7 @@ public class ByteRangeCapturingInputStream extends SdkFilterInputStream {
 		return data;
 	}
 
-	@Override
+	
 	public synchronized void mark(int readlimit) {
 		super.mark(readlimit);
 		if (markSupported()) {
@@ -72,7 +72,7 @@ public class ByteRangeCapturingInputStream extends SdkFilterInputStream {
 		}
 	}
 
-	@Override
+	
 	public synchronized void reset() throws IOException {
 		super.reset();
 		if (markSupported()) {
@@ -81,7 +81,7 @@ public class ByteRangeCapturingInputStream extends SdkFilterInputStream {
 		}
 	}
 
-	@Override
+	
 	public int read(byte[] b, int off, int len) throws IOException {
 		int bytesRead = super.read(b, off, len);
 		if (bytesRead == -1) return -1;

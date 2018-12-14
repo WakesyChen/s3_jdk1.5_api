@@ -28,7 +28,7 @@ abstract class AbstractHandler extends DefaultHandler {
     private final StringBuilder text = new StringBuilder();
     private final LinkedList<String> context = new LinkedList<String>();
 
-    @Override
+    
     public final void startElement(
             String uri,
             String name,
@@ -46,7 +46,7 @@ abstract class AbstractHandler extends DefaultHandler {
             String qName,
             Attributes attrs);
 
-    @Override
+    
     public final void endElement(String uri, String name, String qName) {
         context.removeLast();
         doEndElement(uri, name, qName);
@@ -57,7 +57,7 @@ abstract class AbstractHandler extends DefaultHandler {
             String name,
             String qName);
 
-    @Override
+    
     public final void characters(char ch[], int start, int length) {
         text.append(ch, start, length);
     }

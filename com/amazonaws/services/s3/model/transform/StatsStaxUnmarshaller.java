@@ -35,7 +35,7 @@ class StatsStaxUnmarshaller
     private StatsStaxUnmarshaller() {
     }
 
-    @Override
+    
     public Stats unmarshall(StaxUnmarshallerContext context) throws Exception {
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;

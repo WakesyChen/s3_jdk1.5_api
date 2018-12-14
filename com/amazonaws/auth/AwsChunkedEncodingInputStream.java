@@ -139,7 +139,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         this.aws4Signer = aws4Signer;
     }
 
-    @Override
+    
     public int read() throws IOException {
         byte[] tmp = new byte[1];
         int count = read(tmp, 0, 1);
@@ -153,7 +153,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         }
     }
 
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         abortIfNeeded();
         if (b == null) {
@@ -182,7 +182,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         return count;
     }
 
-    @Override
+    
     public long skip(long n) throws IOException {
         if (n <= 0) {
             return 0;
@@ -203,7 +203,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
     /**
      * @see java.io.InputStream#markSupported()
      */
-    @Override
+    
     public boolean markSupported() {
         return true;
     }
@@ -211,7 +211,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
     /**
      * The readlimit parameter is ignored.
      */
-    @Override
+    
     public void mark(int readlimit) {
         abortIfNeeded();
         if ( !isAtStart )
@@ -236,7 +236,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
      * Reset the stream, either by resetting the wrapped stream or using the
      * buffer created by this class.
      */
-    @Override
+    
     public void reset() throws IOException {
         abortIfNeeded();
         // Clear up any encoded data
@@ -362,7 +362,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
         }
     }
 
-    @Override
+    
     protected InputStream getWrappedInputStream() {
         return is;
     }

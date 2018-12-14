@@ -30,7 +30,7 @@ public class IsSigV4RetryablePredicate extends SdkPredicate<AmazonServiceExcepti
     /**
      * @return True to retry with SigV4, false to not retry
      */
-    @Override
+    
     public boolean test(AmazonServiceException ase) {
         if (ase == null || ase.getErrorMessage() == null) {
             return false;

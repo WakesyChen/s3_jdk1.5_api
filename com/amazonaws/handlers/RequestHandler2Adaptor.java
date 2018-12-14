@@ -33,12 +33,12 @@ final class RequestHandler2Adaptor extends RequestHandler2 {
         this.old = old;
     }
     @SuppressWarnings("deprecation")
-    @Override public void beforeRequest(Request<?> request) {
+     public void beforeRequest(Request<?> request) {
         old.beforeRequest(request);
     }
 
     @SuppressWarnings("deprecation")
-    @Override
+    
     public void afterResponse(Request<?> request, Response<?> response) {
         AWSRequestMetrics awsRequestMetrics = request == null ? null : request
                 .getAWSRequestMetrics();
@@ -50,16 +50,16 @@ final class RequestHandler2Adaptor extends RequestHandler2 {
     }
 
     @SuppressWarnings("deprecation")
-    @Override public void afterError(Request<?> request, Response<?> response,
+     public void afterError(Request<?> request, Response<?> response,
             Exception e) {
         old.afterError(request, e);
     }
 
-    @Override public int hashCode() {
+     public int hashCode() {
         return old.hashCode();
     }
 
-    @Override public boolean equals(Object o) {
+     public boolean equals(Object o) {
         if (!(o instanceof RequestHandler2Adaptor))
             return false;
         RequestHandler2Adaptor that = (RequestHandler2Adaptor)o;

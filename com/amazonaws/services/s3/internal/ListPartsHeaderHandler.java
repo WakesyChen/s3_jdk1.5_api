@@ -20,7 +20,7 @@ import com.amazonaws.services.s3.model.PartListing;
 
 public class ListPartsHeaderHandler implements HeaderHandler<PartListing> {
 
-    @Override
+    
     public void handle(PartListing result, HttpResponse response) {
         result.setAbortDate(ServiceUtils.parseRfc822Date(response.getHeaders().get(Headers.ABORT_DATE)));
         result.setAbortRuleId(response.getHeaders().get(Headers.ABORT_RULE_ID));

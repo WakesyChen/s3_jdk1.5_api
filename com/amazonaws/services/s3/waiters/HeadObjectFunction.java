@@ -48,7 +48,7 @@ public class HeadObjectFunction implements
      *        Corresponding request for the operation
      * @return Corresponding result of the operation
      */
-    @Override
+    
     public ObjectMetadata apply(GetObjectMetadataRequest headObjectRequest) {
 
         return client.getObjectMetadata(headObjectRequest);

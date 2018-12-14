@@ -19,13 +19,13 @@ package com.amazonaws.log;
  * Commons Logging.
  */
 public final class CommonsLogFactory extends InternalLogFactory {
-    @Override
+    
     protected InternalLogApi doGetLog(Class<?> clazz) {
         return new CommonsLog(
                 org.apache.commons.logging.LogFactory.getLog(clazz));
     }
 
-    @Override
+    
     protected InternalLogApi doGetLog(String name) {
         return new CommonsLog(
                 org.apache.commons.logging.LogFactory.getLog(name));

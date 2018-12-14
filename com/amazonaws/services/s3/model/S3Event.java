@@ -49,7 +49,7 @@ public enum S3Event {
         this.event = event;
     }
 
-    @Override
+    
     public String toString() {
         return this.event;
     }

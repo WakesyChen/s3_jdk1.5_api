@@ -39,7 +39,7 @@ public class AwsRegionProviderChain extends AwsRegionProvider {
         Collections.addAll(this.providers, providers);
     }
 
-    @Override
+    
     public String getRegion() throws SdkClientException {
         for (AwsRegionProvider provider : providers) {
             try {

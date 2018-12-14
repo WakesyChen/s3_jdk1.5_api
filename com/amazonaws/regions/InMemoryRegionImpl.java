@@ -65,42 +65,42 @@ public class InMemoryRegionImpl implements RegionImpl {
         return this;
     }
 
-    @Override
+    
     public String getName() {
         return name;
     }
 
-    @Override
+    
     public String getDomain() {
         return domain;
     }
 
-    @Override
+    
     public String getPartition() {
         throw new UnsupportedOperationException("Partition is not available in the in memory implementation");
     }
 
-    @Override
+    
     public boolean isServiceSupported(String serviceName) {
         return endpoints.containsKey(serviceName);
     }
 
-    @Override
+    
     public String getServiceEndpoint(String serviceName) {
         return endpoints.get(serviceName);
     }
 
-    @Override
+    
     public boolean hasHttpsEndpoint(String serviceName) {
         return https.contains(serviceName);
     }
 
-    @Override
+    
     public boolean hasHttpEndpoint(String serviceName) {
         return http.contains(serviceName);
     }
 
-    @Override
+    
     public Collection<String> getAvailableEndpoints() {
         return Collections.unmodifiableCollection(endpoints.values());
     }

@@ -28,7 +28,7 @@ public final class ReplicationAndOperator extends ReplicationNAryOperator {
         super(operands);
     }
 
-    @Override
+    
     public void accept(ReplicationPredicateVisitor replicationPredicateVisitor) {
         replicationPredicateVisitor.visit(this);
     }

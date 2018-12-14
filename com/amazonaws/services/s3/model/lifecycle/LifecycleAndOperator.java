@@ -28,7 +28,7 @@ public final class LifecycleAndOperator extends LifecycleNAryOperator {
         super(operands);
     }
 
-    @Override
+    
     public void accept(LifecyclePredicateVisitor lifecyclePredicateVisitor) {
         lifecyclePredicateVisitor.visit(this);
     }

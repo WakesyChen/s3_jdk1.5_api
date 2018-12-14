@@ -25,7 +25,7 @@ public enum JSONType {
         this.jsonType = jsonType;
     }
 
-    @Override
+    
     public String toString() {
         return jsonType;
     }

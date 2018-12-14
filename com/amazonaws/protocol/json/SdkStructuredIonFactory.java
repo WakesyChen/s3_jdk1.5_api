@@ -81,12 +81,12 @@ class SdkStructuredIonFactory extends SdkStructuredJsonFactoryImpl {
         this.builder = builder;
     }
 
-    @Override
+    
     protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory, String contentType) {
         return SdkIonGenerator.create(builder, contentType);
     }
 
-    @Override
+    
     protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
         return new CompositeErrorCodeParser(
                 new IonErrorCodeParser(ION_SYSTEM),

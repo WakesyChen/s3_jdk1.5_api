@@ -54,7 +54,7 @@ public class ApacheHttpRequestFactory implements
     private static final List<String> ignoreHeaders = Arrays.asList
             (HttpHeaders.CONTENT_LENGTH, HttpHeaders.HOST);
 
-    @Override
+    
     public HttpRequestBase create(final Request<?> request,
                                   final HttpClientSettings settings)
             throws

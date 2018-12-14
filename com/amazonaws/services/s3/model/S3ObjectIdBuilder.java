@@ -77,7 +77,7 @@ public final class S3ObjectIdBuilder implements Serializable {
         return new S3ObjectId(bucket, key, versionId);
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -97,7 +97,7 @@ public final class S3ObjectIdBuilder implements Serializable {
         return versionId != null ? versionId.equals(that.versionId) : that.versionId == null;
     }
 
-    @Override
+    
     public int hashCode() {
         int result = bucket != null ? bucket.hashCode() : 0;
         result = 31 * result + (key != null ? key.hashCode() : 0);

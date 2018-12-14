@@ -169,7 +169,7 @@ public class Message {
         return baos.toByteArray();
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -180,14 +180,14 @@ public class Message {
         return Arrays.equals(payload, message.payload);
     }
 
-    @Override
+    
     public int hashCode() {
         int result = headers.hashCode();
         result = 31 * result + Arrays.hashCode(payload);
         return result;
     }
 
-    @Override
+    
     public String toString() {
         StringBuilder ret = new StringBuilder();
 

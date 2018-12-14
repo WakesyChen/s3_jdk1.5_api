@@ -17,7 +17,7 @@ package com.amazonaws.endpointdiscovery;
 import static com.amazonaws.endpointdiscovery.Constants.ENDPOINT_DISCOVERY_SYSTEM_PROPERTY;
 
 public class SystemPropertyEndpointDiscoveryProvider implements EndpointDiscoveryProvider {
-    @Override
+    
     public Boolean endpointDiscoveryEnabled() {
         Boolean endpointDiscoveryEnabled = null;
 

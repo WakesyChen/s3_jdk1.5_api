@@ -26,7 +26,7 @@ import com.amazonaws.services.s3.model.GetObjectTaggingResult;
  * com.amazonaws.services.s3.model.GetObjectTaggingRequest} response.
  */
 public class GetObjectTaggingResponseHeaderHandler implements HeaderHandler<GetObjectTaggingResult> {
-    @Override
+    
     public void handle(GetObjectTaggingResult result, HttpResponse response) {
         result.setVersionId(response.getHeaders().get(Headers.S3_VERSION_ID));
     }

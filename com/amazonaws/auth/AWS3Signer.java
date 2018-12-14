@@ -59,7 +59,7 @@ public class AWS3Signer extends AbstractAWSSigner {
      * @param request
      *            The request to sign.
      */
-    @Override
+    
     public void sign(SignableRequest<?> request, AWSCredentials credentials) throws SdkClientException {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
@@ -209,7 +209,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         }
     }
 
-    @Override
+    
     protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }

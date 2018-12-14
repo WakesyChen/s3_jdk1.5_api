@@ -202,13 +202,13 @@ final class GCMCipherLite extends CipherLite {
         return delta;
     }
 
-    @Override long mark() {
+     long mark() {
         return this.markedCount = aux == null ? outputByteCount : currentCount;
     }
 
-    @Override boolean markSupported() { return true; }
+     boolean markSupported() { return true; }
 
-    @Override void reset() {
+     void reset() {
         if (markedCount < outputByteCount || invisiblyProcessed) {
             try {
                 aux = createAuxiliary(markedCount);

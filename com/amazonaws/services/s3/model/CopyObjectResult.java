@@ -110,12 +110,12 @@ public class CopyObjectResult extends SSEResultBase
         this.lastModifiedDate = lastModifiedDate;
     }
 
-    @Override
+    
     public String getVersionId() {
         return versionId;
     }
 
-    @Override
+    
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -156,12 +156,12 @@ public class CopyObjectResult extends SSEResultBase
         this.expirationTimeRuleId = expirationTimeRuleId;
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

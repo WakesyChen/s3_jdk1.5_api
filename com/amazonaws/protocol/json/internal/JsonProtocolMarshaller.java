@@ -138,14 +138,14 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
      * If there is not an explicit payload member then we need to start the implicit JSON request object. All
      * members bound to the payload will be added as fields to this object.
      */
-    @Override
+    
     public void startMarshalling() {
         if (!hasExplicitPayloadMember) {
             jsonGenerator.writeStartObject();
         }
     }
 
-    @Override
+    
     public <V> void marshall(V val, MarshallingInfo<V> marshallingInfo) {
         doMarshall(resolveValue(val, marshallingInfo), marshallingInfo);
     }
@@ -178,7 +178,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
         }
     }
 
-    @Override
+    
     public Request<OrigRequest> finishMarshalling() {
         // Content may already be set if the payload is binary data.
         if (request.getContent() == null) {

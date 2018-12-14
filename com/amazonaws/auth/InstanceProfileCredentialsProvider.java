@@ -118,7 +118,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
                     }
                 });
                 executor.scheduleWithFixedDelay(new Runnable() {
-                    @Override
+                    
                     public void run() {
                         try {
                             if (shouldRefresh) credentialsFetcher.getCredentials();
@@ -150,7 +150,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
         LOG.error(t.getMessage(), t);
     }
 
-    @Override
+    
     protected void finalize() throws Throwable {
         if (executor != null) {
             executor.shutdownNow();
@@ -163,7 +163,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      *
      * @throws AmazonClientException if {@link SDKGlobalConfiguration#isEc2MetadataDisabled()} is true
      */
-    @Override
+    
     public AWSCredentials getCredentials() {
         if (SDKGlobalConfiguration.isEc2MetadataDisabled()) {
             throw new AmazonClientException("AWS_EC2_METADATA_DISABLED is set to true, not loading credentials from EC2 Instance "
@@ -174,14 +174,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
         return creds;
     }
 
-    @Override
+    
     public void refresh() {
         if (credentialsFetcher != null) {
             credentialsFetcher.refresh();
         }
     }
 
-    @Override
+    
     public void close() throws IOException {
         if (executor != null) {
             executor.shutdownNow();
@@ -190,7 +190,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
     }
 
     private static class InstanceMetadataCredentialsEndpointProvider extends CredentialsEndpointProvider {
-        @Override
+        
         public URI getCredentialsEndpoint() throws URISyntaxException, IOException {
             String host = EC2MetadataUtils.getHostAddressForEC2MetadataService();
 

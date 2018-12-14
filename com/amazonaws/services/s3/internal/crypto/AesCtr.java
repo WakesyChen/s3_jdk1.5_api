@@ -15,14 +15,14 @@
 package com.amazonaws.services.s3.internal.crypto;
 
 class AesCtr extends ContentCryptoScheme {
-    @Override String getKeyGeneratorAlgorithm() { return AES_GCM.getKeyGeneratorAlgorithm(); }
-    @Override String getCipherAlgorithm() { return "AES/CTR/NoPadding"; }
-    @Override int getKeyLengthInBits() { return AES_GCM.getKeyLengthInBits(); }
-    @Override int getBlockSizeInBytes() { return AES_GCM.getBlockSizeInBytes(); }
-    @Override int getIVLengthInBytes() { return 16; }
-    @Override long getMaxPlaintextSize() {  return MAX_CTR_BYTES;  }
+     String getKeyGeneratorAlgorithm() { return AES_GCM.getKeyGeneratorAlgorithm(); }
+     String getCipherAlgorithm() { return "AES/CTR/NoPadding"; }
+     int getKeyLengthInBits() { return AES_GCM.getKeyLengthInBits(); }
+     int getBlockSizeInBytes() { return AES_GCM.getBlockSizeInBytes(); }
+     int getIVLengthInBytes() { return 16; }
+     long getMaxPlaintextSize() {  return MAX_CTR_BYTES;  }
 
-    @Override
+    
     byte[] adjustIV(byte[] iv, long byteOffset) {
         // currently only support iv of length 12 for AES/GCM.
         // Anything else is quite a bit complicated.

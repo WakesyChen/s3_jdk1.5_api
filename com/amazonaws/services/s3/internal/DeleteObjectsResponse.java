@@ -68,12 +68,12 @@ public class DeleteObjectsResponse implements S3RequesterChargedResult {
         this.errors = errors;
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

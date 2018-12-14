@@ -1092,7 +1092,7 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      * Returns the AWS Key Management System parameters used to encrypt the
      * object on server side.
      */
-    @Override
+    
     public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
         return sseAwsKeyManagementParams;
     }

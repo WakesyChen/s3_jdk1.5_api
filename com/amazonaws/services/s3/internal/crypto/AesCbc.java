@@ -15,10 +15,10 @@
 package com.amazonaws.services.s3.internal.crypto;
 
 class AesCbc extends ContentCryptoScheme {
-    @Override String getKeyGeneratorAlgorithm() { return "AES"; }
-    @Override String getCipherAlgorithm() { return "AES/CBC/PKCS5Padding"; }
-    @Override int getKeyLengthInBits() { return 256; }
-    @Override int getBlockSizeInBytes() { return 16; }
-    @Override int getIVLengthInBytes() { return 16; }
-    @Override long getMaxPlaintextSize() { return MAX_CBC_BYTES; }
+     String getKeyGeneratorAlgorithm() { return "AES"; }
+     String getCipherAlgorithm() { return "AES/CBC/PKCS5Padding"; }
+     int getKeyLengthInBits() { return 256; }
+     int getBlockSizeInBytes() { return 16; }
+     int getIVLengthInBytes() { return 16; }
+     long getMaxPlaintextSize() { return MAX_CBC_BYTES; }
 }

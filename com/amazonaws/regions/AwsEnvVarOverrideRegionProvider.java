@@ -24,7 +24,7 @@ import static com.amazonaws.SDKGlobalConfiguration.AWS_REGION_ENV_VAR;
  */
 public class AwsEnvVarOverrideRegionProvider extends AwsRegionProvider {
 
-    @Override
+    
     public String getRegion() throws SdkClientException {
         return System.getenv(AWS_REGION_ENV_VAR);
     }

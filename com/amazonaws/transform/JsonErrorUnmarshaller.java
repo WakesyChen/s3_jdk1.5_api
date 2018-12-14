@@ -47,7 +47,7 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
         this.handledErrorCode = handledErrorCode;
     }
 
-    @Override
+    
     public AmazonServiceException unmarshall(JsonNode jsonContent) throws Exception {
         return MAPPER.treeToValue(jsonContent, exceptionClass);
     }

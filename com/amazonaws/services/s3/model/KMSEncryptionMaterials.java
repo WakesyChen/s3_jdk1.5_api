@@ -47,7 +47,7 @@ public class KMSEncryptionMaterials extends EncryptionMaterials implements Seria
     /**
      * Always throws <code>UnsupportedOperationException</code>.
      */
-    @Override
+    
     public final KeyPair getKeyPair() {
         throw new UnsupportedOperationException();
     }
@@ -55,7 +55,7 @@ public class KMSEncryptionMaterials extends EncryptionMaterials implements Seria
     /**
      * Always throws <code>UnsupportedOperationException</code>.
      */
-    @Override
+    
     public final SecretKey getSymmetricKey() {
         throw new UnsupportedOperationException();
     }
@@ -67,7 +67,7 @@ public class KMSEncryptionMaterials extends EncryptionMaterials implements Seria
      * 
      * @return true
      */
-    @Override
+    
     public final boolean isKMSEnabled() {
         return true;
     }
@@ -76,12 +76,12 @@ public class KMSEncryptionMaterials extends EncryptionMaterials implements Seria
      * Returns the default KMS's Customer Master Key ID; or null if there
      * isn't one.
      */
-    @Override
+    
     public String getCustomerMasterKeyId() {
         return getDescription(CUSTOMER_MASTER_KEY_ID);
     }
 
-    @Override
+    
     public String toString() {
         return String.valueOf(getMaterialsDescription());
     }

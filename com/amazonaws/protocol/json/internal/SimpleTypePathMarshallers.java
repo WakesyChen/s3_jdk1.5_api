@@ -38,7 +38,7 @@ public class SimpleTypePathMarshallers {
             new SimplePathMarshaller<String>(ValueToStringConverters.FROM_STRING, PathMarshallers.GREEDY);
 
     public static final JsonMarshaller<Void> NULL = new JsonMarshaller<Void>() {
-        @Override
+        
         public void marshall(Void val, JsonMarshallerContext context, MarshallingInfo<Void> marshallingInfo) {
             throw new IllegalArgumentException(String.format("Parameter '%s' must not be null", marshallingInfo.marshallLocationName()));
         }
@@ -55,7 +55,7 @@ public class SimpleTypePathMarshallers {
             this.pathMarshaller = pathMarshaller;
         }
 
-        @Override
+        
         public void marshall(T val, JsonMarshallerContext context, MarshallingInfo<T> marshallingInfo) {
             context.request().setResourcePath(
                     pathMarshaller.marshall(context.request().getResourcePath(), marshallingInfo.marshallLocationName(),

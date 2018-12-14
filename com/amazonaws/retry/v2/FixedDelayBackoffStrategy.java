@@ -27,7 +27,7 @@ public class FixedDelayBackoffStrategy implements BackoffStrategy {
         this.fixedBackoff = assertIsPositive(fixedBackoff, "fixedBackoff");
     }
 
-    @Override
+    
     public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
         return fixedBackoff;
     }

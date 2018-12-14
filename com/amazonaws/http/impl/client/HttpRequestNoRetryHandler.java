@@ -26,7 +26,7 @@ public class HttpRequestNoRetryHandler extends DefaultHttpRequestRetryHandler {
     public static final HttpRequestNoRetryHandler Singleton = new HttpRequestNoRetryHandler();
     private HttpRequestNoRetryHandler() {}
 
-    @Override public boolean retryRequest(
+     public boolean retryRequest(
             final IOException exception,
             int executionCount,
             final HttpContext context) {

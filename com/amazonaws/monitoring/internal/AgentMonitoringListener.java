@@ -82,12 +82,12 @@ public final class AgentMonitoringListener extends MonitoringListener {
         this.maxSize = maxSize;
     }
 
-    @Override
+    
     public void handleEvent(MonitoringEvent event) {
         dispatcher.addWriteTask(event, channel, maxSize);
     }
 
-    @Override
+    
     public String toString() {
         return SIMPLE_NAME;
     }

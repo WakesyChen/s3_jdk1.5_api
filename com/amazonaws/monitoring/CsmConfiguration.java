@@ -63,7 +63,7 @@ public final class CsmConfiguration {
         return clientId;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -83,7 +83,7 @@ public final class CsmConfiguration {
         return clientId != null ? clientId.equals(other.clientId) : other.clientId == null;
     }
 
-    @Override
+    
     public int hashCode() {
         int result = (enabled ? 1 : 0);
         result = 31 * result + port;

@@ -34,7 +34,7 @@ class ProgressStaxUnmarshaller
     private ProgressStaxUnmarshaller() {
     }
 
-    @Override
+    
     public Progress unmarshall(StaxUnmarshallerContext context) throws Exception {
         // This is currently the same as the statistics. Inline the statistics if they diverge.
         Stats queryStats = StatsStaxUnmarshaller.getInstance().unmarshall(context);

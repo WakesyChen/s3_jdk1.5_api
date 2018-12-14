@@ -33,7 +33,7 @@ public final class AnalyticsPrefixPredicate extends AnalyticsFilterPredicate {
         return prefix;
     }
 
-    @Override
+    
     public void accept(AnalyticsPredicateVisitor analyticsPredicateVisitor) {
         analyticsPredicateVisitor.visit(this);
     }

@@ -66,7 +66,7 @@ public class ResponseMetadata {
         return metadata.get(AWS_REQUEST_ID);
     }
 
-    @Override
+    
     public String toString() {
         if (metadata == null) return "{}";
         return metadata.toString();

@@ -25,7 +25,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 class AmazonS3ClientConfigurationFactory extends ClientConfigurationFactory {
 
-    @Override
+    
     protected ClientConfiguration getInRegionOptimizedConfig() {
         return super.getInRegionOptimizedConfig().withSocketTimeout(21000);
     }

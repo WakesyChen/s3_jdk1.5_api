@@ -55,12 +55,12 @@ public class DeleteObjectsResult implements Serializable, S3RequesterChargedResu
         return deletedObjects;
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

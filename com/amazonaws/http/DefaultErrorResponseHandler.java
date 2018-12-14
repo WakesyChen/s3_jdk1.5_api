@@ -66,7 +66,7 @@ public class DefaultErrorResponseHandler implements HttpResponseHandler<AmazonSe
         this.unmarshallerList = unmarshallerList;
     }
 
-    @Override
+    
     public AmazonServiceException handle(HttpResponse errorResponse) throws Exception {
         AmazonServiceException ase = createAse(errorResponse);
         if (ase == null) {

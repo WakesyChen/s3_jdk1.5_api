@@ -42,7 +42,7 @@ public class LegacyRegionXmlMetadataBuilder implements Builder<RegionMetadata> {
 
     private static final Log LOG = LogFactory.getLog(LegacyRegionXmlMetadataBuilder.class);
 
-    @Override
+    
     public RegionMetadata build() {
         return loadOverrideMetadataIfExists();
     }

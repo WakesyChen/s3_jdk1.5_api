@@ -206,7 +206,7 @@ public class SelectObjectContentRequest extends AmazonWebServiceRequest implemen
         return this;
     }
 
-    @Override
+    
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

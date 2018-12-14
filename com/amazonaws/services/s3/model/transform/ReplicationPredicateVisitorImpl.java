@@ -31,17 +31,17 @@ class ReplicationPredicateVisitorImpl implements ReplicationPredicateVisitor {
         this.xml = xml;
     }
 
-    @Override
+    
     public void visit(ReplicationPrefixPredicate replicationPrefixPredicate) {
         writePrefix(xml, replicationPrefixPredicate.getPrefix());
     }
 
-    @Override
+    
     public void visit(ReplicationTagPredicate replicationTagPredicate) {
         writeTag(xml, replicationTagPredicate.getTag());
     }
 
-    @Override
+    
     public void visit(ReplicationAndOperator replicationAndOperator) {
         xml.start("And");
         for (ReplicationFilterPredicate predicate : replicationAndOperator.getOperands()) {

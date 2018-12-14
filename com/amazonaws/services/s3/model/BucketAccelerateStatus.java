@@ -39,7 +39,7 @@ public enum BucketAccelerateStatus {
         this.accelerateStatus = status;
     }
 
-    @Override
+    
     public String toString() {
         return accelerateStatus;
     }

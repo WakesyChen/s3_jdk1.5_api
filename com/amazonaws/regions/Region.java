@@ -167,7 +167,7 @@ public class Region {
         }
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (obj instanceof Region == false)
             return false;
@@ -176,12 +176,12 @@ public class Region {
         return this.getName().equals(region.getName());
     }
 
-    @Override
+    
     public int hashCode() {
         return getName().hashCode();
     }
 
-    @Override
+    
     public String toString() {
         return getName();
     }

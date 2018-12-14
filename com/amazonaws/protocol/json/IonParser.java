@@ -57,22 +57,22 @@ final class IonParser extends JsonParser {
         this.shouldCloseReader = shouldCloseReader;
     }
 
-    @Override
+    
     public ObjectCodec getCodec() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public void setCodec(ObjectCodec c) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public Version version() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public void close() throws IOException {
         if (shouldCloseReader) {
             reader.close();
@@ -82,7 +82,7 @@ final class IonParser extends JsonParser {
         closed = true;
     }
 
-    @Override
+    
     public JsonToken nextToken() throws IOException, JsonParseException {
         currentToken = doNextToken();
         return currentToken;
@@ -138,7 +138,7 @@ final class IonParser extends JsonParser {
         }
     }
 
-    @Override
+    
     public JsonToken nextValue() throws IOException, JsonParseException {
         JsonToken token = nextToken();
         return (token == JsonToken.FIELD_NAME)
@@ -146,7 +146,7 @@ final class IonParser extends JsonParser {
                 : token;
     }
 
-    @Override
+    
     public JsonParser skipChildren() throws IOException, JsonParseException {
         IonType currentType = reader.getType();
         if (IonType.isContainer(currentType)) {
@@ -158,75 +158,75 @@ final class IonParser extends JsonParser {
         return this;
     }
 
-    @Override
+    
     public boolean isClosed() {
         return closed;
     }
 
-    @Override
+    
     public JsonToken getCurrentToken() {
         return currentToken;
     }
 
-    @Override
+    
     public int getCurrentTokenId() {
         return currentToken == null
                 ? JsonTokenId.ID_NO_TOKEN
                 : currentToken.id();
     }
 
-    @Override
+    
     public boolean hasCurrentToken() {
         return currentToken != null;
     }
 
-    @Override
+    
     public boolean hasTokenId(int id) {
         return getCurrentTokenId() == id;
     }
 
-    @Override
+    
     public boolean hasToken(JsonToken t) {
         return currentToken == t;
     }
 
-    @Override
+    
     public String getCurrentName() throws IOException {
         return reader.getFieldName();
     }
 
-    @Override
+    
     public JsonStreamContext getParsingContext() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public JsonLocation getTokenLocation() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public JsonLocation getCurrentLocation() {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public void clearCurrentToken() {
         lastClearedToken = currentToken;
         currentToken = null;
     }
 
-    @Override
+    
     public JsonToken getLastClearedToken() {
         return lastClearedToken;
     }
 
-    @Override
+    
     public void overrideCurrentName(String name) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public String getText() throws IOException {
         if (state == State.FIELD_NAME) {
             return reader.getFieldName();
@@ -245,27 +245,27 @@ final class IonParser extends JsonParser {
         return currentToken.asString();
     }
 
-    @Override
+    
     public char[] getTextCharacters() throws IOException {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public int getTextLength() throws IOException {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public int getTextOffset() throws IOException {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public boolean hasTextCharacters() {
         return false;
     }
 
-    @Override
+    
     public Number getNumberValue() throws IOException {
         NumberType numberType = getNumberType();
         if (numberType == null) {
@@ -283,7 +283,7 @@ final class IonParser extends JsonParser {
         }
     }
 
-    @Override
+    
     public NumberType getNumberType() throws IOException {
         switch (reader.getType()) {
             case DECIMAL:
@@ -297,37 +297,37 @@ final class IonParser extends JsonParser {
         }
     }
 
-    @Override
+    
     public int getIntValue() throws IOException {
         return reader.intValue();
     }
 
-    @Override
+    
     public long getLongValue() throws IOException {
         return reader.longValue();
     }
 
-    @Override
+    
     public BigInteger getBigIntegerValue() throws IOException {
         return reader.bigIntegerValue();
     }
 
-    @Override
+    
     public float getFloatValue() throws IOException {
         return (float) reader.doubleValue();
     }
 
-    @Override
+    
     public double getDoubleValue() throws IOException {
         return reader.doubleValue();
     }
 
-    @Override
+    
     public BigDecimal getDecimalValue() throws IOException {
         return reader.decimalValue();
     }
 
-    @Override
+    
     public Object getEmbeddedObject() throws IOException {
         if (currentToken != JsonToken.VALUE_EMBEDDED_OBJECT) {
             return null;
@@ -344,12 +344,12 @@ final class IonParser extends JsonParser {
         }
     }
 
-    @Override
+    
     public byte[] getBinaryValue(Base64Variant bv) throws IOException {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+    
     public String getValueAsString(String defaultValue) throws IOException {
         // The documentation is ambiguous about whether field names should
         // return their text or the default value. To conform with the

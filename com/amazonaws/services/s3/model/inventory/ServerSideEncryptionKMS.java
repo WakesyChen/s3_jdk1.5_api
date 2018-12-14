@@ -57,7 +57,7 @@ public class ServerSideEncryptionKMS implements InventoryEncryption, Serializabl
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -68,7 +68,7 @@ public class ServerSideEncryptionKMS implements InventoryEncryption, Serializabl
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -91,7 +91,7 @@ public class ServerSideEncryptionKMS implements InventoryEncryption, Serializabl
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
@@ -100,7 +100,7 @@ public class ServerSideEncryptionKMS implements InventoryEncryption, Serializabl
         return hashCode;
     }
 
-    @Override
+    
     public ServerSideEncryptionKMS clone() {
         try {
             return (ServerSideEncryptionKMS) super.clone();

@@ -28,7 +28,7 @@ public interface SdkClock {
      * Standard implementation that calls out to {@link System#currentTimeMillis()}. Used in production code.
      */
     SdkClock STANDARD = new SdkClock() {
-        @Override
+        
         public long currentTimeMillis() {
             return System.currentTimeMillis();
         }
@@ -50,7 +50,7 @@ public interface SdkClock {
             this.mockedTime = mockedTime;
         }
 
-        @Override
+        
         public long currentTimeMillis() {
             return mockedTime;
         }

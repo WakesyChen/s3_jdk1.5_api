@@ -280,7 +280,7 @@ public class DefaultRequest<T> implements Request<T> {
         return this;
     }
 
-    @Override
+    
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getHttpMethod()).append(" ");
@@ -314,12 +314,12 @@ public class DefaultRequest<T> implements Request<T> {
         return builder.toString();
     }
 
-    @Override
+    
     public AWSRequestMetrics getAWSRequestMetrics() {
         return metrics;
     }
 
-    @Override
+    
     public void setAWSRequestMetrics(AWSRequestMetrics metrics) {
         if (this.metrics == null) {
             this.metrics = metrics;
@@ -328,18 +328,18 @@ public class DefaultRequest<T> implements Request<T> {
         }
     }
 
-    @Override
+    
     public <X> void addHandlerContext(HandlerContextKey<X> key, X value) {
         handlerContext.put(key, value);
     }
 
-    @Override
+    
     public <X> X getHandlerContext(HandlerContextKey<X> key) {
         return (X) handlerContext.get(key);
     }
 
     @SuppressWarnings("resource")
-    @Override
+    
     public InputStream getContentUnwrapped() {
         InputStream is = getContent();
         if (is == null)
@@ -353,12 +353,12 @@ public class DefaultRequest<T> implements Request<T> {
         return is;
     }
 
-    @Override
+    
     public ReadLimitInfo getReadLimitInfo() {
         return originalRequest;
     }
 
-    @Override
+    
     public Object getOriginalRequestObject() {
         return originalRequest;
     }

@@ -102,7 +102,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
         }
     }
 
-    @Override
+    
     public PutObjectResult putObjectSecurely(PutObjectRequest putObjectRequest) {
         return defaultCryptoMode == EncryptionOnly
              ? eo.putObjectSecurely(putObjectRequest)
@@ -110,20 +110,20 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
              ;
     }
 
-    @Override
+    
     public S3Object getObjectSecurely(GetObjectRequest req) {
         // AE module can handle S3 objects encrypted in either AE or EO format
         return ae.getObjectSecurely(req);
     }
 
-    @Override
+    
     public ObjectMetadata getObjectSecurely(GetObjectRequest req,
             File destinationFile) {
         // AE module can handle S3 objects encrypted in either AE or EO format
         return ae.getObjectSecurely(req, destinationFile);
     }
 
-    @Override
+    
     public CompleteMultipartUploadResult completeMultipartUploadSecurely(
             CompleteMultipartUploadRequest req)
                     throws SdkClientException, AmazonServiceException {
@@ -133,7 +133,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
              ;
     }
 
-    @Override
+    
     public void abortMultipartUploadSecurely(AbortMultipartUploadRequest req) {
         if (defaultCryptoMode == EncryptionOnly)
             eo.abortMultipartUploadSecurely(req);
@@ -141,7 +141,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
             ae.abortMultipartUploadSecurely(req);
     }
 
-    @Override
+    
     public InitiateMultipartUploadResult initiateMultipartUploadSecurely(
             InitiateMultipartUploadRequest req)
                     throws SdkClientException, AmazonServiceException {
@@ -161,7 +161,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
      * be uploaded serially, and in order. Otherwise, the previous encryption
      * context isn't available to use when encrypting the current part.
      */
-    @Override
+    
     public UploadPartResult uploadPartSecurely(UploadPartRequest req)
         throws SdkClientException, AmazonServiceException {
         return defaultCryptoMode == EncryptionOnly
@@ -170,7 +170,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
              ;
     }
 
-    @Override
+    
     public CopyPartResult copyPartSecurely(CopyPartRequest req) {
         return defaultCryptoMode == EncryptionOnly 
              ? eo.copyPartSecurely(req)
@@ -178,7 +178,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
              ;
     }
 
-    @Override
+    
     public PutObjectResult putInstructionFileSecurely(
             PutInstructionFileRequest req) {
         return defaultCryptoMode == EncryptionOnly
@@ -187,7 +187,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
             ;
     }
 
-    @Override
+    
     public void putLocalObjectSecurely(UploadObjectRequest req,
             String uploadId, OutputStream os) throws IOException {
         if (defaultCryptoMode == EncryptionOnly)

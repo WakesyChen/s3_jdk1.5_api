@@ -68,7 +68,7 @@ public class MultipleFileDownloadImpl extends MultipleFileTransfer<Download> imp
      *             If this thread is interrupted while waiting for the transfer
      *             to complete.
      */
-    @Override
+    
     public void waitForCompletion()
             throws AmazonClientException, AmazonServiceException, InterruptedException {
         if (subTransfers.isEmpty())

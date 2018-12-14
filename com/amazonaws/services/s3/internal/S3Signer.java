@@ -133,7 +133,7 @@ public class S3Signer extends AbstractAWSSigner {
                         additionalQueryParamsToSign));
     }
 
-    @Override
+    
     public void sign(SignableRequest<?> request, AWSCredentials credentials) {
 
         if (resourcePath == null) {
@@ -179,7 +179,7 @@ public class S3Signer extends AbstractAWSSigner {
                         + signature);
     }
 
-    @Override
+    
     protected void addSessionCredentials(SignableRequest<?> request,
             AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());

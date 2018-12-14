@@ -40,12 +40,12 @@ public class ProfileStaticCredentialsProvider implements AWSCredentialsProvider 
         this.credentialsProvider = new StaticCredentialsProvider(fromStaticCredentials());
     }
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         return credentialsProvider.getCredentials();
     }
 
-    @Override
+    
     public void refresh() {
         // No Op
     }

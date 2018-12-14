@@ -37,7 +37,7 @@ import java.util.concurrent.ExecutorService;
 public final class TransferManagerBuilder {
 
     private static final SdkFunction<TransferManagerParams, TransferManager> DEFAULT_TRANSFER_MANAGER_FACTORY = new SdkFunction<TransferManagerParams, TransferManager>() {
-        @Override
+        
         public TransferManager apply(TransferManagerParams params) {
             return new TransferManager(params);
         }

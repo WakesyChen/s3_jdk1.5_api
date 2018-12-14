@@ -36,7 +36,7 @@ public class SdkBufferedInputStream extends BufferedInputStream implements
         super(in, size);
     }
 
-    @Override
+    
     public boolean isMetricActivated() {
         if (in instanceof MetricAware) {
             MetricAware metricAware = (MetricAware)in;
@@ -64,49 +64,49 @@ public class SdkBufferedInputStream extends BufferedInputStream implements
     protected void abort() {
     }
 
-    @Override
+    
     public int read() throws IOException {
         abortIfNeeded();
         return super.read();
     }
 
-    @Override
+    
     public int read(byte b[], int off, int len) throws IOException {
         abortIfNeeded();
         return super.read(b, off, len);
     }
 
-    @Override
+    
     public long skip(long n) throws IOException {
         abortIfNeeded();
         return super.skip(n);
     }
 
-    @Override
+    
     public int available() throws IOException {
         abortIfNeeded();
         return super.available();
     }
 
-    @Override
+    
     public void close() throws IOException {
         super.close();
         abortIfNeeded();
     }
 
-    @Override
+    
     public void mark(int readlimit) {
         abortIfNeeded();
         super.mark(readlimit);
     }
 
-    @Override
+    
     public void reset() throws IOException {
         abortIfNeeded();
         super.reset();
     }
 
-    @Override
+    
     public boolean markSupported() {
         abortIfNeeded();
         return super.markSupported();

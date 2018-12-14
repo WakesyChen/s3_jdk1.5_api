@@ -76,7 +76,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -99,7 +99,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
         return restrictPublicBuckets != null ? restrictPublicBuckets.equals(that.restrictPublicBuckets) : that.restrictPublicBuckets == null;
     }
 
-    @Override
+    
     public int hashCode() {
         int result = blockPublicAcls != null ? blockPublicAcls.hashCode() : 0;
         result = 31 * result + (ignorePublicAcls != null ? ignorePublicAcls.hashCode() : 0);
@@ -108,7 +108,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
         return result;
     }
 
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -128,7 +128,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public PublicAccessBlockConfiguration clone() {
         try {
             return (PublicAccessBlockConfiguration) super.clone();

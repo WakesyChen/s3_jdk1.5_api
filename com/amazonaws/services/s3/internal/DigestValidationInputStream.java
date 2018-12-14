@@ -42,7 +42,7 @@ public class DigestValidationInputStream extends SdkDigestInputStream {
     /**
      * @see java.io.InputStream#read()
      */
-    @Override
+    
     public int read() throws IOException {
         int ch = super.read();
         if (ch == -1) {
@@ -54,7 +54,7 @@ public class DigestValidationInputStream extends SdkDigestInputStream {
     /**
      * @see java.io.InputStream#read(byte[], int, int)
      */
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         int result = super.read(b, off, len);
         if (result == -1) {

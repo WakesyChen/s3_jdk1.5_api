@@ -63,19 +63,19 @@ public class XpathUtils {
 
     private static final ErrorHandler ERROR_HANDLER = new ErrorHandler() {
 
-        @Override
+        
         public void warning(SAXParseException e) throws SAXException {
             if (log.isDebugEnabled()) {
                 log.debug("xml parse warning: " + e.getMessage(), e);
             }
         }
 
-        @Override
+        
         public void fatalError(SAXParseException e) throws SAXException {
             throw e;
         }
 
-        @Override
+        
         public void error(SAXParseException e) throws SAXException {
             if (log.isDebugEnabled()) {
                 log.debug("xml parse error: " + e.getMessage(), e);
@@ -88,7 +88,7 @@ public class XpathUtils {
      */
     private static final ThreadLocal<XPathFactory> X_PATH_FACTORY = SdkThreadLocalsRegistry.register(
             new ThreadLocal<XPathFactory>() {
-                @Override
+                
                 protected XPathFactory initialValue() {
                     return XPathFactory.newInstance();
                 }

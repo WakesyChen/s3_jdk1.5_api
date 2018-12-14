@@ -416,7 +416,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * @see AbstractPutObjectRequest#setInputStream(InputStream)
      * @see AbstractPutObjectRequest#withInputStream(InputStream)
      */
-    @Override
+    
     public File getFile() {
         return file;
     }
@@ -436,7 +436,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * @see AbstractPutObjectRequest#getInputStream()
      * @see AbstractPutObjectRequest#withInputStream(InputStream)
      */
-    @Override
+    
     public void setFile(File file) {
         this.file = file;
     }
@@ -644,7 +644,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * @see AbstractPutObjectRequest#setFile(File)
      * @see AbstractPutObjectRequest#withFile(File)
      */
-    @Override
+    
     public InputStream getInputStream() {
         return inputStream;
     }
@@ -664,7 +664,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * @see AbstractPutObjectRequest#getFile()
      * @see AbstractPutObjectRequest#withFile(File)
      */
-    @Override
+    
     public void setInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
     }
@@ -728,7 +728,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
         return t;
     }
 
-    @Override
+    
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }
@@ -933,7 +933,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * Returns the AWS Key Management System parameters used to encrypt the
      * object on server side.
      */
-    @Override
+    
     public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
         return sseAwsKeyManagementParams;
     }
@@ -963,7 +963,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
         return t;
     }
 
-    @Override
+    
     public AbstractPutObjectRequest clone() {
         return (AbstractPutObjectRequest) super.clone();
     }

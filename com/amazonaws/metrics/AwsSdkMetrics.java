@@ -788,8 +788,8 @@ public enum AwsSdkMetrics {
             new PropertiesCredentials(new File(filepath));
         synchronized(AwsSdkMetrics.class) {
             credentialProvider = new AWSCredentialsProvider() {
-                @Override public void refresh() {}
-                @Override public AWSCredentials getCredentials() {
+                 public void refresh() {}
+                 public AWSCredentials getCredentials() {
                     return cred;
                 }
             };

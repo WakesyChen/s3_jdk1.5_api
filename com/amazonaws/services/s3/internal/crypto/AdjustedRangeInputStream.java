@@ -76,7 +76,7 @@ public class AdjustedRangeInputStream extends SdkInputStream {
     /* (non-Javadoc)
      * @see java.io.InputStream#read()
      */
-    @Override
+    
     public int read() throws IOException {
         abortIfNeeded();
         int result;
@@ -103,7 +103,7 @@ public class AdjustedRangeInputStream extends SdkInputStream {
     /* (non-Javadoc)
      * @see java.io.InputStream#read(byte[], int, int)
      */
-    @Override
+    
     public int read(byte[] buffer, int offset, int length) throws IOException {
         abortIfNeeded();
         int numBytesRead;
@@ -135,7 +135,7 @@ public class AdjustedRangeInputStream extends SdkInputStream {
     /* (non-Javadoc)
      * @see java.io.InputStream#available()
      */
-    @Override
+    
     public int available() throws IOException {
         abortIfNeeded();
         int available = this.decryptedContents.available();
@@ -151,7 +151,7 @@ public class AdjustedRangeInputStream extends SdkInputStream {
     /* (non-Javadoc)
      * @see java.io.InputStream#close()
      */
-    @Override
+    
     public void close() throws IOException {
         // If not already closed, then close the input stream.
         if(!this.closed) {
@@ -172,7 +172,7 @@ public class AdjustedRangeInputStream extends SdkInputStream {
         abortIfNeeded();
     }
 
-    @Override
+    
     protected InputStream getWrappedInputStream() {
         return decryptedContents;
     }

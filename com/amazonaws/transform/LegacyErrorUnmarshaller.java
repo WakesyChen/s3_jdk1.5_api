@@ -61,7 +61,7 @@ public class LegacyErrorUnmarshaller implements Unmarshaller<AmazonServiceExcept
         this.exceptionClass = exceptionClass;
     }
 
-    @Override
+    
     public AmazonServiceException unmarshall(Node in) throws Exception {
         XPath xpath = xpath();
         String errorCode = parseErrorCode(in, xpath);

@@ -102,5 +102,5 @@ public class ProgressListenerChain implements ProgressListener, DeliveryMode {
         }
     }
 
-    @Override public boolean isSyncCallSafe() { return syncCallSafe; }
+     public boolean isSyncCallSafe() { return syncCallSafe; }
 }

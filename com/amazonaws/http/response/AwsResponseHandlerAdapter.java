@@ -65,7 +65,7 @@ public class AwsResponseHandlerAdapter<T> implements HttpResponseHandler<T> {
         this.responseMetadataCache = responseMetadataCache;
     }
 
-    @Override
+    
     public T handle(HttpResponse response) throws Exception {
         final AmazonWebServiceResponse<T> awsResponse = delegate.handle(response);
 
@@ -109,7 +109,7 @@ public class AwsResponseHandlerAdapter<T> implements HttpResponseHandler<T> {
         return result;
     }
 
-    @Override
+    
     public boolean needsConnectionLeftOpen() {
         return delegate.needsConnectionLeftOpen();
     }

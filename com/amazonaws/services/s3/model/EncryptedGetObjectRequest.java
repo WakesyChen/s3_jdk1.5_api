@@ -205,7 +205,7 @@ public class EncryptedGetObjectRequest extends GetObjectRequest implements Seria
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -228,7 +228,7 @@ public class EncryptedGetObjectRequest extends GetObjectRequest implements Seria
         return getInstructionFileSuffix() != null ? getInstructionFileSuffix().equals(that.getInstructionFileSuffix()) : that.getInstructionFileSuffix() == null;
     }
 
-    @Override
+    
     public int hashCode() {
         int prime = 31;
 

@@ -31,7 +31,7 @@ final class MultipleFileTransferStateChangeListener implements TransferStateChan
         this.multipleFileTransfer = multipleFileTransfer;
     }
 
-    @Override
+    
     public void transferStateChanged(Transfer upload, TransferState state) {
         // There's a race here: we can't start monitoring the state of
         // individual transfers until we have added all the transfers to the

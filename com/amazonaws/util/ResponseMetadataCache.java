@@ -40,13 +40,13 @@ public class ResponseMetadataCache implements MetadataCache {
         internalCache = new InternalCache(maxEntries);
     }
 
-    @Override
+    
     public synchronized void add(Object obj, ResponseMetadata metadata) {
         if (obj == null) return;
         internalCache.put(System.identityHashCode(obj), metadata);
     }
 
-    @Override
+    
     public synchronized ResponseMetadata get(Object obj) {
         // System.identityHashCode isn't guaranteed to be unique
         // on all platforms, but should be reasonable enough to use
@@ -69,7 +69,7 @@ public class ResponseMetadataCache implements MetadataCache {
             this.maxSize = maxSize;
         }
 
-        @Override
+        
         protected boolean removeEldestEntry(Entry<Integer,ResponseMetadata> eldest) {
             return size() > maxSize;
         }

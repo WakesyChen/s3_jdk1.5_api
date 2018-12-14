@@ -63,7 +63,7 @@ public class ShouldClearSslSessionPredicate extends SdkPredicate<SSLException> {
      *            SSLException thrown during connect
      * @return True is the SSL session cache should be cleared, false otherwise.
      */
-    @Override
+    
     public boolean test(SSLException sslEx) {
         return isExceptionAffected(sslEx.getMessage()) && isJvmAffected();
     }

@@ -25,7 +25,7 @@ import com.amazonaws.util.StringInputStream;
 @SdkProtectedApi
 public class StringToInputStreamAdapter implements TypeAdapter<String, InputStream> {
 
-    @Override
+    
     public InputStream adapt(String source) {
         if (source == null) {
             return null;

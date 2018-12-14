@@ -36,7 +36,7 @@ public class SignerConfig {
         return signerType;
     }
 
-    @Override
+    
     public String toString() {
         return signerType;
     }

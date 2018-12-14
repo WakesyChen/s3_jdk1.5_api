@@ -57,7 +57,7 @@ class Base16Codec implements Codec {
                   : CodecUtils.toBytesDirect("0123456789abcdef");
     }
 
-    @Override
+    
     public byte[] encode(byte[] src) {
         byte[] dest = new byte[src.length * 2];
         byte p;
@@ -69,7 +69,7 @@ class Base16Codec implements Codec {
         return dest;
     }
 
-    @Override
+    
     public byte[] decode(byte[] src, final int length)
     {
         if (length % 2 != 0) {

@@ -83,7 +83,7 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      *
      * @see EofSensorInputStream
      */
-    @Override
+    
     public void abort() {
         super.abort();
 
@@ -116,7 +116,7 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      * <p>
      * Ref: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=7036144
      */
-    @Override
+    
     public int available() throws IOException {
         int estimate = super.available();
         return estimate == 0 ? 1 : estimate;
@@ -131,7 +131,7 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      * @see S3ObjectInputStream#abort()
      * @see com.amazonaws.services.s3.internal.S3AbortableInputStream
      */
-    @Override
+    
     public void close() throws IOException {
         super.close();
     }

@@ -88,7 +88,7 @@ public class SetBucketEncryptionRequest extends AmazonWebServiceRequest implemen
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -102,7 +102,7 @@ public class SetBucketEncryptionRequest extends AmazonWebServiceRequest implemen
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -132,7 +132,7 @@ public class SetBucketEncryptionRequest extends AmazonWebServiceRequest implemen
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
@@ -143,7 +143,7 @@ public class SetBucketEncryptionRequest extends AmazonWebServiceRequest implemen
         return hashCode;
     }
 
-    @Override
+    
     public SetBucketEncryptionRequest clone() {
         return (SetBucketEncryptionRequest) super.clone();
     }

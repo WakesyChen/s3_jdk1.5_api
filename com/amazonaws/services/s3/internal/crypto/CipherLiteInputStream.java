@@ -80,7 +80,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         this(is, CipherLite.Null, DEFAULT_IN_BUFFER_SIZE, false, false);
     }
 
-    @Override public int read() throws IOException {
+     public int read() throws IOException {
         if (curr_pos >= max_pos) {
             if (eof)
                 return -1;
@@ -100,11 +100,11 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
     };
 
 
-    @Override public int read(byte b[]) throws IOException {
+     public int read(byte b[]) throws IOException {
         return read(b, 0, b.length);
     }
 
-    @Override
+    
     public int read(byte buf[], int off, int target_len) throws IOException {
         if (curr_pos >= max_pos) {
             // all buffered data has been read, let's get some more
@@ -139,7 +139,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
      * Note: This implementation will only skip up to the end of the buffered
      * data, potentially skipping 0 bytes.
      */
-    @Override public long skip(long n) throws IOException {
+     public long skip(long n) throws IOException {
         abortIfNeeded();
         int available = max_pos - curr_pos;
         if (n > available)
@@ -150,12 +150,12 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         return n;
     }
 
-    @Override public int available() {
+     public int available() {
         abortIfNeeded();
         return max_pos - curr_pos; 
     }
 
-    @Override public void close() throws IOException {
+     public void close() throws IOException {
         in.close();
         // For multipart upload the doFinal has to be triggered via the read
         // methods, since we cann't tell if the close is due to error or normal
@@ -174,13 +174,13 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         abortIfNeeded();
     }
 
-    @Override
+    
     public boolean markSupported() {
         abortIfNeeded();
         return in.markSupported() && cipherLite.markSupported();
     }
 
-    @Override
+    
     public void mark(int readlimit) {
         abortIfNeeded();
         in.mark(readlimit);
@@ -193,7 +193,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
      * Subclassing this method would need to take care in keeping all internal
      * states consistent.  REF: TT0036173414, ISSUE-JAVA-547.
      */
-    @Override
+    
     public void reset() throws IOException {
         abortIfNeeded();
         in.reset();

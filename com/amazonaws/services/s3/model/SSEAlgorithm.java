@@ -32,7 +32,7 @@ public enum SSEAlgorithm {
         this.algorithm = algorithm;
     }
 
-    @Override
+    
     public String toString() {
         return algorithm;
     }

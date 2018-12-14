@@ -35,7 +35,7 @@ public final class LifecyclePrefixPredicate extends LifecycleFilterPredicate {
         return prefix;
     }
 
-    @Override
+    
     public void accept(LifecyclePredicateVisitor lifecyclePredicateVisitor) {
         lifecyclePredicateVisitor.visit(this);
     }

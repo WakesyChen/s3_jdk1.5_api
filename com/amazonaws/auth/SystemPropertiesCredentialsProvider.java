@@ -28,7 +28,7 @@ import com.amazonaws.util.StringUtils;
  */
 public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvider {
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         String accessKey = StringUtils.trim(System.getProperty(ACCESS_KEY_SYSTEM_PROPERTY));
         String secretKey = StringUtils.trim(System.getProperty(SECRET_KEY_SYSTEM_PROPERTY));
@@ -47,11 +47,11 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
         }
     }
 
-    @Override
+    
     public void refresh() {
     }
 
-    @Override
+    
     public String toString() {
         return getClass().getSimpleName();
     }

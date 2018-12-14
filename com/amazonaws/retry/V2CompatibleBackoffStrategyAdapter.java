@@ -26,7 +26,7 @@ import com.amazonaws.retry.v2.RetryPolicyContext;
 @SdkInternalApi
 abstract class V2CompatibleBackoffStrategyAdapter implements V2CompatibleBackoffStrategy {
 
-    @Override
+    
     public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                      AmazonClientException exception,
                                      int retriesAttempted) {

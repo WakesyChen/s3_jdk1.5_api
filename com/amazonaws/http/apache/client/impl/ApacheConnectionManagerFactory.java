@@ -58,7 +58,7 @@ public class ApacheConnectionManagerFactory implements
 
     private final Log LOG = LogFactory.getLog(AmazonHttpClient.class);
 
-    @Override
+    
     public HttpClientConnectionManager create(final HttpClientSettings settings) {
         ConnectionSocketFactory sslsf = getPreferredSocketFactory(settings);
 
@@ -160,18 +160,18 @@ public class ApacheConnectionManagerFactory implements
             }
         }
 
-        @Override
+        
         public Socket createLayeredSocket(Socket socket, String target, int port, HttpContext context) throws IOException, UnknownHostException {
             return getSSLContext().getSocketFactory().createSocket(socket,
                     target, port, true);
         }
 
-        @Override
+        
         public Socket createSocket(HttpContext context) throws IOException {
             return getSSLContext().getSocketFactory().createSocket();
         }
 
-        @Override
+        
         public Socket connectSocket(int connectTimeout, Socket sock, HttpHost host, InetSocketAddress remoteAddress, InetSocketAddress localAddress, HttpContext context) throws IOException {
 
             SSLSocket sslsock = (SSLSocket) ((sock != null) ? sock :
@@ -198,18 +198,18 @@ public class ApacheConnectionManagerFactory implements
     private static class TrustingX509TrustManager implements X509TrustManager {
         private static final X509Certificate[] X509_CERTIFICATES = new X509Certificate[0];
 
-        @Override
+        
         public X509Certificate[] getAcceptedIssuers() {
             return X509_CERTIFICATES;
         }
 
-        @Override
+        
         public void checkServerTrusted(X509Certificate[] chain, String authType)
                 throws CertificateException {
             // No-op, to trust all certs
         }
 
-        @Override
+        
         public void checkClientTrusted(X509Certificate[] chain, String authType)
                 throws CertificateException {
             // No-op, to trust all certs

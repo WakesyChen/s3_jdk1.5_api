@@ -25,7 +25,7 @@ class S3KeyWrapScheme {
         String getKeyWrapAlgorithm(Key key) {
             return null;
         }
-        @Override public String toString() { return "NONE"; }
+         public String toString() { return "NONE"; }
     };
     public static final String AESWrap = "AESWrap"; 
     public static final String RSA_ECB_OAEPWithSHA256AndMGF1Padding = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
@@ -47,5 +47,5 @@ class S3KeyWrapScheme {
         return null;
     }
 
-    @Override public String toString() { return "S3KeyWrapScheme"; }
+     public String toString() { return "S3KeyWrapScheme"; }
 }

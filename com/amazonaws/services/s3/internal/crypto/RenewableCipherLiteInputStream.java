@@ -50,7 +50,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
      * can then be marked at and get reset back to the very beginning of the
      * stream (but not anywhere else).
      */
-    @Override
+    
     public boolean markSupported() {
         abortIfNeeded();
         return in.markSupported();
@@ -65,7 +65,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
      * @throws UnsupportedOperationException
      *             if mark is called after this stream has been accessed.
      */
-    @Override
+    
     public void mark(final int readlimit) {
         abortIfNeeded();
         if (hasBeenAccessed) {
@@ -84,7 +84,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
      * can then be marked at and get reset back to the very beginning of the
      * stream (but not anywhere else).
      */
-    @Override
+    
     public void reset() throws IOException {
         abortIfNeeded();
         in.reset();
@@ -93,26 +93,26 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
         hasBeenAccessed = false;
     }
 
-    @Override
+    
     public int read() throws IOException {
         hasBeenAccessed = true;
         return super.read();
     }
 
-    @Override
+    
     public int read(final byte[] b) throws IOException {
         hasBeenAccessed = true;
         return super.read(b);
     }
 
-    @Override
+    
     public int read(final byte[] b, final int off, final int len)
             throws IOException {
         hasBeenAccessed = true;
         return super.read(b, off, len);
     }
 
-    @Override
+    
     public long skip(final long n) throws IOException {
         hasBeenAccessed = true;
         return super.skip(n);

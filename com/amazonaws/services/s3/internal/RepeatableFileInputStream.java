@@ -80,7 +80,7 @@ public class RepeatableFileInputStream extends SdkInputStream {
      * @throws IOException
      *             when the FileInputStream cannot be re-created.
      */
-    @Override
+    
     public void reset() throws IOException {
         this.fis.close();
         abortIfNeeded();
@@ -100,12 +100,12 @@ public class RepeatableFileInputStream extends SdkInputStream {
         this.bytesReadPastMarkPoint = 0;
     }
 
-    @Override
+    
     public boolean markSupported() {
         return true;
     }
 
-    @Override
+    
     public void mark(int readlimit) {
         abortIfNeeded();
         this.markPoint += bytesReadPastMarkPoint;
@@ -115,19 +115,19 @@ public class RepeatableFileInputStream extends SdkInputStream {
         }
     }
 
-    @Override
+    
     public int available() throws IOException {
         abortIfNeeded();
         return fis.available();
     }
 
-    @Override
+    
     public void close() throws IOException {
         fis.close();
         abortIfNeeded();
     }
 
-    @Override
+    
     public int read() throws IOException {
         abortIfNeeded();
         int byteRead = fis.read();
@@ -139,7 +139,7 @@ public class RepeatableFileInputStream extends SdkInputStream {
         }
     }
 
-    @Override
+    
     public long skip(long n) throws IOException {
         abortIfNeeded();
         long skipped = fis.skip(n);
@@ -147,7 +147,7 @@ public class RepeatableFileInputStream extends SdkInputStream {
         return skipped;
     }
 
-    @Override
+    
     public int read(byte[] arg0, int arg1, int arg2) throws IOException {
         abortIfNeeded();
         int count = fis.read(arg0, arg1, arg2);
@@ -155,7 +155,7 @@ public class RepeatableFileInputStream extends SdkInputStream {
         return count;
     }
 
-    @Override
+    
     public InputStream getWrappedInputStream() {
         return fis;
     }

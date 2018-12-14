@@ -82,19 +82,19 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
         this.monitoringListeners = monitoringListeners;
     }
 
-    @Override
+    
     public void afterAttempt(HandlerAfterAttemptContext context) {
         ApiCallAttemptMonitoringEvent event = generateApiCallAttemptMonitoringEvent(context);
         handToMonitoringListeners(event);
     }
 
-    @Override
+    
     public void afterResponse(Request<?> request, Response<?> response) {
         ApiCallMonitoringEvent event = generateApiCallMonitoringEvent(request);
         handToMonitoringListeners(event);
     }
 
-    @Override
+    
     public void afterError(Request<?> request, Response<?> response, Exception e) {
         ApiCallMonitoringEvent event = generateApiCallMonitoringEvent(request, e);
         handToMonitoringListeners(event);

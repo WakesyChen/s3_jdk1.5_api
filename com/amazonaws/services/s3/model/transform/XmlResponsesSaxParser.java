@@ -612,7 +612,7 @@ public class XmlResponsesSaxParser {
             return objectListing;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -633,7 +633,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (atTopLevel()) {
                 if (name.equals("ListBucketResult")) {
@@ -778,7 +778,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -799,7 +799,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (atTopLevel()) {
                 if (name.equals("ListBucketResult")) {
@@ -951,7 +951,7 @@ public class XmlResponsesSaxParser {
             return bucketsOwner;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -970,7 +970,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("ListAllMyBucketsResult", "Owner")) {
                 if (name.equals("ID")) {
@@ -1020,7 +1020,7 @@ public class XmlResponsesSaxParser {
             return accessControlList;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1053,7 +1053,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("AccessControlPolicy", "Owner")) {
                 if (name.equals("ID")) {
@@ -1120,7 +1120,7 @@ public class XmlResponsesSaxParser {
             return bucketLoggingConfiguration;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1129,7 +1129,7 @@ public class XmlResponsesSaxParser {
 
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("BucketLoggingStatus", "LoggingEnabled")) {
                 if (name.equals("TargetBucket")) {
@@ -1161,7 +1161,7 @@ public class XmlResponsesSaxParser {
             return location;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1170,7 +1170,7 @@ public class XmlResponsesSaxParser {
 
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (atTopLevel()) {
                 if (name.equals("LocationConstraint")) {
@@ -1198,7 +1198,7 @@ public class XmlResponsesSaxParser {
         private String errorHostId = null;
         private boolean receivedErrorResponse = false;
 
-        @Override
+        
         protected ServerSideEncryptionResult sseResult() {
             return result;
         }
@@ -1207,32 +1207,32 @@ public class XmlResponsesSaxParser {
             return result.getLastModifiedDate();
         }
 
-        @Override
+        
         public String getVersionId() {
             return result.getVersionId();
         }
 
-        @Override
+        
         public void setVersionId(String versionId) {
             result.setVersionId(versionId);
         }
 
-        @Override
+        
         public Date getExpirationTime() {
             return result.getExpirationTime();
         }
 
-        @Override
+        
         public void setExpirationTime(Date expirationTime) {
             result.setExpirationTime(expirationTime);
         }
 
-        @Override
+        
         public String getExpirationTimeRuleId() {
             return result.getExpirationTimeRuleId();
         }
 
-        @Override
+        
         public void setExpirationTimeRuleId(String expirationTimeRuleId) {
             result.setExpirationTimeRuleId(expirationTimeRuleId);
         }
@@ -1270,7 +1270,7 @@ public class XmlResponsesSaxParser {
         }
 
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1286,7 +1286,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("CopyObjectResult") || in ("CopyPartResult")) {
                 if (name.equals("LastModified")) {
@@ -1323,7 +1323,7 @@ public class XmlResponsesSaxParser {
             return new RequestPaymentConfiguration(Payer.valueOf(payer));
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1332,7 +1332,7 @@ public class XmlResponsesSaxParser {
 
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("RequestPaymentConfiguration")) {
                 if (name.equals("Payer")) {
@@ -1361,7 +1361,7 @@ public class XmlResponsesSaxParser {
             return versionListing;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1390,7 +1390,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(
                 String uri,
                 String name,
@@ -1506,7 +1506,7 @@ public class XmlResponsesSaxParser {
             return configuration;
         }
 
-        @Override
+        
         protected  void doStartElement(
                 String uri,
                 String name,
@@ -1534,7 +1534,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("WebsiteConfiguration")) {
                 if (name.equals("RedirectAllRequestsTo")) {
@@ -1609,7 +1609,7 @@ public class XmlResponsesSaxParser {
 
         public BucketVersioningConfiguration getConfiguration() { return configuration; }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1618,7 +1618,7 @@ public class XmlResponsesSaxParser {
 
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("VersioningConfiguration")) {
                 if (name.equals("Status")) {
@@ -1645,7 +1645,7 @@ public class XmlResponsesSaxParser {
 
         public BucketAccelerateConfiguration getConfiguration() { return configuration; }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1654,7 +1654,7 @@ public class XmlResponsesSaxParser {
 
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("AccelerateConfiguration")) {
                 if (name.equals("Status")) {
@@ -1694,14 +1694,14 @@ public class XmlResponsesSaxParser {
         private String requestId;
         private String errorCode;
 
-        @Override
+        
         protected ServerSideEncryptionResult sseResult() {
             return result;
         }
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#getExpirationTime()
          */
-        @Override
+        
         public Date getExpirationTime() {
             return result == null ? null : result.getExpirationTime();
         }
@@ -1709,7 +1709,7 @@ public class XmlResponsesSaxParser {
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setExpirationTime(java.util.Date)
          */
-        @Override
+        
         public void setExpirationTime(Date expirationTime) {
             if (result != null) {
                 result.setExpirationTime(expirationTime);
@@ -1719,7 +1719,7 @@ public class XmlResponsesSaxParser {
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#getExpirationTimeRuleId()
          */
-        @Override
+        
         public String getExpirationTimeRuleId() {
             return result == null ? null : result.getExpirationTimeRuleId();
         }
@@ -1727,21 +1727,21 @@ public class XmlResponsesSaxParser {
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setExpirationTimeRuleId(java.lang.String)
          */
-        @Override
+        
         public void setExpirationTimeRuleId(String expirationTimeRuleId) {
             if (result != null) {
                 result.setExpirationTimeRuleId(expirationTimeRuleId);
             }
         }
 
-        @Override
+        
         public void setVersionId(String versionId) {
             if (result != null) {
                 result.setVersionId(versionId);
             }
         }
 
-        @Override
+        
         public String getVersionId() {
             return result == null ? null : result.getVersionId();
         }
@@ -1770,7 +1770,7 @@ public class XmlResponsesSaxParser {
             return ase;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1784,7 +1784,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (atTopLevel()) {
                 if (name.equals("Error")) {
@@ -1839,7 +1839,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1848,7 +1848,7 @@ public class XmlResponsesSaxParser {
 
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("InitiateMultipartUploadResult")) {
                 if (name.equals("Bucket")) {
@@ -1934,7 +1934,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -1952,7 +1952,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("ListMultipartUploadsResult")) {
                 if (name.equals("Bucket")) {
@@ -2070,7 +2070,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -2086,7 +2086,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("ListPartsResult")) {
                 if (name.equals("Bucket")) {
@@ -2219,7 +2219,7 @@ public class XmlResponsesSaxParser {
             return bucketReplicationConfiguration;
         }
 
-        @Override
+        
         protected void doStartElement(String uri, String name, String qName,
                 Attributes attrs) {
 
@@ -2254,7 +2254,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in(REPLICATION_CONFIG)) {
                 if (name.equals(RULE)) {
@@ -2372,7 +2372,7 @@ public class XmlResponsesSaxParser {
             return configuration;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -2386,7 +2386,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("Tagging")) {
                 if (name.equals("TagSet")) {
@@ -2447,7 +2447,7 @@ public class XmlResponsesSaxParser {
         }
 
 
-        @Override
+        
         protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
             if (in("Tagging")) {
                 if (name.equals("TagSet")) {
@@ -2456,7 +2456,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("Tagging")) {
                 if (name.equals("TagSet")) {
@@ -2521,7 +2521,7 @@ public class XmlResponsesSaxParser {
             return response;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -2537,7 +2537,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("DeleteResult")) {
                 if (name.equals("Deleted")) {
@@ -2672,7 +2672,7 @@ public class XmlResponsesSaxParser {
             return configuration;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -2701,7 +2701,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("LifecycleConfiguration")) {
                 if (name.equals("Rule")) {
@@ -2857,7 +2857,7 @@ public class XmlResponsesSaxParser {
             return configuration;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -2889,7 +2889,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("CORSConfiguration")) {
                 if (name.equals("CORSRule")) {
@@ -2969,7 +2969,7 @@ public class XmlResponsesSaxParser {
             return new GetBucketMetricsConfigurationResult().withMetricsConfiguration(configuration);
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -2988,7 +2988,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("MetricsConfiguration")) {
                 if (name.equals("Id")) {
@@ -3074,7 +3074,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -3098,7 +3098,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
 
             if (in("ListMetricsConfigurationsResult")) {
@@ -3220,7 +3220,7 @@ public class XmlResponsesSaxParser {
             return new GetBucketAnalyticsConfigurationResult().withAnalyticsConfiguration(configuration);
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -3256,7 +3256,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("AnalyticsConfiguration")) {
                 if (name.equals("Id")) {
@@ -3379,7 +3379,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -3420,7 +3420,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
 
             if (in("ListBucketAnalyticsConfigurationsResult")) {
@@ -3577,7 +3577,7 @@ public class XmlResponsesSaxParser {
             return result.withInventoryConfiguration(configuration);
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -3602,7 +3602,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
 
             if (in("InventoryConfiguration")) {
@@ -3709,7 +3709,7 @@ public class XmlResponsesSaxParser {
             return result;
         }
 
-        @Override
+        
         protected void doStartElement(
                 String uri,
                 String name,
@@ -3739,7 +3739,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
 
             if (in("ListInventoryConfigurationsResult")) {
@@ -3830,11 +3830,11 @@ public class XmlResponsesSaxParser {
             return getObjectLegalHoldResult.withLegalHold(legalHold);
         }
 
-        @Override
+        
         protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("LegalHold")) {
                 if ("Status".equals(name)) {
@@ -3854,7 +3854,7 @@ public class XmlResponsesSaxParser {
             return result.withObjectLockConfiguration(objectLockConfiguration);
         }
 
-        @Override
+        
         protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
             if (in("ObjectLockConfiguration")) {
                 if ("Rule".equals(name)) {
@@ -3867,7 +3867,7 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("ObjectLockConfiguration")) {
                 if ("ObjectLockEnabled".equals(name)) {
@@ -3900,11 +3900,11 @@ public class XmlResponsesSaxParser {
             return result.withRetention(retention);
         }
 
-        @Override
+        
         protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
         }
 
-        @Override
+        
         protected void doEndElement(String uri, String name, String qName) {
             if (in("Retention")) {
                 if ("Mode".equals(name)) {

@@ -47,7 +47,7 @@ public class PrivilegedMasterSecretValidator implements MasterSecretValidator {
      */
     public boolean isMasterSecretValid(final Socket socket) {
         return AccessController.doPrivileged(new PrivilegedAction<Boolean>() {
-            @Override
+            
             public Boolean run() {
                 return privilegedIsMasterSecretValid(socket);
             }

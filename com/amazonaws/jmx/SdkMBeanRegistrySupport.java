@@ -21,7 +21,7 @@ import com.amazonaws.metrics.MetricAdmin;
 
 public class SdkMBeanRegistrySupport implements SdkMBeanRegistry {
     ;
-    @Override
+    
     public boolean registerMetricAdminMBean(String objectName) {
         try {
             return MBeans.registerMBean(objectName, new MetricAdmin());
@@ -31,7 +31,7 @@ public class SdkMBeanRegistrySupport implements SdkMBeanRegistry {
         return false;
     }
 
-    @Override
+    
     public boolean unregisterMBean(String objectName) {
         try {
             return MBeans.unregisterMBean(objectName);
@@ -41,7 +41,7 @@ public class SdkMBeanRegistrySupport implements SdkMBeanRegistry {
         return false;
     }
 
-    @Override
+    
     public boolean isMBeanRegistered(String objectName) {
         return MBeans.isRegistered(objectName);
     }

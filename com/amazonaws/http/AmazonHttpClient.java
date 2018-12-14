@@ -414,7 +414,7 @@ public class AmazonHttpClient {
                && response.getHeaders("Location").length > 0;
     }
 
-    @Override
+    
     protected void finalize() throws Throwable {
         this.shutdown();
         super.finalize();
@@ -534,12 +534,12 @@ public class AmazonHttpClient {
             // Return a Dummy, No-Op handler
             return new HttpResponseHandler<T>() {
 
-                @Override
+                
                 public T handle(HttpResponse response) throws Exception {
                     return null;
                 }
 
-                @Override
+                
                 public boolean needsConnectionLeftOpen() {
                     return false;
                 }
@@ -618,33 +618,33 @@ public class AmazonHttpClient {
         private HttpResponseHandler<? extends SdkBaseException> errorResponseHandler;
         private ExecutionContext executionContext = new ExecutionContext();
 
-        @Override
+        
         public RequestExecutionBuilder request(Request<?> request) {
             this.request = request;
             return this;
         }
 
-        @Override
+        
         public RequestExecutionBuilder errorResponseHandler(
                 HttpResponseHandler<? extends SdkBaseException> errorResponseHandler) {
             this.errorResponseHandler = errorResponseHandler;
             return this;
         }
 
-        @Override
+        
         public RequestExecutionBuilder executionContext(
                 ExecutionContext executionContext) {
             this.executionContext = executionContext;
             return this;
         }
 
-        @Override
+        
         public RequestExecutionBuilder requestConfig(RequestConfig requestConfig) {
             this.requestConfig = requestConfig;
             return this;
         }
 
-        @Override
+        
         public <Output> Response<Output> execute(HttpResponseHandler<Output> responseHandler) {
             RequestConfig config = requestConfig != null ? requestConfig : new AmazonWebServiceRequestAdapter(request.getOriginalRequest());
             return new RequestExecutor<Output>(request,
@@ -656,7 +656,7 @@ public class AmazonHttpClient {
             ).execute();
         }
 
-        @Override
+        
         public Response<Void> execute() {
             return execute(null);
         }

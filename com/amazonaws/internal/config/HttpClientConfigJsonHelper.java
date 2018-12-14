@@ -32,7 +32,7 @@ public class HttpClientConfigJsonHelper implements Builder<HttpClientConfig> {
         this.regionMetadataServiceName = regionMetadataServiceName;
     }
 
-    @Override
+    
     public String toString() {
         return "serviceName: " + serviceName + ", regionMetadataServiceName: " + regionMetadataServiceName;
     }
@@ -53,7 +53,7 @@ public class HttpClientConfigJsonHelper implements Builder<HttpClientConfig> {
         this.regionMetadataServiceName = regionMetadataServiceName;
     }
 
-    @Override
+    
     public HttpClientConfig build() {
         return new HttpClientConfig(serviceName, regionMetadataServiceName);
     }

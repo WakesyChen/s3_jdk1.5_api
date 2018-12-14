@@ -39,7 +39,7 @@ public class AbortIncompleteMultipartUpload implements Serializable {
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -49,12 +49,12 @@ public class AbortIncompleteMultipartUpload implements Serializable {
         return daysAfterInitiation == that.daysAfterInitiation;
     }
 
-    @Override
+    
     public int hashCode() {
         return daysAfterInitiation;
     }
 
-    @Override
+    
     protected AbortIncompleteMultipartUpload clone() throws CloneNotSupportedException {
         try {
             return (AbortIncompleteMultipartUpload) super.clone();

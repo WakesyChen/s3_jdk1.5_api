@@ -95,7 +95,7 @@ public class JsonMarshallerContext {
         marshallerRegistry().getMarshaller(marshallLocation, val)
                             // construct a new MarshallingInfo to pass the marshallLocationName
                             .marshall(val, this, MarshallingInfo.builder(new MarshallingType<Object>() {
-                                @Override
+                                
                                 public boolean isDefaultMarshallerForType(Class<?> type) {
                                     return false;
                                 }

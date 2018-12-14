@@ -88,7 +88,7 @@ public class MasterSecretValidators {
      */
     public static class NoOpMasterSecretValidator implements MasterSecretValidator {
 
-        @Override
+        
         public boolean isMasterSecretValid(Socket socket) {
             return true;
         }

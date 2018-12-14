@@ -49,7 +49,7 @@ class NamespaceRemovingInputStream extends SdkFilterInputStream {
     /* (non-Javadoc)
      * @see java.io.FilterInputStream#read()
      */
-    @Override
+    
     public int read() throws IOException {
         abortIfNeeded();
         int b = in.read();
@@ -77,7 +77,7 @@ class NamespaceRemovingInputStream extends SdkFilterInputStream {
     /* (non-Javadoc)
      * @see java.io.FilterInputStream#read(byte[], int, int)
      */
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         for (int i = 0; i < len; i++) {
             int j = this.read();
@@ -95,7 +95,7 @@ class NamespaceRemovingInputStream extends SdkFilterInputStream {
     /* (non-Javadoc)
      * @see java.io.FilterInputStream#read(byte[])
      */
-    @Override
+    
     public int read(byte[] b) throws IOException {
         return this.read(b, 0, b.length);
     }

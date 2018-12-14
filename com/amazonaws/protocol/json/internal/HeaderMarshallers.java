@@ -43,7 +43,7 @@ public class HeaderMarshallers {
             ValueToStringConverters.FROM_BOOLEAN);
 
     public static final JsonMarshaller<Date> DATE = new SimpleHeaderMarshaller<Date>(ValueToStringConverters.FROM_DATE) {
-        @Override
+        
         public void marshall(Date val, JsonMarshallerContext context, MarshallingInfo<Date> marshallingInfo) {
             TimestampFormat timestampFormat = marshallingInfo.timestampFormat();
             if (TimestampFormat.UNKNOWN.equals(timestampFormat)) {
@@ -61,7 +61,7 @@ public class HeaderMarshallers {
             this.converter = converter;
         }
 
-        @Override
+        
         public void marshall(T val, JsonMarshallerContext context, MarshallingInfo<T> marshallingInfo) {
             context.request().addHeader(marshallingInfo.marshallLocationName(), converter.convert(val));
         }

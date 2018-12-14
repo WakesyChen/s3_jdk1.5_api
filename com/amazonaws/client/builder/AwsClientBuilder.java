@@ -511,42 +511,42 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
             this._advancedConfig = advancedConfig.build();
         }
 
-        @Override
+        
         public AWSCredentialsProvider getCredentialsProvider() {
             return this._credentials;
         }
 
-        @Override
+        
         public ClientConfiguration getClientConfiguration() {
             return this._clientConfig;
         }
 
-        @Override
+        
         public RequestMetricCollector getRequestMetricCollector() {
             return this._metricsCollector;
         }
 
-        @Override
+        
         public List<RequestHandler2> getRequestHandlers() {
             return this._requestHandlers;
         }
 
-        @Override
+        
         public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
             return this._csmConfig;
         }
 
-        @Override
+        
         public MonitoringListener getMonitoringListener() {
             return this._monitoringListener;
         }
 
-        @Override
+        
         public AdvancedConfig getAdvancedConfig() {
             return _advancedConfig;
         }
 
-        @Override
+        
         public ExecutorService getExecutor() {
             throw new UnsupportedOperationException("ExecutorService is not used for sync client.");
         }

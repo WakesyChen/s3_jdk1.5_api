@@ -59,13 +59,13 @@ public interface SdkMBeanRegistry {
     }
     
     static final SdkMBeanRegistry NONE = new SdkMBeanRegistry() {
-        @Override public boolean registerMetricAdminMBean(String objectName) {
+         public boolean registerMetricAdminMBean(String objectName) {
             return false;
         }
-        @Override public boolean unregisterMBean(String objectName) {
+         public boolean unregisterMBean(String objectName) {
             return false;
         }
-        @Override public boolean isMBeanRegistered(String objectName) {
+         public boolean isMBeanRegistered(String objectName) {
             return false;
         }
     };

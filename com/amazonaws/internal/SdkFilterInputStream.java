@@ -41,7 +41,7 @@ public class SdkFilterInputStream extends FilterInputStream implements
         return in;
     }
 
-    @Override
+    
     public boolean isMetricActivated() {
         if (in instanceof MetricAware) {
             MetricAware metricAware = (MetricAware)in;
@@ -78,55 +78,55 @@ public class SdkFilterInputStream extends FilterInputStream implements
         return aborted;
     }
 
-    @Override
+    
     public int read() throws IOException {
         abortIfNeeded();
         return in.read();
     }
 
-    @Override
+    
     public int read(byte b[], int off, int len) throws IOException {
         abortIfNeeded();
         return in.read(b, off, len);
     }
 
-    @Override
+    
     public long skip(long n) throws IOException {
         abortIfNeeded();
         return in.skip(n);
     }
 
-    @Override
+    
     public int available() throws IOException {
         abortIfNeeded();
         return in.available();
     }
 
-    @Override
+    
     public void close() throws IOException {
         in.close();
         abortIfNeeded();
     }
 
-    @Override
+    
     public synchronized void mark(int readlimit) {
         abortIfNeeded();
         in.mark(readlimit);
     }
 
-    @Override
+    
     public synchronized void reset() throws IOException {
         abortIfNeeded();
         in.reset();
     }
 
-    @Override
+    
     public boolean markSupported() {
         abortIfNeeded();
         return in.markSupported();
     }
 
-    @Override
+    
     public void release() {
         // Don't call IOUtils.release(in, null) or else could lead to infinite loop
         SdkIOUtils.closeQuietly(this);

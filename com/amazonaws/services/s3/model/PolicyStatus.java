@@ -51,7 +51,7 @@ public class PolicyStatus implements Serializable, Cloneable {
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -65,7 +65,7 @@ public class PolicyStatus implements Serializable, Cloneable {
         return isPublic != null ? isPublic.equals(that.isPublic) : that.isPublic == null;
     }
 
-    @Override
+    
     public int hashCode() {
         return isPublic != null ? isPublic.hashCode() : 0;
     }
@@ -76,7 +76,7 @@ public class PolicyStatus implements Serializable, Cloneable {
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -87,7 +87,7 @@ public class PolicyStatus implements Serializable, Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public PolicyStatus clone() {
         try {
             return (PolicyStatus) super.clone();

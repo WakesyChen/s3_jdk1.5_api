@@ -565,22 +565,22 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      * </p>
      * 
      */
-    @Override
+    
     public PutObjectResult putObject(PutObjectRequest req) {
         return crypto.putObjectSecurely(req.clone());
     }
 
-    @Override
+    
     public S3Object getObject(GetObjectRequest req) {
         return crypto.getObjectSecurely(req);
     }
 
-    @Override
+    
     public ObjectMetadata getObject(GetObjectRequest req, File dest) {
         return crypto.getObjectSecurely(req, dest);
     }
 
-    @Override
+    
     public void deleteObject(DeleteObjectRequest req) {
         req.getRequestClientOptions().appendUserAgent(USER_AGENT);
         // Delete the object
@@ -593,7 +593,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
         super.deleteObject(instructionDeleteRequest);
     }
 
-    @Override
+    
     public CompleteMultipartUploadResult completeMultipartUpload(
             CompleteMultipartUploadRequest req) {
         return crypto.completeMultipartUploadSecurely(req);
@@ -607,7 +607,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      * corresponding to the materialsDescription specified in the current request.
      * </p>
      */
-    @Override
+    
     public InitiateMultipartUploadResult initiateMultipartUpload(
             InitiateMultipartUploadRequest req) {
         boolean isCreateEncryptionMaterial = true;
@@ -632,18 +632,18 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      * be uploaded serially, and in order. Otherwise, the previous encryption
      * context isn't available to use when encrypting the current part.
      */
-    @Override
+    
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
             throws SdkClientException, AmazonServiceException {
         return crypto.uploadPartSecurely(uploadPartRequest);
     }
 
-    @Override
+    
     public CopyPartResult copyPart(CopyPartRequest copyPartRequest) {
         return crypto.copyPartSecurely(copyPartRequest);
     }
 
-    @Override
+    
     public void abortMultipartUpload(AbortMultipartUploadRequest req) {
         crypto.abortMultipartUploadSecurely(req);
     }
@@ -671,7 +671,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      * Otherwise, users who provided the KMS client would be responsible to
      * shut down the KMS client extrinsic to this method.
      */
-    @Override
+    
     public void shutdown() {
         super.shutdown();
         if (isKMSClientInternal)
@@ -685,45 +685,45 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      * decryption operations.
      */
     private final class S3DirectImpl extends S3Direct {
-        @Override
+        
         public PutObjectResult putObject(PutObjectRequest req) {
             return AmazonS3EncryptionClient.super.putObject(req);
         }
 
-        @Override
+        
         public S3Object getObject(GetObjectRequest req) {
             return AmazonS3EncryptionClient.super.getObject(req);
         }
 
-        @Override
+        
         public ObjectMetadata getObject(GetObjectRequest req, File dest) {
             return AmazonS3EncryptionClient.super.getObject(req, dest);
         }
 
-        @Override
+        
         public CompleteMultipartUploadResult completeMultipartUpload(
                 CompleteMultipartUploadRequest req) {
             return AmazonS3EncryptionClient.super.completeMultipartUpload(req);
         }
 
-        @Override
+        
         public InitiateMultipartUploadResult initiateMultipartUpload(
                 InitiateMultipartUploadRequest req) {
             return AmazonS3EncryptionClient.super.initiateMultipartUpload(req);
         }
 
-        @Override
+        
         public UploadPartResult uploadPart(UploadPartRequest req)
                 throws SdkClientException, AmazonServiceException {
             return AmazonS3EncryptionClient.super.uploadPart(req);
         }
 
-        @Override
+        
         public CopyPartResult copyPart(CopyPartRequest req) {
             return AmazonS3EncryptionClient.super.copyPart(req);
         }
 
-        @Override
+        
         public void abortMultipartUpload(AbortMultipartUploadRequest req) {
             AmazonS3EncryptionClient.super.abortMultipartUpload(req);
         }

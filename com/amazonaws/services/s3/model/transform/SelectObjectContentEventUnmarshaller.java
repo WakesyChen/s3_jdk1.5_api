@@ -100,14 +100,14 @@ public abstract class SelectObjectContentEventUnmarshaller {
     public abstract SelectObjectContentEvent unmarshal(Message message) throws Exception;
 
     public static class RecordsEventUnmarshaller extends SelectObjectContentEventUnmarshaller {
-        @Override
+        
         public RecordsEvent unmarshal(Message message) {
             return new RecordsEvent().withPayload(ByteBuffer.wrap(message.getPayload()));
         }
     }
 
     public static class StatsEventUnmarshaller extends SelectObjectContentEventUnmarshaller {
-        @Override
+        
         public StatsEvent unmarshal(Message message) throws Exception {
             StaxUnmarshallerContext context = payloadUnmarshaller(message);
             return new StatsEvent().withDetails(StatsStaxUnmarshaller.getInstance().unmarshall(context));
@@ -115,7 +115,7 @@ public abstract class SelectObjectContentEventUnmarshaller {
     }
 
     public static class ProgressEventUnmarshaller extends SelectObjectContentEventUnmarshaller {
-        @Override
+        
         public ProgressEvent unmarshal(Message message) throws Exception {
             StaxUnmarshallerContext context = payloadUnmarshaller(message);
             return new ProgressEvent().withDetails(ProgressStaxUnmarshaller.getInstance().unmarshall(context));
@@ -123,21 +123,21 @@ public abstract class SelectObjectContentEventUnmarshaller {
     }
 
     public static class ContinuationEventUnmarshaller extends SelectObjectContentEventUnmarshaller {
-        @Override
+        
         public ContinuationEvent unmarshal(Message message) {
             return new ContinuationEvent();
         }
     }
 
     public static class EndEventUnmarshaller extends SelectObjectContentEventUnmarshaller {
-        @Override
+        
         public EndEvent unmarshal(Message message) {
             return new EndEvent();
         }
     }
 
     public static class UnknownEventUnmarshaller extends SelectObjectContentEventUnmarshaller {
-        @Override
+        
         public SelectObjectContentEvent unmarshal(Message message) {
             return new SelectObjectContentEvent();
         }

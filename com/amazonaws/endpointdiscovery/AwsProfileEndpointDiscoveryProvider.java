@@ -49,7 +49,7 @@ public class AwsProfileEndpointDiscoveryProvider implements EndpointDiscoveryPro
         this.profileConfigLoader = configLoader;
     }
 
-    @Override
+    
     public Boolean endpointDiscoveryEnabled() {
         Boolean endpointDiscoveryEnabled = null;
         File configFile = locationProvider.getLocation();

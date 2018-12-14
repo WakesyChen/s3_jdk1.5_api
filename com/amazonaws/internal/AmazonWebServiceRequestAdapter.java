@@ -38,54 +38,54 @@ public final class AmazonWebServiceRequestAdapter extends RequestConfig {
         this.request = request;
     }
 
-    @Override
+    
     public ProgressListener getProgressListener() {
         return request.getGeneralProgressListener();
     }
 
-    @Override
+    
     public RequestMetricCollector getRequestMetricsCollector() {
         return request.getRequestMetricCollector();
     }
 
-    @Override
+    
     public AWSCredentialsProvider getCredentialsProvider() {
         return request.getRequestCredentialsProvider();
     }
 
-    @Override
+    
     public Map<String, String> getCustomRequestHeaders() {
         return (request.getCustomRequestHeaders() == null) ? Collections.<String, String>emptyMap() :
                 request.getCustomRequestHeaders();
     }
 
-    @Override
+    
     public Map<String, List<String>> getCustomQueryParameters() {
         return (request.getCustomQueryParameters() == null) ? Collections.<String, List<String>>emptyMap() :
                 request.getCustomQueryParameters();
     }
 
-    @Override
+    
     public Integer getRequestTimeout() {
         return request.getSdkRequestTimeout();
     }
 
-    @Override
+    
     public Integer getClientExecutionTimeout() {
         return request.getSdkClientExecutionTimeout();
     }
 
-    @Override
+    
     public RequestClientOptions getRequestClientOptions() {
         return request.getRequestClientOptions();
     }
 
-    @Override
+    
     public String getRequestType() {
         return request.getClass().getSimpleName();
     }
 
-    @Override
+    
     public Object getOriginalRequest() {
         return request;
     }

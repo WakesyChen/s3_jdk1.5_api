@@ -26,7 +26,7 @@ final class DefaultMarshallingType<T> implements MarshallingType<T> {
         this.type = type;
     }
 
-    @Override
+    
     public boolean isDefaultMarshallerForType(Class<?> type) {
         return this.type.isAssignableFrom(type);
     }

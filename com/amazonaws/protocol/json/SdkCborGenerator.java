@@ -44,7 +44,7 @@ class SdkCborGenerator extends SdkJsonGenerator {
      * (https://tools.ietf.org/html/rfc7049#section-2.4.1) we will need to
      * write a tag and write the epoch.
      */
-    @Override
+    
     public StructuredJsonGenerator writeValue(Date date, TimestampFormat timestampFormat) {
 
         if (!(getGenerator() instanceof CBORGenerator)) {
@@ -61,7 +61,7 @@ class SdkCborGenerator extends SdkJsonGenerator {
         return this;
     }
 
-    @Override
+    
     public byte[] getBytes() {
         try {
             return super.getBytes();

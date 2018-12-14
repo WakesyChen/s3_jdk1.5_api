@@ -48,7 +48,7 @@ public class GetBucketPolicyStatusResult implements Serializable, Cloneable {
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -62,7 +62,7 @@ public class GetBucketPolicyStatusResult implements Serializable, Cloneable {
         return policyStatus != null ? policyStatus.equals(that.policyStatus) : that.policyStatus == null;
     }
 
-    @Override
+    
     public int hashCode() {
         return policyStatus != null ? policyStatus.hashCode() : 0;
     }
@@ -73,7 +73,7 @@ public class GetBucketPolicyStatusResult implements Serializable, Cloneable {
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -84,7 +84,7 @@ public class GetBucketPolicyStatusResult implements Serializable, Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public GetBucketPolicyStatusResult clone() {
         try {
             return (GetBucketPolicyStatusResult) super.clone();

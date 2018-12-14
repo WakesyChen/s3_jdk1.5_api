@@ -292,7 +292,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
         paramList.add(value);
     }
 
-    @Override
+    
     public final int getReadLimit() {
         return requestClientOptions.getReadLimit();
     }
@@ -553,12 +553,12 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
         return t;
     }
 
-    @Override
+    
     public <X> void addHandlerContext(HandlerContextKey<X> key, X value) {
         this.handlerContext.put(key, value);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public <X> X getHandlerContext(HandlerContextKey<X> key) {
         return (X) this.handlerContext.get(key);
@@ -582,7 +582,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      *
      * @see Object#clone()
      */
-    @Override
+    
     public AmazonWebServiceRequest clone() {
         try {
             AmazonWebServiceRequest cloned = (AmazonWebServiceRequest) super.clone();

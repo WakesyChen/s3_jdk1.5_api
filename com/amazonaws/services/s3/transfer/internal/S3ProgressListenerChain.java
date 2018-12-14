@@ -34,7 +34,7 @@ public class S3ProgressListenerChain extends
         super(listeners);
     }
 
-    @Override
+    
     public void onPersistableTransfer(PersistableTransfer persistableTransfer) {
         for (ProgressListener listener : getListeners()) {
             if (listener instanceof S3ProgressListener) {

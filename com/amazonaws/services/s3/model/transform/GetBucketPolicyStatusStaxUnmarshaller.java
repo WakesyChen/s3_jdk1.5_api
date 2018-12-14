@@ -38,7 +38,7 @@ public class GetBucketPolicyStatusStaxUnmarshaller implements Unmarshaller<GetBu
     private GetBucketPolicyStatusStaxUnmarshaller() {
     }
 
-    @Override
+    
     public GetBucketPolicyStatusResult unmarshall(InputStream inputStream) throws Exception {
         StaxUnmarshallerContext context
             = new StaxUnmarshallerContext(XmlUtils.getXmlInputFactory().createXMLEventReader(inputStream));

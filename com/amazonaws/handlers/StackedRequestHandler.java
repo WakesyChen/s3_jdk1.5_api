@@ -67,7 +67,7 @@ public class StackedRequestHandler implements IRequestHandler2 {
         Collections.reverse(reverseOrderRequestHandlers);
     }
 
-    @Override
+    
     public AmazonWebServiceRequest beforeExecution(AmazonWebServiceRequest origRequest) {
         AmazonWebServiceRequest toReturn = origRequest;
         for (RequestHandler2 handler : inOrderRequestHandlers) {
@@ -76,7 +76,7 @@ public class StackedRequestHandler implements IRequestHandler2 {
         return toReturn;
     }
 
-    @Override
+    
     public AmazonWebServiceRequest beforeMarshalling(AmazonWebServiceRequest origRequest) {
         AmazonWebServiceRequest toReturn = origRequest;
         for (RequestHandler2 handler : inOrderRequestHandlers) {
@@ -85,21 +85,21 @@ public class StackedRequestHandler implements IRequestHandler2 {
         return toReturn;
     }
 
-    @Override
+    
     public void beforeRequest(Request<?> request) {
         for (RequestHandler2 handler : inOrderRequestHandlers) {
             handler.beforeRequest(request);
         }
     }
 
-    @Override
+    
     public void beforeAttempt(HandlerBeforeAttemptContext context) {
         for (RequestHandler2 handler : inOrderRequestHandlers) {
             handler.beforeAttempt(context);
         }
     }
 
-    @Override
+    
     public HttpResponse beforeUnmarshalling(Request<?> request, HttpResponse origHttpResponse) {
         HttpResponse toReturn = origHttpResponse;
         for(RequestHandler2 handler : reverseOrderRequestHandlers) {
@@ -108,21 +108,21 @@ public class StackedRequestHandler implements IRequestHandler2 {
         return toReturn;
     }
 
-    @Override
+    
     public void afterAttempt(HandlerAfterAttemptContext context) {
         for(RequestHandler2 handler : reverseOrderRequestHandlers) {
             handler.afterAttempt(context);
         }
     }
 
-    @Override
+    
     public void afterResponse(Request<?> request, Response<?> response) {
         for(RequestHandler2 handler : reverseOrderRequestHandlers) {
             handler.afterResponse(request, response);
         }
     }
 
-    @Override
+    
     public void afterError(Request<?> request, Response<?> response, Exception e) {
         for(RequestHandler2 handler : reverseOrderRequestHandlers) {
             handler.afterError(request, response, e);

@@ -119,7 +119,7 @@ public class Owner implements Serializable {
         this.displayName = name;
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (!(obj instanceof Owner)) {
             return false;
@@ -141,7 +141,7 @@ public class Owner implements Serializable {
                 otherOwnerName.equals(thisOwnerName));
     }
 
-    @Override
+    
     public int hashCode() {
         if (id != null) {
             return id.hashCode();

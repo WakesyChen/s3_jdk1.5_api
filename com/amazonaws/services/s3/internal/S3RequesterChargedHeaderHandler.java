@@ -30,7 +30,7 @@ public class S3RequesterChargedHeaderHandler<T extends S3RequesterChargedResult>
      * com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object,
      * com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public void handle(T result, HttpResponse response) {
         result.setRequesterCharged(response.getHeaders().get(Headers.REQUESTER_CHARGED_HEADER) != null);
     }

@@ -73,7 +73,7 @@ public class SDKProgressPublisher {
         // place, but such task submission is necessary to remain backward
         // compatible.
         return latestFutureTask = LazyHolder.executor.submit(new Runnable() {
-            @Override
+            
             public void run() {
                 listener.progressChanged(event);
             }

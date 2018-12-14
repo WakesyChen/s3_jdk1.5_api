@@ -33,7 +33,7 @@ public class DelegatingDnsResolver implements DnsResolver {
         this.delegate = delegate;
     }
 
-    @Override
+    
     public InetAddress[] resolve(String host) throws UnknownHostException {
         return delegate.resolve(host);
     }

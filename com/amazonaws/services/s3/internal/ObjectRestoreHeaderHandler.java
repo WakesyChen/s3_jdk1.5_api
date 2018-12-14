@@ -49,7 +49,7 @@ public class ObjectRestoreHeaderHandler<T extends ObjectRestoreResult>
      * com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object,
      * com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public void handle(T result, HttpResponse response) {
         String restoreHeader = response.getHeaders().get(Headers.RESTORE);
         if (restoreHeader != null) {

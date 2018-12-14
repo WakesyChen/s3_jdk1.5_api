@@ -67,7 +67,7 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer<Upload> impleme
      *             If this thread is interrupted while waiting for the transfer
      *             to complete.
      */
-    @Override
+    
     public void waitForCompletion()
             throws AmazonClientException, AmazonServiceException, InterruptedException {
         if (subTransfers.isEmpty())
@@ -78,7 +78,7 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer<Upload> impleme
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.transfer.MultipleFileUpload#getSubTransfers()
      */
-    @Override
+    
     public Collection<? extends Upload> getSubTransfers() {
         return Collections.unmodifiableCollection(subTransfers);
     }

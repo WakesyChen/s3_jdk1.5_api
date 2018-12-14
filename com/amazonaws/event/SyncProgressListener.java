@@ -23,5 +23,5 @@ public abstract class SyncProgressListener
     /**
      * Always returns true.
      */
-    @Override public boolean isSyncCallSafe() { return true; }
+     public boolean isSyncCallSafe() { return true; }
 }

@@ -41,7 +41,7 @@ public abstract class AwsSyncClientBuilder<Subclass extends AwsSyncClientBuilder
         super(clientConfigFactory, regionProvider);
     }
 
-    @Override
+    
     public final TypeToBuild build() {
         return configureMutableProperties(build(getSyncClientParams()));
     }

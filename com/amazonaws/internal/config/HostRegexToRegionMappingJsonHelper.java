@@ -41,7 +41,7 @@ public class HostRegexToRegionMappingJsonHelper implements Builder<HostRegexToRe
         this.regionName = regionName;
     }
 
-    @Override
+    
     public HostRegexToRegionMapping build() {
         return new HostRegexToRegionMapping(hostNameRegex, regionName);
     }

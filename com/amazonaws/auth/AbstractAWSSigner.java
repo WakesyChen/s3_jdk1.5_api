@@ -59,7 +59,7 @@ public abstract class AbstractAWSSigner implements Signer {
     static {
         SHA256_MESSAGE_DIGEST = SdkThreadLocalsRegistry.register(
                 new ThreadLocal<MessageDigest>() {
-                    @Override
+                    
                     protected MessageDigest initialValue() {
                         try {
                             return MessageDigest.getInstance("SHA-256");

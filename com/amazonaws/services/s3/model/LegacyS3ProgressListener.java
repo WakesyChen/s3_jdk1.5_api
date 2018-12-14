@@ -56,5 +56,5 @@ public class LegacyS3ProgressListener implements
         }
     }
 
-    @Override public boolean isSyncCallSafe() { return syncCallSafe; }
+     public boolean isSyncCallSafe() { return syncCallSafe; }
 }

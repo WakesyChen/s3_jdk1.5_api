@@ -35,7 +35,7 @@ class ServerSideEncryptionByDefaultStaxUnmarshaller
     private ServerSideEncryptionByDefaultStaxUnmarshaller() {
     }
 
-    @Override
+    
     public ServerSideEncryptionByDefault unmarshall(StaxUnmarshallerContext context) throws Exception {
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;

@@ -38,7 +38,7 @@ public class CsmConfigurationProviderChain implements CsmConfigurationProvider {
         }
     }
 
-    @Override
+    
     public CsmConfiguration getConfiguration() {
         for (CsmConfigurationProvider p : providers) {
             try {

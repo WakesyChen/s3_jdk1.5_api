@@ -53,7 +53,7 @@ public class AwsProfileRegionProvider extends AwsRegionProvider {
         this.profileConfigLoader = configLoader;
     }
 
-    @Override
+    
     public String getRegion() throws SdkClientException {
         File configFile = locationProvider.getLocation();
         if (configFile != null && configFile.exists()) {

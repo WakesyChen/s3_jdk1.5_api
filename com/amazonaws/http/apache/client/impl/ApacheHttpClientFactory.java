@@ -41,7 +41,7 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
     private final ConnectionManagerFactory<HttpClientConnectionManager>
             cmFactory = new ApacheConnectionManagerFactory();
 
-    @Override
+    
     public ConnectionManagerAwareHttpClient create(HttpClientSettings settings) {
         final HttpClientBuilder builder = HttpClients.custom();
         // Note that it is important we register the original connection manager with the

@@ -113,7 +113,7 @@ public class ResettableInputStream extends ReleasableInputStream {
         this.markPos = fileChannel.position();
     }
 
-    @Override
+    
     public final boolean markSupported() {
         return true;
     }
@@ -139,7 +139,7 @@ public class ResettableInputStream extends ReleasableInputStream {
      * @param _
      *            ignored
      */
-    @Override
+    
     public void mark(int _) {
         abortIfNeeded();
         try {
@@ -168,7 +168,7 @@ public class ResettableInputStream extends ReleasableInputStream {
      * {@link ResettableInputStream#disableClose()}, so that the release method
      * becomes the only way to truly close the opened file.
      */
-    @Override
+    
     public void reset() throws IOException {
         abortIfNeeded();
         fileChannel.position(markPos);
@@ -176,25 +176,25 @@ public class ResettableInputStream extends ReleasableInputStream {
             log.trace("Reset to position " + markPos);
     }
 
-    @Override
+    
     public int available() throws IOException {
         abortIfNeeded();
         return fis.available();
     }
 
-    @Override
+    
     public int read() throws IOException {
         abortIfNeeded();
         return fis.read();
     }
 
-    @Override
+    
     public long skip(long n) throws IOException {
         abortIfNeeded();
         return fis.skip(n);
     }
 
-    @Override
+    
     public int read(byte[] arg0, int arg1, int arg2) throws IOException {
         abortIfNeeded();
         return fis.read(arg0, arg1, arg2);

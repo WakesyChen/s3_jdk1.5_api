@@ -25,7 +25,7 @@ import java.util.Map;
  * com.amazonaws.services.s3.model.DeleteObjectTaggingRequest} response.
  */
 public class DeleteObjectTaggingHeaderHandler implements HeaderHandler<DeleteObjectTaggingResult> {
-    @Override
+    
     public void handle(DeleteObjectTaggingResult result, HttpResponse response) {
         result.setVersionId(response.getHeaders().get(Headers.S3_VERSION_ID));
     }

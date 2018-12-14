@@ -29,7 +29,7 @@ public final class MetricsAndOperator extends MetricsNAryOperator {
         super(operands);
     }
 
-    @Override
+    
     public void accept(MetricsPredicateVisitor metricsPredicateVisitor) {
         metricsPredicateVisitor.visit(this);
     }

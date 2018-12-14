@@ -139,7 +139,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      *            The service name to use when calculating signatures in this
      *            signer.
      */
-    @Override
+    
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -154,7 +154,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      *            The region name to use when calculating signatures in this
      *            signer.
      */
-    @Override
+    
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
@@ -168,7 +168,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      *
      * @param endpointPrefix The endpoint prefix of the service
      */
-    @Override
+    
     public void setEndpointPrefix(String endpointPrefix) {
         this.endpointPrefix = endpointPrefix;
     }
@@ -209,7 +209,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 overriddenDate.getTime());
     }
 
-    @Override
+    
     public void sign(SignableRequest<?> request, AWSCredentials credentials) {
         // anonymous credentials, don't sign
         if (isAnonymous(credentials)) {
@@ -257,7 +257,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 signerParams);
     }
 
-    @Override
+    
     public void presignRequest(SignableRequest<?> request, AWSCredentials credentials,
             Date userSpecifiedExpirationDate) {
 
@@ -476,7 +476,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         request.addParameter(X_AMZ_CREDENTIAL, signingCredentials);
     }
 
-    @Override
+    
     protected void addSessionCredentials(SignableRequest<?> request,
             AWSSessionCredentials credentials) {
         request.addHeader(X_AMZ_SECURITY_TOKEN, credentials.getSessionToken());

@@ -47,7 +47,7 @@ public class DefaultServiceEndpointBuilder extends ServiceEndpointBuilder {
         return this;
     }
 
-    @Override
+    
     public URI getServiceEndpoint() {
         String serviceEndpoint = region.getServiceEndpoint(serviceName);
 
@@ -76,7 +76,7 @@ public class DefaultServiceEndpointBuilder extends ServiceEndpointBuilder {
         }
     }
 
-    @Override
+    
     public Region getRegion() {
         return region;
     }

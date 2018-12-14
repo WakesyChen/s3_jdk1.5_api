@@ -53,14 +53,14 @@ public abstract class MetricCollector
 
     /** A convenient instance of a no-op request metric collector. */
     public static final MetricCollector NONE = new MetricCollector() {
-        @Override public boolean start() { return true; }
-        @Override public boolean stop() { return true; }
+         public boolean start() { return true; }
+         public boolean stop() { return true; }
         /** Always returns false. */
-        @Override public boolean isEnabled() { return false; }
-        @Override public RequestMetricCollector getRequestMetricCollector() {
+         public boolean isEnabled() { return false; }
+         public RequestMetricCollector getRequestMetricCollector() {
             return RequestMetricCollector.NONE;
         }
-        @Override public ServiceMetricCollector getServiceMetricCollector() {
+         public ServiceMetricCollector getServiceMetricCollector() {
             return ServiceMetricCollector.NONE;
         }
     };

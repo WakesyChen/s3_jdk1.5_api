@@ -36,7 +36,7 @@ public class SdkConnectionKeepAliveStrategy
         this.maxIdleTime = maxIdleTime;
     }
 
-    @Override
+    
     public long getKeepAliveDuration(
             HttpResponse response,
             HttpContext context) {

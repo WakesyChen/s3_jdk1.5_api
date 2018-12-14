@@ -52,7 +52,7 @@ class Base32Codec extends AbstractBase32Codec {
         super(alphabets());
     }
     
-    @Override
+    
     protected int pos(byte in) {
         int pos = LazyHolder.DECODED[in];
         

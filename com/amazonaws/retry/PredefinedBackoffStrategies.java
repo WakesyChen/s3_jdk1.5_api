@@ -68,7 +68,7 @@ public class PredefinedBackoffStrategies {
         }
 
 
-        @Override
+        
         public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
             int ceil = calculateExponentialDelay(context.retriesAttempted(), baseDelay, maxBackoffTime);
             return random.nextInt(ceil);
@@ -87,7 +87,7 @@ public class PredefinedBackoffStrategies {
             this.maxBackoffTime = ValidationUtils.assertIsPositive(maxBackoffTime, "Max backoff");
         }
 
-        @Override
+        
         public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
             int ceil = calculateExponentialDelay(context.retriesAttempted(), baseDelay, maxBackoffTime);
             return (ceil / 2) + random.nextInt((ceil / 2) + 1);
@@ -105,7 +105,7 @@ public class PredefinedBackoffStrategies {
             this.maxBackoffTime = ValidationUtils.assertIsPositive(maxBackoffTime, "Max backoff");
         }
 
-        @Override
+        
         public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
             return calculateExponentialDelay(context.retriesAttempted(), baseDelay, maxBackoffTime);
         }
@@ -139,7 +139,7 @@ public class PredefinedBackoffStrategies {
                     throttledBaseDelay, maxBackoff);
         }
 
-        @Override
+        
         public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
             /*
              * We use the full jitter scheme for non-throttled exceptions and the

@@ -29,7 +29,7 @@ import com.amazonaws.util.StringUtils;
  * the <code>AWS_SESSION_TOKEN</code> environment variable is also set then temporary credentials will be used.
  */
 public class EnvironmentVariableCredentialsProvider implements AWSCredentialsProvider {
-    @Override
+    
     public AWSCredentials getCredentials() {
         String accessKey = System.getenv(ACCESS_KEY_ENV_VAR);
         if (accessKey == null) {
@@ -59,11 +59,11 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
                 new BasicSessionCredentials(accessKey, secretKey, sessionToken);
     }
 
-    @Override
+    
     public void refresh() {
     }
 
-    @Override
+    
     public String toString() {
         return getClass().getSimpleName();
     }

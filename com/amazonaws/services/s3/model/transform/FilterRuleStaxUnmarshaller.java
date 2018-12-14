@@ -32,7 +32,7 @@ class FilterRuleStaxUnmarshaller implements Unmarshaller<FilterRule, StaxUnmarsh
     private FilterRuleStaxUnmarshaller() {
     }
 
-    @Override
+    
     public FilterRule unmarshall(StaxUnmarshallerContext context) throws Exception {
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;

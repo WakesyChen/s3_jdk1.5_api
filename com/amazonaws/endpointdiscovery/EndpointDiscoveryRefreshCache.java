@@ -87,7 +87,7 @@ public abstract class EndpointDiscoveryRefreshCache<K> {
                                                        final long refreshPeriod,
                                                        final URI defaultEndpoint) {
         return executorService.schedule(new Callable<URI>() {
-            @Override
+            
             public URI call() {
                 try {
                     return put(key, cacheLoader.load(key), defaultEndpoint);

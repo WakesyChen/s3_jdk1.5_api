@@ -41,12 +41,12 @@ public class ResetException extends SdkClientException {
      * {@inheritDoc}
      * A stream reset exception cannot be retried.
      */
-    @Override
+    
     public boolean isRetryable() {
         return false;
     }
 
-    @Override
+    
     public String getMessage() {
         String msg = super.getMessage();
         return extraInfo == null ? msg : msg + ";  " + extraInfo;

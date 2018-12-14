@@ -22,12 +22,12 @@ import com.amazonaws.event.request.ProgressSupport;
  */
 public class ProgressTracker extends SyncProgressListener {
     public static final ProgressTracker NOOP = new ProgressTracker() {
-        @Override public void progressChanged(ProgressEvent progressEvent) {}
+         public void progressChanged(ProgressEvent progressEvent) {}
     };
 
     private final Progress progress = new ProgressSupport();
 
-    @Override
+    
     public void progressChanged(ProgressEvent progressEvent) {
         long bytes = progressEvent.getBytes();
         if (bytes <= 0)

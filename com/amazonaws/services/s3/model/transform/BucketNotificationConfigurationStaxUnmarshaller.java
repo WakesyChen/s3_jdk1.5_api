@@ -38,7 +38,7 @@ public class BucketNotificationConfigurationStaxUnmarshaller implements
     private BucketNotificationConfigurationStaxUnmarshaller() {
     }
 
-    @Override
+    
     public BucketNotificationConfiguration unmarshall(InputStream inputStream) throws Exception {
         StaxUnmarshallerContext context =
             new StaxUnmarshallerContext(XmlUtils.getXmlInputFactory().createXMLEventReader(inputStream));

@@ -60,7 +60,7 @@ public class EncryptedInitiateMultipartUploadRequest extends
         super(bucketName, key, objectMetadata);
     }
 
-    @Override
+    
     public Map<String, String> getMaterialsDescription() {
         return materialsDescription;
     }

@@ -54,7 +54,7 @@ class TimingInfoFullSupport extends TimingInfo {
         super(startEpochTimeMilli, startTimeNano, endTimeNano);
     }
 
-    @Override
+    
     public void addSubMeasurement(String subMeasurementName, TimingInfo ti) {
         List<TimingInfo> timings = subMeasurementsByName.get(subMeasurementName);
         if (timings == null) {
@@ -70,12 +70,12 @@ class TimingInfoFullSupport extends TimingInfo {
         }
     }
 
-    @Override
+    
     public TimingInfo getSubMeasurement(String subMeasurementName) {
         return getSubMeasurement(subMeasurementName, 0);
     }
 
-    @Override
+    
     public TimingInfo getSubMeasurement(String subMesurementName, int index) {
 
         List<TimingInfo> timings = subMeasurementsByName.get(subMesurementName);
@@ -87,7 +87,7 @@ class TimingInfoFullSupport extends TimingInfo {
         return timings.get(index);
     }
 
-    @Override
+    
     public TimingInfo getLastSubMeasurement(String subMeasurementName) {
 
         if (subMeasurementsByName == null || subMeasurementsByName.size() == 0) {
@@ -102,32 +102,32 @@ class TimingInfoFullSupport extends TimingInfo {
         return timings.get(timings.size() - 1);
     }
 
-    @Override
+    
     public List<TimingInfo> getAllSubMeasurements(String subMeasurementName) {
         return subMeasurementsByName.get(subMeasurementName);
     }
 
-    @Override
+    
     public Map<String, List<TimingInfo>> getSubMeasurementsByName() {
         return subMeasurementsByName;
     }
 
-    @Override
+    
     public Number getCounter(String key) {
         return countersByName.get(key);
     }
 
-    @Override
+    
     public Map<String, Number> getAllCounters() {
         return countersByName;
     }
 
-    @Override
+    
     public void setCounter(String key, long count) {
         countersByName.put(key, count);
     }
 
-    @Override
+    
     public void incrementCounter(String key) {
 
         int count = 0;

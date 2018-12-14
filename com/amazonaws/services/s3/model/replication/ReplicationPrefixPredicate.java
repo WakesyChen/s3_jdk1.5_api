@@ -35,7 +35,7 @@ public final class ReplicationPrefixPredicate extends ReplicationFilterPredicate
         return prefix;
     }
 
-    @Override
+    
     public void accept(ReplicationPredicateVisitor replicationPredicateVisitor) {
         replicationPredicateVisitor.visit(this);
     }

@@ -34,17 +34,17 @@ public class HttpRequestAbortTaskTrackerImpl implements HttpRequestAbortTaskTrac
         this.future = ValidationUtils.assertNotNull(future, "future");
     }
 
-    @Override
+    
     public boolean httpRequestAborted() {
         return task.httpRequestAborted();
     }
 
-    @Override
+    
     public boolean isEnabled() {
         return task.isEnabled();
     }
 
-    @Override
+    
     public void cancelTask() {
         future.cancel(false);
     }

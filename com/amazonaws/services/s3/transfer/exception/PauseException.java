@@ -46,7 +46,7 @@ public class PauseException extends SdkClientException {
     /**
      * {@inheritDoc} An paused exception is not intended to be retried.
      */
-    @Override
+    
     public boolean isRetryable() {
         return false;
     }

@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class SetObjectLockConfigurationResult implements Serializable, S3RequesterChargedResult {
     private boolean requesterCharged;
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return requesterCharged;
     }
@@ -36,7 +36,7 @@ public class SetObjectLockConfigurationResult implements Serializable, S3Request
         return this;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         withRequesterCharged(isRequesterCharged);
     }

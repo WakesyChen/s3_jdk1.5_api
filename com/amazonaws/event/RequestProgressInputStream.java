@@ -28,17 +28,17 @@ class RequestProgressInputStream extends ProgressInputStream {
         super(is, listener);
     }
 
-    @Override
+    
     protected void onReset() {
         publishRequestReset(getListener(), getNotifiedByteCount());
     }
 
-    @Override
+    
     protected void onEOF() {
         onNotifyBytesRead();
     }
 
-    @Override
+    
     protected void onNotifyBytesRead() {
         publishRequestBytesTransferred(getListener(), getUnnotifiedByteCount());
     }

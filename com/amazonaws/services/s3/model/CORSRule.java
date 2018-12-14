@@ -233,7 +233,7 @@ public class CORSRule implements Serializable {
                this.AllowedMethod = AllowedMethod;
          }
 
-         @Override
+         
          public String toString() {
                return AllowedMethod;
          }

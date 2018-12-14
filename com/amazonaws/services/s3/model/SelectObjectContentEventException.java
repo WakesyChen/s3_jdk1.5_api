@@ -39,7 +39,7 @@ public final class SelectObjectContentEventException extends SdkClientException 
      * Retrieve a summary of the reason for the exception, including the {@link #getErrorCode()} and {@link #getErrorMessage()},
      * if the error was raised by the service.
      */
-    @Override
+    
     public String getMessage() {
         return super.getMessage();
     }

@@ -369,7 +369,7 @@ public class Unmarshallers {
 
     public static final class GetObjectTaggingResponseUnmarshaller implements Unmarshaller<GetObjectTaggingResult, InputStream> {
 
-        @Override
+        
         public GetObjectTaggingResult unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseObjectTaggingResponse(in).getResult();
         }
@@ -377,7 +377,7 @@ public class Unmarshallers {
 
     public static final class SetObjectTaggingResponseUnmarshaller implements Unmarshaller<SetObjectTaggingResult, InputStream> {
 
-        @Override
+        
         public SetObjectTaggingResult unmarshall(InputStream in) throws Exception {
             return new SetObjectTaggingResult();
         }
@@ -385,7 +385,7 @@ public class Unmarshallers {
 
     public static final class DeleteObjectTaggingResponseUnmarshaller implements Unmarshaller<DeleteObjectTaggingResult, InputStream> {
 
-        @Override
+        
         public DeleteObjectTaggingResult unmarshall(InputStream in) throws Exception {
             return new DeleteObjectTaggingResult();
         }
@@ -528,7 +528,7 @@ public class Unmarshallers {
 
     public static final class GetObjectLegalHoldResultUnmarshaller implements Unmarshaller<GetObjectLegalHoldResult, InputStream> {
 
-        @Override
+        
         public GetObjectLegalHoldResult unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseGetObjectLegalHoldResponse(in).getResult();
         }
@@ -536,7 +536,7 @@ public class Unmarshallers {
 
     public static final class SetObjectLockConfigurationResultUnmarshaller implements Unmarshaller<SetObjectLockConfigurationResult, InputStream> {
 
-        @Override
+        
         public SetObjectLockConfigurationResult unmarshall(InputStream in) throws Exception {
             return new SetObjectLockConfigurationResult();
         }
@@ -544,7 +544,7 @@ public class Unmarshallers {
 
     public static final class SetObjectLegalHoldResultUnmarshaller implements Unmarshaller<SetObjectLegalHoldResult, InputStream> {
 
-        @Override
+        
         public SetObjectLegalHoldResult unmarshall(InputStream in) throws Exception {
             return new SetObjectLegalHoldResult();
         }
@@ -552,7 +552,7 @@ public class Unmarshallers {
 
     public static final class GetObjectLockConfigurationResultUnmarshaller implements Unmarshaller<GetObjectLockConfigurationResult, InputStream> {
 
-        @Override
+        
         public GetObjectLockConfigurationResult unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseGetObjectLockConfigurationResponse(in).getResult();
         }
@@ -560,7 +560,7 @@ public class Unmarshallers {
 
     public static final class SetObjectRetentionResultUnmarshaller implements Unmarshaller<SetObjectRetentionResult, InputStream> {
 
-        @Override
+        
         public SetObjectRetentionResult unmarshall(InputStream in) throws Exception {
             return new SetObjectRetentionResult();
         }
@@ -568,7 +568,7 @@ public class Unmarshallers {
 
     public static final class GetObjectRetentionResultUnmarshaller implements Unmarshaller<GetObjectRetentionResult, InputStream> {
 
-        @Override
+        
         public GetObjectRetentionResult unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseGetObjectRetentionResponse(in).getResult();
         }

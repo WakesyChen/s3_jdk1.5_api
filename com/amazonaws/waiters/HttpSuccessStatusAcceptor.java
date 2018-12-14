@@ -26,12 +26,12 @@ public class HttpSuccessStatusAcceptor<Output> extends WaiterAcceptor<Output>{
         this.waiterState = waiterState;
     }
 
-    @Override
+    
     public boolean matches(Output output) {
         return true;
     }
 
-    @Override
+    
     public WaiterState getState() {
         return waiterState;
     }

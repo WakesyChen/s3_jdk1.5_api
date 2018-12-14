@@ -26,7 +26,7 @@ public class StaticCsmConfigurationProvider implements CsmConfigurationProvider 
         this.csmConfig = ValidationUtils.assertNotNull(csmConfig, "csmConfig");
     }
 
-    @Override
+    
     public CsmConfiguration getConfiguration() {
         return csmConfig;
     }

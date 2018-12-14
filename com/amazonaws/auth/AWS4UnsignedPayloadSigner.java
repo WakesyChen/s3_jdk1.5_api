@@ -39,13 +39,13 @@ public class AWS4UnsignedPayloadSigner extends AWS4Signer {
         super(clock);
     }
 
-    @Override
+    
     public void sign(SignableRequest<?> request, AWSCredentials credentials) {
         request.getHeaders().put(X_AMZ_CONTENT_SHA256, "required");
         super.sign(request, credentials);
     }
 
-    @Override
+    
     protected String calculateContentHash(SignableRequest<?> request) {
         if ("https".equals(request.getEndpoint().getScheme())) {
             return "UNSIGNED-PAYLOAD";

@@ -65,7 +65,7 @@ public class SdkTLSSocketFactory extends SSLConnectionSocketFactory {
         this.shouldClearSslSessionsPredicate = new ShouldClearSslSessionPredicate(JavaVersionParser.getCurrentJavaVersion());
     }
 
-    @Override
+    
     public Socket createSocket(HttpContext ctx) throws IOException {
         if (HttpContextUtils.disableSocketProxy(ctx)) {
             return new Socket(Proxy.NO_PROXY);
@@ -76,7 +76,7 @@ public class SdkTLSSocketFactory extends SSLConnectionSocketFactory {
     /**
      * {@inheritDoc} Used to enforce the preferred TLS protocol during SSL handshake.
      */
-    @Override
+    
     protected final void prepareSocket(final SSLSocket socket) {
         String[] supported = socket.getSupportedProtocols();
         String[] enabled = socket.getEnabledProtocols();

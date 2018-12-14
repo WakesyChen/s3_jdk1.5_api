@@ -32,12 +32,12 @@ public interface ProgressListener {
 
     static class NoOpProgressListener implements ProgressListener, DeliveryMode {
 
-        @Override
+        
         public boolean isSyncCallSafe() {
             return true;
         }
 
-        @Override
+        
         public void progressChanged(ProgressEvent progressEvent) {
         }
     }
@@ -91,7 +91,7 @@ public interface ProgressListener {
          * <p>
          * {@inheritDoc}
          */
-        @Override public void progressChanged(ProgressEvent progressEvent) {
+         public void progressChanged(ProgressEvent progressEvent) {
             if (cause != null)
                 return;
             try {
@@ -125,6 +125,6 @@ public interface ProgressListener {
             return new ExceptionReporter(listener);
         }
 
-        @Override public boolean isSyncCallSafe() { return syncCallSafe; }
+         public boolean isSyncCallSafe() { return syncCallSafe; }
     }
 }

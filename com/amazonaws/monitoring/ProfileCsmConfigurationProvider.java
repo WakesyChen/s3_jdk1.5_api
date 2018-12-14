@@ -81,7 +81,7 @@ public final class ProfileCsmConfigurationProvider implements CsmConfigurationPr
         this.configFileLocationProvider = configFileLocationProvider;
     }
 
-    @Override
+    
     public CsmConfiguration getConfiguration() {
         String profileName = getProfileName();
 

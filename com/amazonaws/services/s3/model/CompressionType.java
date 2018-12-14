@@ -26,7 +26,7 @@ public enum CompressionType {
         this.compressionType = compressionType;
     }
 
-    @Override
+    
     public String toString() {
         return compressionType;
     }

@@ -32,7 +32,7 @@ public class EndpointDiscoveryProviderChain implements EndpointDiscoveryProvider
         Collections.addAll(this.providers, providers);
     }
 
-    @Override
+    
     public Boolean endpointDiscoveryEnabled() {
         Boolean endpointDiscoveryEnabled = null;
 

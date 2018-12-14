@@ -43,27 +43,27 @@ public final class AmazonS3EncryptionClientParamsWrapper extends AmazonS3Encrypt
         this.getS3ClientOptions = getS3ClientOptions;
     }
 
-    @Override
+    
     EncryptionMaterialsProvider getEncryptionMaterials() {
         return encryptionMaterials;
     }
 
-    @Override
+    
     CryptoConfiguration getCryptoConfiguration() {
         return cryptoConfiguration;
     }
 
-    @Override
+    
     AWSKMS getKmsClient() {
         return kms;
     }
 
-    @Override
+    
     public AwsSyncClientParams getClientParams() {
         return getClientParams;
     }
 
-    @Override
+    
     public S3ClientOptions getS3ClientOptions() {
         return getS3ClientOptions;
     }

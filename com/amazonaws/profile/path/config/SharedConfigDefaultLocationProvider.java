@@ -30,7 +30,7 @@ public class SharedConfigDefaultLocationProvider extends AwsDirectoryBasePathPro
      */
     private static final String DEFAULT_CONFIG_FILE_NAME = "config";
 
-    @Override
+    
     public File getLocation() {
         File file = new File(getAwsDirectory(), DEFAULT_CONFIG_FILE_NAME);
         if (file.exists() && file.isFile()) {

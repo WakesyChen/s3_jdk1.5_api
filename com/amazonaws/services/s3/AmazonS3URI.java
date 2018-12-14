@@ -241,7 +241,7 @@ public class AmazonS3URI {
         return region;
     }
 
-    @Override
+    
     public String toString() {
         return uri.toString();
     }
@@ -380,7 +380,7 @@ public class AmazonS3URI {
                         + "escape sequence.");
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -395,7 +395,7 @@ public class AmazonS3URI {
         return region != null ? region.equals(that.region) : that.region == null;
     }
 
-    @Override
+    
     public int hashCode() {
         int result = uri.hashCode();
         result = 31 * result + (isPathStyle ? 1 : 0);

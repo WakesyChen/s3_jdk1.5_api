@@ -38,7 +38,7 @@ public class GetPublicAccessBlockStaxUnmarshaller implements Unmarshaller<GetPub
     private GetPublicAccessBlockStaxUnmarshaller() {
     }
 
-    @Override
+    
     public GetPublicAccessBlockResult unmarshall(InputStream inputStream) throws Exception {
         StaxUnmarshallerContext context
             = new StaxUnmarshallerContext(XmlUtils.getXmlInputFactory().createXMLEventReader(inputStream));

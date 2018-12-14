@@ -37,7 +37,7 @@ public enum ObjectLockEnabled {
         throw new IllegalArgumentException("Cannot create enum from " + objectLockEnabledString + " value!");
     }
 
-    @Override
+    
     public String toString() {
         return objectLockEnabled;
     }

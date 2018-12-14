@@ -892,7 +892,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
         return this;
     }
 
-    @Override
+    
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }
@@ -1009,7 +1009,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -1054,7 +1054,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
         return partNumber != null ? partNumber.equals(that.partNumber) : that.partNumber == null;
     }
 
-    @Override
+    
     public int hashCode() {
         int result = s3ObjectIdBuilder != null ? s3ObjectIdBuilder.hashCode() : 0;
         result = 31 * result + Arrays.hashCode(range);

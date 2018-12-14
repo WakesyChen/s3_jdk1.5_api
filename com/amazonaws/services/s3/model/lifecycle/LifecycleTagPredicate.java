@@ -33,7 +33,7 @@ public final class LifecycleTagPredicate extends LifecycleFilterPredicate {
         return tag;
     }
 
-    @Override
+    
     public void accept(LifecyclePredicateVisitor lifecyclePredicateVisitor) {
         lifecyclePredicateVisitor.visit(this);
     }

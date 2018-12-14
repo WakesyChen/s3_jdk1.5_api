@@ -137,13 +137,13 @@ public class S3Versions implements Iterable<S3VersionSummary> {
         private Iterator<S3VersionSummary> currentIterator = null;
         private S3VersionSummary nextSummary = null;
 
-        @Override
+        
         public boolean hasNext() {
             prepareCurrentListing();
             return nextMatchingSummary() != null;
         }
 
-        @Override
+        
         public S3VersionSummary next() {
             prepareCurrentListing();
             S3VersionSummary returnValue = nextMatchingSummary();
@@ -151,7 +151,7 @@ public class S3Versions implements Iterable<S3VersionSummary> {
             return returnValue;
         }
 
-        @Override
+        
         public void remove() {
             throw new UnsupportedOperationException();
         }
@@ -197,7 +197,7 @@ public class S3Versions implements Iterable<S3VersionSummary> {
 
     }
 
-    @Override
+    
     public Iterator<S3VersionSummary> iterator() {
         return new VersionIterator();
     }

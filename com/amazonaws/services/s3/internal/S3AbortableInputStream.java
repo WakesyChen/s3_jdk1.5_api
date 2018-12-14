@@ -65,7 +65,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      *
      * @see org.apache.http.conn.EofSensorInputStream
      */
-    @Override
+    
     public void abort() {
         super.abort();
         if (httpRequest != null) {
@@ -84,7 +84,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      * <p>
      * Ref: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=7036144
      */
-    @Override
+    
     public int available() throws IOException {
         int estimate = super.available();
         return estimate == 0 ? 1 : estimate;
@@ -93,7 +93,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      */
-    @Override
+    
     public int read() throws IOException {
         try {
             int value = super.read();
@@ -110,7 +110,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      */
-    @Override
+    
     public int read(byte[] b) throws IOException {
         return read(b, 0, b.length);
 
@@ -119,7 +119,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      */
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         try {
             int value = super.read(b, off, len);
@@ -133,7 +133,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
         }
     }
 
-    @Override
+    
     public synchronized void mark(int readlimit) {
         super.mark(readlimit);
         markedBytes = bytesRead;
@@ -142,14 +142,14 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      */
-    @Override
+    
     public synchronized void reset() throws IOException {
         super.reset();
         bytesRead = markedBytes;
         eofReached = false;
     }
 
-    @Override
+    
     public synchronized long skip(long n) throws IOException {
         try {
             long skipped = super.skip(n);
@@ -170,7 +170,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      *
      * @see {@link S3ObjectInputStream#abort()}
      */
-    @Override
+    
     public void close() throws IOException {
         if (_readAllBytes() || isAborted()) {
             super.close();

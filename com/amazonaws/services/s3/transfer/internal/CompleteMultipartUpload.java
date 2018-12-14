@@ -80,7 +80,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
         this.monitor = monitor;
     }
 
-    @Override
+    
     public UploadResult call() throws Exception {
         CompleteMultipartUploadResult res;
 

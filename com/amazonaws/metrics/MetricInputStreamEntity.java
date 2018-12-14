@@ -47,7 +47,7 @@ public class MetricInputStreamEntity extends InputStreamEntity {
         helper = new ByteThroughputHelper(metricType);
     }
 
-    @Override
+    
     public void writeTo(final OutputStream outstream) throws IOException {
         if (outstream instanceof MetricAware) {
             // hchar: There is currently no implementation of output stream that

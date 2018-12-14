@@ -30,7 +30,7 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
     private static final AmazonS3ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new AmazonS3ClientConfigurationFactory();
 
     private static final SdkFunction<AmazonS3ClientParamsWrapper, AmazonS3> DEFAULT_CLIENT_FACTORY = new SdkFunction<AmazonS3ClientParamsWrapper, AmazonS3>() {
-        @Override
+        
         public AmazonS3 apply(AmazonS3ClientParamsWrapper params) {
             return new AmazonS3Client(params);
         }

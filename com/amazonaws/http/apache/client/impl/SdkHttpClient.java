@@ -52,57 +52,57 @@ public class SdkHttpClient implements
         this.cm = cm;
     }
 
-    @Override
+    
     public HttpParams getParams() {
         return delegate.getParams();
     }
 
-    @Override
+    
     public ClientConnectionManager getConnectionManager() {
         return delegate.getConnectionManager();
     }
 
-    @Override
+    
     public HttpResponse execute(HttpUriRequest request) throws IOException, ClientProtocolException {
         return delegate.execute(request);
     }
 
-    @Override
+    
     public HttpResponse execute(HttpUriRequest request, HttpContext context) throws IOException, ClientProtocolException {
         return delegate.execute(request, context);
     }
 
-    @Override
+    
     public HttpResponse execute(HttpHost target, HttpRequest request) throws IOException, ClientProtocolException {
         return delegate.execute(target, request);
     }
 
-    @Override
+    
     public HttpResponse execute(HttpHost target, HttpRequest request, HttpContext context) throws IOException, ClientProtocolException {
         return delegate.execute(target, request, context);
     }
 
-    @Override
+    
     public <T> T execute(HttpUriRequest request, ResponseHandler<? extends T> responseHandler) throws IOException, ClientProtocolException {
         return delegate.execute(request, responseHandler);
     }
 
-    @Override
+    
     public <T> T execute(HttpUriRequest request, ResponseHandler<? extends T> responseHandler, HttpContext context) throws IOException, ClientProtocolException {
         return delegate.execute(request, responseHandler, context);
     }
 
-    @Override
+    
     public <T> T execute(HttpHost target, HttpRequest request, ResponseHandler<? extends T> responseHandler) throws IOException, ClientProtocolException {
         return delegate.execute(target, request, responseHandler);
     }
 
-    @Override
+    
     public <T> T execute(HttpHost target, HttpRequest request, ResponseHandler<? extends T> responseHandler, HttpContext context) throws IOException, ClientProtocolException {
         return delegate.execute(target, request, responseHandler, context);
     }
 
-    @Override
+    
     public HttpClientConnectionManager getHttpClientConnectionManager() {
         return cm;
     }

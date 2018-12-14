@@ -35,7 +35,7 @@ public abstract class SdkInputStream extends InputStream implements
      */
     abstract protected InputStream getWrappedInputStream();
 
-    @Override
+    
     public final boolean isMetricActivated() {
         InputStream in = getWrappedInputStream();
         if (in instanceof MetricAware) {
@@ -75,7 +75,7 @@ public abstract class SdkInputStream extends InputStream implements
      * <p>
      * {@inheritDoc}
      */
-    @Override
+    
     public void release() {
         // Don't call IOUtils.release(in, null) or else could lead to infinite loop
         IOUtils.closeQuietly(this, null);

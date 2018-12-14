@@ -124,7 +124,7 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
     /**
      * Returns the material description for the new instruction file.
      */
-    @Override
+    
     public Map<String, String> getMaterialsDescription() {
         return matDesc == null
              ? encryptionMaterials.getMaterialsDescription()
@@ -135,7 +135,7 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
     /**
      * Returns the encryption materials if specified; or null if not.
      */
-    @Override
+    
     public EncryptionMaterials getEncryptionMaterials() {
         return encryptionMaterials;
     }

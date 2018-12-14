@@ -77,7 +77,7 @@ public class PutObjectResult extends SSEResultBase
      *
      * @see PutObjectResult#setVersionId(String)
      */
-    @Override
+    
     public String getVersionId() {
         return versionId;
     }
@@ -91,7 +91,7 @@ public class PutObjectResult extends SSEResultBase
      *
      * @see PutObjectResult#getVersionId()
      */
-    @Override
+    
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -193,12 +193,12 @@ public class PutObjectResult extends SSEResultBase
         this.metadata = metadata;
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

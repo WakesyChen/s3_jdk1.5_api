@@ -185,7 +185,7 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
         return this;
     }
 
-    @Override
+    
     public Map<String, String> getMaterialsDescription() {
         return materialsDescription;
     }
@@ -240,7 +240,7 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
     /**
      * Returns a clone (as deep as possible) of this request object.
      */
-    @Override
+    
     public UploadObjectRequest clone() {
         final UploadObjectRequest cloned = (UploadObjectRequest) super.clone();
         super.copyPutObjectBaseTo(cloned);

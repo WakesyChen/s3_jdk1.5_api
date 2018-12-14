@@ -35,7 +35,7 @@ public class SelectRecordsInputStream extends SdkFilterInputStream {
     /**
      * Equivalent to calling {@link SelectObjectContentEventStream#abort()}.
      */
-    @Override
+    
     public void abort() {
         super.abort();
         abortableHttpStream.abort();
@@ -44,7 +44,7 @@ public class SelectRecordsInputStream extends SdkFilterInputStream {
     /**
      * Equivalent to calling {@link SelectObjectContentEventStream#close()}.
      */
-    @Override
+    
     public void close() throws IOException {
         super.close();
         abortableHttpStream.close();

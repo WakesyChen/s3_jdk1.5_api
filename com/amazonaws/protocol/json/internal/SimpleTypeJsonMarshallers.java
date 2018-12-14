@@ -33,7 +33,7 @@ import java.util.Map;
 public class SimpleTypeJsonMarshallers {
 
     public static final JsonMarshaller<Void> NULL = new JsonMarshaller<Void>() {
-        @Override
+        
         public void marshall(Void val, JsonMarshallerContext context, MarshallingInfo<Void> marshallingInfo) {
             // If paramName is non null then we are emitting a field of an object, in that
             // we just don't write the field. If param name is null then we are either in a container
@@ -46,7 +46,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<String> STRING = new BaseJsonMarshaller<String>() {
-        @Override
+        
         public void marshall(String val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<String> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -54,7 +54,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Integer> INTEGER = new BaseJsonMarshaller<Integer>() {
-        @Override
+        
         public void marshall(Integer val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Integer> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -62,7 +62,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Long> LONG = new BaseJsonMarshaller<Long>() {
-        @Override
+        
         public void marshall(Long val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Long> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -70,7 +70,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Short> SHORT = new BaseJsonMarshaller<Short>() {
-        @Override
+        
         public void marshall(Short val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Short> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -78,7 +78,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Float> FLOAT = new BaseJsonMarshaller<Float>() {
-        @Override
+        
         public void marshall(Float val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Float> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -86,7 +86,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<BigDecimal> BIG_DECIMAL = new BaseJsonMarshaller<BigDecimal>() {
-        @Override
+        
         public void marshall(BigDecimal val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<BigDecimal> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -94,7 +94,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Double> DOUBLE = new BaseJsonMarshaller<Double>() {
-        @Override
+        
         public void marshall(Double val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Double> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -102,7 +102,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Boolean> BOOLEAN = new BaseJsonMarshaller<Boolean>() {
-        @Override
+        
         public void marshall(Boolean val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Boolean> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -110,7 +110,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<Date> DATE = new BaseJsonMarshaller<Date>() {
-        @Override
+        
         public void marshall(Date val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Date> marshallingInfo) {
 
@@ -123,7 +123,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<ByteBuffer> BYTE_BUFFER = new BaseJsonMarshaller<ByteBuffer>() {
-        @Override
+        
         public void marshall(ByteBuffer val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<ByteBuffer> marshallingInfo) {
             jsonGenerator.writeValue(val);
@@ -131,7 +131,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<StructuredPojo> STRUCTURED = new BaseJsonMarshaller<StructuredPojo>() {
-        @Override
+        
         public void marshall(StructuredPojo val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<StructuredPojo> marshallingInfo) {
             jsonGenerator.writeStartObject();
@@ -142,7 +142,7 @@ public class SimpleTypeJsonMarshallers {
     };
 
     public static final JsonMarshaller<List> LIST = new BaseJsonMarshaller<List>() {
-        @Override
+        
         public void marshall(List list, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<List> marshallingInfo) {
             jsonGenerator.writeStartArray();
@@ -152,7 +152,7 @@ public class SimpleTypeJsonMarshallers {
             jsonGenerator.writeEndArray();
         }
 
-        @Override
+        
         protected boolean shouldEmit(List list) {
             return !(list.isEmpty() && list instanceof SdkInternalList && ((SdkInternalList) list).isAutoConstruct());
         }
@@ -162,7 +162,7 @@ public class SimpleTypeJsonMarshallers {
      * Marshalls a Map as a JSON object where each key becomes a field.
      */
     public static final JsonMarshaller<Map> MAP = new BaseJsonMarshaller<Map>() {
-        @Override
+        
         public void marshall(Map map, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                              MarshallingInfo<Map> mapMarshallingInfo) {
             jsonGenerator.writeStartObject();
@@ -176,7 +176,7 @@ public class SimpleTypeJsonMarshallers {
             jsonGenerator.writeEndObject();
         }
 
-        @Override
+        
         protected boolean shouldEmit(Map map) {
             return !(map.isEmpty() && map instanceof SdkInternalMap && ((SdkInternalMap) map).isAutoConstruct());
         }
@@ -192,7 +192,7 @@ public class SimpleTypeJsonMarshallers {
      */
     public static <T> JsonMarshaller<T> adapt(final StructuredJsonMarshaller<T> toAdapt) {
         return new BaseJsonMarshaller<T>() {
-            @Override
+            
             public void marshall(T val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context,
                                  MarshallingInfo<T> marshallingInfo) {
                 toAdapt.marshall(val, jsonGenerator);
@@ -208,7 +208,7 @@ public class SimpleTypeJsonMarshallers {
      */
     private abstract static class BaseJsonMarshaller<T> implements JsonMarshaller<T> {
 
-        @Override
+        
         public final void marshall(T val, JsonMarshallerContext context, MarshallingInfo<T> marshallingInfo) {
             if (!shouldEmit(val)) {
                 return;

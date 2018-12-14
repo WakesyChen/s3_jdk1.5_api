@@ -33,7 +33,7 @@ public class UploadPartCallable implements Callable<PartETag> {
     private static final ThreadLocal<MessageDigest> MD5_DIGEST;
     static {
         MD5_DIGEST = SdkThreadLocalsRegistry.register(new ThreadLocal<MessageDigest>() {
-            @Override
+            
             protected MessageDigest initialValue() {
                 try {
                     return MessageDigest.getInstance("MD5");

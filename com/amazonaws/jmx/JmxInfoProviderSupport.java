@@ -28,7 +28,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.jmx.spi.JmxInfoProvider;
 
 public class JmxInfoProviderSupport implements JmxInfoProvider {
-    @Override
+    
     public long[] getFileDecriptorInfo() {
         MBeanServer mbsc = MBeans.getMBeanServer();
         AttributeList attributes;
@@ -48,37 +48,37 @@ public class JmxInfoProviderSupport implements JmxInfoProvider {
         return null;
     }
 
-    @Override
+    
     public int getThreadCount() {
       ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
       return threadMXBean.getThreadCount();
     }
 
-    @Override
+    
     public int getDaemonThreadCount() {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         return threadMXBean.getDaemonThreadCount();
     }
 
-    @Override
+    
     public int getPeakThreadCount() {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         return threadMXBean.getPeakThreadCount();
     }
 
-    @Override
+    
     public long getTotalStartedThreadCount() {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         return threadMXBean.getTotalStartedThreadCount();
     }
 
-    @Override
+    
     public long[] findDeadlockedThreads() {
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         return threadMXBean.findDeadlockedThreads();
     }
 
-    @Override
+    
     public boolean isEnabled() {
         return true;
     }

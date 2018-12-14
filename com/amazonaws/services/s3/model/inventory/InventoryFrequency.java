@@ -31,7 +31,7 @@ public enum InventoryFrequency {
         this.frequency = frequency;
     }
 
-    @Override
+    
     public String toString() {
         return frequency;
     }

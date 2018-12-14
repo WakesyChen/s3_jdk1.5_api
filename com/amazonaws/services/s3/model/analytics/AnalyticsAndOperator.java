@@ -28,7 +28,7 @@ public class AnalyticsAndOperator extends AnalyticsNAryOperator {
         super(operands);
     }
 
-    @Override
+    
     public void accept(AnalyticsPredicateVisitor analyticsPredicateVisitor) {
         analyticsPredicateVisitor.visit(this);
     }

@@ -16,7 +16,7 @@ package com.amazonaws.auth;
 
 public interface AWSSessionCredentialsProvider extends AWSCredentialsProvider {
 
-	@Override
+	
 	public AWSSessionCredentials getCredentials();
 
 }

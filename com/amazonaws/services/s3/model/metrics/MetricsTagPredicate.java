@@ -32,7 +32,7 @@ public final class MetricsTagPredicate extends MetricsFilterPredicate {
         return tag;
     }
 
-    @Override
+    
     public void accept(MetricsPredicateVisitor metricsPredicateVisitor) {
         metricsPredicateVisitor.visit(this);
     }

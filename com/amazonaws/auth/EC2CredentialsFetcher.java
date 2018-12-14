@@ -221,7 +221,7 @@ class EC2CredentialsFetcher {
         return credentialsExpiration;
     }
 
-    @Override
+    
     public String toString() {
         return getClass().getSimpleName();
     }

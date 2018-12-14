@@ -45,7 +45,7 @@ public class MultiObjectDeleteException extends AmazonS3Exception implements Ser
      * {@link #getErrors()} to retrieve a list of objects whose deletion failed,
      * along with the error code and message for each individual failure.
      */
-    @Override
+    
     public String getErrorCode() {
         return super.getErrorCode();
     }

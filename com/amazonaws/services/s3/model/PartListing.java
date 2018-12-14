@@ -408,12 +408,12 @@ public class PartListing implements Serializable, S3RequesterChargedResult {
     public void setAbortRuleId(String abortRuleId) {
         this.abortRuleId = abortRuleId;
     }
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

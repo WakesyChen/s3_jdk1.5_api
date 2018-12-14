@@ -29,7 +29,7 @@ public enum StorageClassAnalysisSchemaVersion implements Serializable {
         this.version = version;
     }
 
-    @Override
+    
     public String toString() {
         return version;
     }

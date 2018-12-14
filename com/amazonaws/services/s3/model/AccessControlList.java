@@ -227,7 +227,7 @@ public class AccessControlList implements Serializable, S3RequesterChargedResult
     /* (non-Javadoc)
      * @see java.lang.Object#hashCode()
      */
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -240,7 +240,7 @@ public class AccessControlList implements Serializable, S3RequesterChargedResult
     /* (non-Javadoc)
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -281,17 +281,17 @@ public class AccessControlList implements Serializable, S3RequesterChargedResult
     /* (non-Javadoc)
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         return "AccessControlList [owner=" + owner + ", grants=" + getGrantsAsList() + "]";
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

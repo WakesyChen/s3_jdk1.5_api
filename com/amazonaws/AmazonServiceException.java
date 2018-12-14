@@ -258,7 +258,7 @@ public class AmazonServiceException extends SdkClientException {
         return statusCode;
     }
 
-    @Override
+    
     public String getMessage() {
         return getErrorMessage()
             + " (Service: " + getServiceName()

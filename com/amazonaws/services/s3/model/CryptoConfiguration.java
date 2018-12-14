@@ -324,49 +324,49 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      */
     private static final class ReadOnly extends CryptoConfiguration {
         private ReadOnly() {}
-        @Override public boolean isReadOnly() { return true; }
-        @Override public void setStorageMode(CryptoStorageMode storageMode) {
+         public boolean isReadOnly() { return true; }
+         public void setStorageMode(CryptoStorageMode storageMode) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withStorageMode(CryptoStorageMode storageMode) {
+         public CryptoConfiguration withStorageMode(CryptoStorageMode storageMode) {
             throw new UnsupportedOperationException();
         }
-        @Override public void setCryptoProvider(Provider cryptoProvider) {
+         public void setCryptoProvider(Provider cryptoProvider) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withCryptoProvider(Provider cryptoProvider) {
+         public CryptoConfiguration withCryptoProvider(Provider cryptoProvider) {
             throw new UnsupportedOperationException();
         }
-        @Override public void setAlwaysUseCryptoProvider(boolean value) {
+         public void setAlwaysUseCryptoProvider(boolean value) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
+         public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
             throw new UnsupportedOperationException();
         }
-        @Override public void setSecureRandom(SecureRandom random) {
+         public void setSecureRandom(SecureRandom random) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withSecureRandom(SecureRandom random) {
+         public CryptoConfiguration withSecureRandom(SecureRandom random) {
             throw new UnsupportedOperationException();
         }
-        @Override public void setCryptoMode(CryptoMode cryptoMode) {
+         public void setCryptoMode(CryptoMode cryptoMode) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode) {
+         public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode) {
             throw new UnsupportedOperationException();
         }
-        @Override public void setIgnoreMissingInstructionFile(
+         public void setIgnoreMissingInstructionFile(
             boolean ignoreMissingInstructionFile) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withIgnoreMissingInstructionFile(
+         public CryptoConfiguration withIgnoreMissingInstructionFile(
             boolean ignoreMissingInstructionFile) {
             throw new UnsupportedOperationException();
         }
-        @Override public void setKmsRegion(Regions kmsRegion) {
+         public void setKmsRegion(Regions kmsRegion) {
             throw new UnsupportedOperationException();
         }
-        @Override public CryptoConfiguration withKmsRegion(Regions kmsRegion) {
+         public CryptoConfiguration withKmsRegion(Regions kmsRegion) {
             throw new UnsupportedOperationException();
         }
     }
@@ -380,7 +380,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         return copyTo(new CryptoConfiguration.ReadOnly());
     }
 
-    @Override
+    
     public CryptoConfiguration clone() {
         return copyTo(new CryptoConfiguration());
     }

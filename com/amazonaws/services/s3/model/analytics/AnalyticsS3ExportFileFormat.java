@@ -28,7 +28,7 @@ public enum AnalyticsS3ExportFileFormat implements Serializable {
         this.format = format;
     }
 
-    @Override
+    
     public String toString() {
         return format;
     }

@@ -47,7 +47,7 @@ public class QueryParamMarshallers {
             ValueToStringConverters.FROM_BOOLEAN);
 
     public static final JsonMarshaller<Date> DATE = new SimpleQueryParamMarshaller<Date>(ValueToStringConverters.FROM_DATE) {
-        @Override
+        
         public void marshall(Date val, JsonMarshallerContext context, MarshallingInfo<Date> marshallingInfo) {
             TimestampFormat timestampFormat = marshallingInfo.timestampFormat();
             context.request().addParameter(marshallingInfo.marshallLocationName(), StringUtils.fromDate(val, timestampFormat.getFormat()));
@@ -55,7 +55,7 @@ public class QueryParamMarshallers {
     };
 
     public static final JsonMarshaller<List> LIST = new JsonMarshaller<List>() {
-        @Override
+        
         public void marshall(List list, JsonMarshallerContext context, MarshallingInfo<List> marshallingInfo) {
             for (Object listVal : list) {
                 context.marshall(MarshallLocation.QUERY_PARAM, listVal, marshallingInfo);
@@ -65,7 +65,7 @@ public class QueryParamMarshallers {
 
     public static final JsonMarshaller<Map> MAP = new JsonMarshaller<Map>() {
 
-        @Override
+        
         public void marshall(Map val, JsonMarshallerContext context, MarshallingInfo<Map> mapMarshallingInfo) {
             for (Map.Entry<String, ?> mapEntry : ((Map<String, ?>) val).entrySet()) {
                 context.marshall(MarshallLocation.QUERY_PARAM, mapEntry.getValue(), mapEntry.getKey());
@@ -81,7 +81,7 @@ public class QueryParamMarshallers {
             this.converter = converter;
         }
 
-        @Override
+        
         public void marshall(T val, JsonMarshallerContext context, MarshallingInfo<T> marshallingInfo) {
             context.request().addParameter(marshallingInfo.marshallLocationName(), converter.convert(val));
         }

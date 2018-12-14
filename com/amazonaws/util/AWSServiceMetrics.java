@@ -33,5 +33,5 @@ public enum AWSServiceMetrics implements ServiceMetricType {
     private AWSServiceMetrics(String serviceName) {
         this.serviceName = serviceName;
     }
-    @Override public String getServiceName() { return serviceName; }
+     public String getServiceName() { return serviceName; }
 }

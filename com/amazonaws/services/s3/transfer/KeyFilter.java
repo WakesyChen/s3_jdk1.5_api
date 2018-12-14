@@ -25,7 +25,7 @@ public interface KeyFilter {
      * Default filter that includes all keys.
      */
     KeyFilter INCLUDE_ALL = new KeyFilter() {
-        @Override
+        
         public boolean shouldInclude(S3ObjectSummary objectSummary) {
             return true;
         }

@@ -81,7 +81,7 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -92,7 +92,7 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -115,7 +115,7 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
@@ -124,7 +124,7 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
         return hashCode;
     }
 
-    @Override
+    
     public ServerSideEncryptionConfiguration clone() {
         try {
             return (ServerSideEncryptionConfiguration) super.clone();

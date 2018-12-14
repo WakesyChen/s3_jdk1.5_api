@@ -54,7 +54,7 @@ public class ServiceLatencyProvider {
     
     public String getProviderId() { return super.toString(); }
 
-    @Override
+    
     public String toString() {
         return String.format(
                 "providerId=%s, serviceMetricType=%s, startNano=%d, endNano=%d", 

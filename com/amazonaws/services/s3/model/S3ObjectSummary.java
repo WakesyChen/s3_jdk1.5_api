@@ -226,7 +226,7 @@ public class S3ObjectSummary implements Serializable {
         this.storageClass = storageClass;
     }
 
-    @Override
+    
     public String toString() {
         return "S3ObjectSummary{" +
                 "bucketName='" + bucketName + '\'' +

@@ -28,7 +28,7 @@ public class ServerSideEncryptionS3 implements InventoryEncryption, Serializable
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -36,7 +36,7 @@ public class ServerSideEncryptionS3 implements InventoryEncryption, Serializable
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -52,13 +52,13 @@ public class ServerSideEncryptionS3 implements InventoryEncryption, Serializable
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         int hashCode = 1;
         return hashCode;
     }
 
-    @Override
+    
     public ServerSideEncryptionS3 clone() {
         try {
             return (ServerSideEncryptionS3) super.clone();

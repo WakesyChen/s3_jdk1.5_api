@@ -53,7 +53,7 @@ public class AWSS3V4Signer extends AWS4Signer {
     /**
      * If necessary, creates a chunk-encoding wrapper on the request payload.
      */
-    @Override
+    
     protected void processRequestPayload(SignableRequest<?> request, byte[] signature,
             byte[] signingKey, AWS4SignerRequestParams signerRequestParams) {
         if (useChunkEncoding(request)) {
@@ -66,7 +66,7 @@ public class AWSS3V4Signer extends AWS4Signer {
         }
     }
 
-    @Override
+    
     protected String calculateContentHashPresign(SignableRequest<?> request){
         return "UNSIGNED-PAYLOAD";
     }
@@ -76,7 +76,7 @@ public class AWSS3V4Signer extends AWS4Signer {
      * the request needs to be chunk-encoded. Otherwise calls the superclass
      * method which calculates the hash of the whole content for signing.
      */
-    @Override
+    
     protected String calculateContentHash(SignableRequest<?> request) {
         // To be consistent with other service clients using sig-v4,
         // we just set the header as "required", and AWS4Signer.sign() will be

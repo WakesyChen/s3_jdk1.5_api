@@ -38,7 +38,7 @@ public class SignerConfigJsonHelper implements Builder<SignerConfig> {
         this.signerType = signerType;
     }
 
-    @Override
+    
     public SignerConfig build() {
         return new SignerConfig(signerType);
     }

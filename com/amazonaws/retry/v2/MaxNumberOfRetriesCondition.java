@@ -27,7 +27,7 @@ public class MaxNumberOfRetriesCondition implements RetryCondition {
         this.maxNumberOfRetries = assertIsPositive(maxNumberOfRetries, "maxNumberOfRetries");
     }
 
-    @Override
+    
     public boolean shouldRetry(RetryPolicyContext context) {
         return context.retriesAttempted() < maxNumberOfRetries;
     }

@@ -41,7 +41,7 @@ public class SdkSSLMetricsSocket extends DelegateSSLSocket {
         metricsIS.setMetrics(metrics);
     }
 
-    @Override
+    
     public InputStream getInputStream() throws IOException {
         if (metricsIS == null) {
             metricsIS = new MetricsInputStream(sock.getInputStream());

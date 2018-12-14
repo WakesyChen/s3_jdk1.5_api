@@ -49,37 +49,37 @@ public interface JmxInfoProvider {
     }
 
     static final JmxInfoProvider NONE = new JmxInfoProvider() {
-        @Override
+        
         public long[] getFileDecriptorInfo() {
             return null;
         }
 
-        @Override
+        
         public int getThreadCount() {
             return 0;
         }
 
-        @Override
+        
         public int getDaemonThreadCount() {
             return 0;
         }
 
-        @Override
+        
         public int getPeakThreadCount() {
             return 0;
         }
 
-        @Override
+        
         public long getTotalStartedThreadCount() {
             return 0;
         }
 
-        @Override
+        
         public long[] findDeadlockedThreads() {
             return null;
         }
 
-        @Override
+        
         public boolean isEnabled() {
             return false;
         }

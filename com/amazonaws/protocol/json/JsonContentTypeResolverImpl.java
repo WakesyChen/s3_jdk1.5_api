@@ -29,7 +29,7 @@ class JsonContentTypeResolverImpl implements JsonContentTypeResolver {
         this.prefix = prefix;
     }
 
-    @Override
+    
     public String resolveContentType(JsonClientMetadata metadata) {
         return metadata.getContentTypeOverride() != null ? metadata.getContentTypeOverride() :
                 prefix + metadata.getProtocolVersion();

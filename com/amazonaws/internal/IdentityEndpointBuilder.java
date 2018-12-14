@@ -29,18 +29,18 @@ public class IdentityEndpointBuilder extends ServiceEndpointBuilder {
         this.endpoint = endpoint;
     }
 
-    @Override
+    
     public URI getServiceEndpoint() {
         return endpoint;
     }
 
-    @Override
+    
     public DefaultServiceEndpointBuilder withRegion(Region region) {
         // No-op
         return null;
     }
 
-    @Override
+    
     public Region getRegion() {
         return null;
     }

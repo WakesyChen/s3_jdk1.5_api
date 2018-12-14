@@ -27,31 +27,31 @@ public class ApiCallMonitoringEvent extends ApiMonitoringEvent {
     private int apiCallTimeout;
     private int maxRetriesExceeded;
 
-    @Override
+    
     public ApiCallMonitoringEvent withApi(String api) {
         this.api = api;
         return this;
     }
 
-    @Override
+    
     public ApiCallMonitoringEvent withVersion(Integer version) {
         this.version = version;
         return this;
     }
 
-    @Override
+    
     public ApiCallMonitoringEvent withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    @Override
+    
     public ApiCallMonitoringEvent withService(String service) {
         this.service = service;
         return this;
     }
 
-    @Override
+    
     public ApiCallMonitoringEvent withClientId(String clientId) {
         this.clientId = clientId;
         return this;
@@ -142,7 +142,7 @@ public class ApiCallMonitoringEvent extends ApiMonitoringEvent {
         return this;
     }
 
-    @Override
+    
     public String getType() {
         return API_CALL_MONITORING_EVENT_TYPE;
     }

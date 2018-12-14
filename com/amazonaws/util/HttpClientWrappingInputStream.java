@@ -41,7 +41,7 @@ class HttpClientWrappingInputStream extends SdkFilterInputStream {
         this.client = client;
     }
 
-    @Override
+    
     @SuppressWarnings("deprecation")
     public void close() throws IOException {
         try {

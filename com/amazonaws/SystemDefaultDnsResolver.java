@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
  * to resolve hosts to ip addresses
  */
 public class SystemDefaultDnsResolver implements DnsResolver {
-    @Override
+    
     public InetAddress[] resolve(String host) throws UnknownHostException {
         return InetAddress.getAllByName(host);
     }

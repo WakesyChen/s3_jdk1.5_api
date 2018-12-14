@@ -149,7 +149,7 @@ public abstract class ProgressInputStream extends SdkFilterInputStream {
         }
     }
 
-    @Override
+    
     public int read() throws IOException {
         if (!hasBeenRead) {
             onFirstRead();
@@ -163,7 +163,7 @@ public abstract class ProgressInputStream extends SdkFilterInputStream {
         return ch;
     }
 
-    @Override
+    
     public void reset() throws IOException {
         super.reset();
         onReset();
@@ -171,7 +171,7 @@ public abstract class ProgressInputStream extends SdkFilterInputStream {
         notifiedByteCount = 0;
     }
 
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         if (!hasBeenRead) {
             onFirstRead();
@@ -205,7 +205,7 @@ public abstract class ProgressInputStream extends SdkFilterInputStream {
         return notifiedByteCount;
     }
 
-    @Override
+    
     public void close() throws IOException {
         onClose(); // report any left over bytes not yet reported
         super.close();

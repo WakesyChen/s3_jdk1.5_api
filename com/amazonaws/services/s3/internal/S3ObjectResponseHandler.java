@@ -67,7 +67,7 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
      *
      * @see com.amazonaws.http.HttpResponseHandler#needsConnectionLeftOpen()
      */
-    @Override
+    
     public boolean needsConnectionLeftOpen() {
         return true;
     }

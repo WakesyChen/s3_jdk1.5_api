@@ -26,12 +26,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NullResponseMetadataCache implements MetadataCache {
 
-    @Override
+    
     public void add(Object obj, ResponseMetadata metadata) {
         // deliberately left blank
     }
 
-    @Override
+    
     public ResponseMetadata get(Object obj) {
         throw new SdkClientException("Response metadata caching is not enabled");
     }

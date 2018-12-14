@@ -66,7 +66,7 @@ public abstract class MultipleFileTransfer<T extends Transfer> extends AbstractT
      * Override this method so that TransferState updates are also sent out to the
      * progress listener chain in forms of ProgressEvent.
      */
-    @Override
+    
     public void setState(TransferState state) {
         super.setState(state);
 

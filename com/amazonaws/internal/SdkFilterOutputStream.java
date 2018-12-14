@@ -28,7 +28,7 @@ public class SdkFilterOutputStream extends FilterOutputStream implements
         super(out);
     }
 
-    @Override
+    
     public boolean isMetricActivated() {
         if (out instanceof MetricAware) {
             MetricAware metricAware = (MetricAware)out;
@@ -37,7 +37,7 @@ public class SdkFilterOutputStream extends FilterOutputStream implements
         return false;
     }
 
-    @Override
+    
     public final void release() {
         // Don't call IOUtils.release(in, null) or else could lead to infinite loop
         IOUtils.closeQuietly(this, null);

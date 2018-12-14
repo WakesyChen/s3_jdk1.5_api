@@ -65,7 +65,7 @@ public class SdkProxyRoutePlanner extends DefaultRoutePlanner {
         return false;
     }
 
-    @Override
+    
     protected HttpHost determineProxy(
         final HttpHost target,
         final HttpRequest request,

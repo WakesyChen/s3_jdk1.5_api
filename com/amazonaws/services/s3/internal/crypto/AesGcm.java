@@ -25,24 +25,24 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
 class AesGcm extends ContentCryptoScheme {
-    @Override String getKeyGeneratorAlgorithm() { return "AES"; }
-    @Override String getCipherAlgorithm() { return "AES/GCM/NoPadding"; }
-    @Override int getKeyLengthInBits() { return 256; }
-    @Override int getBlockSizeInBytes() { return 16; }
-    @Override int getIVLengthInBytes() { return 12; }
-    @Override long getMaxPlaintextSize() { return MAX_GCM_BYTES; }
+     String getKeyGeneratorAlgorithm() { return "AES"; }
+     String getCipherAlgorithm() { return "AES/GCM/NoPadding"; }
+     int getKeyLengthInBits() { return 256; }
+     int getBlockSizeInBytes() { return 16; }
+     int getIVLengthInBytes() { return 12; }
+     long getMaxPlaintextSize() { return MAX_GCM_BYTES; }
     /**
      * Used to explicitly record the tag length in S3 for interoperability
      * with other services.
      */
-    @Override int getTagLengthInBits() { return 128; }
+     int getTagLengthInBits() { return 128; }
     /**
      * Currently only Bouncy Castle can support the AES/GCM cipher in
      * Java 6 without having to use the AEAD API in Java 7+.
      */
-    @Override String getPreferredCipherProvider() { return "BC"; }
+     String getPreferredCipherProvider() { return "BC"; }
 
-    @Override
+    
     CipherLite createAuxillaryCipher(SecretKey cek, byte[] ivOrig,
             int cipherMode, Provider securityProvider, long startingBytePos)
             throws InvalidKeyException, NoSuchAlgorithmException,
@@ -52,7 +52,7 @@ class AesGcm extends ContentCryptoScheme {
         return AES_CTR.createCipherLite(cek, iv, cipherMode, securityProvider, false);
     }
 
-    @Override
+    
     protected CipherLite newCipherLite(Cipher cipher,  SecretKey cek, int cipherMode) {
         return new GCMCipherLite(cipher, cek, cipherMode);
     }

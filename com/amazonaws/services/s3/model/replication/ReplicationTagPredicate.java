@@ -33,7 +33,7 @@ public final class ReplicationTagPredicate extends ReplicationFilterPredicate {
         return tag;
     }
 
-    @Override
+    
     public void accept(ReplicationPredicateVisitor replicationPredicateVisitor) {
         replicationPredicateVisitor.visit(this);
     }

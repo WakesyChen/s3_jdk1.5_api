@@ -32,7 +32,7 @@ public class HttpRequestAbortTaskImpl implements HttpRequestAbortTask {
         this.httpRequest = httpRequest;
     }
 
-    @Override
+    
     public void run() {
         if (!httpRequest.isAborted()) {
             httpRequestAborted = true;
@@ -44,7 +44,7 @@ public class HttpRequestAbortTaskImpl implements HttpRequestAbortTask {
         return httpRequestAborted;
     }
 
-    @Override
+    
     public boolean isEnabled() {
         return true;
     }

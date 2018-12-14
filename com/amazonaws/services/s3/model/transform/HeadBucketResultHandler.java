@@ -22,7 +22,7 @@ import com.amazonaws.services.s3.model.HeadBucketResult;
 
 public class HeadBucketResultHandler extends AbstractS3ResponseHandler<HeadBucketResult> {
 
-    @Override
+    
     public AmazonWebServiceResponse<HeadBucketResult> handle(HttpResponse response)
             throws Exception {
         final AmazonWebServiceResponse<HeadBucketResult> awsResponse = new AmazonWebServiceResponse<HeadBucketResult>();

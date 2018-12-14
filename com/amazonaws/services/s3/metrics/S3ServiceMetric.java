@@ -38,7 +38,7 @@ public class S3ServiceMetric extends SimpleMetricType implements ServiceMetricTy
 
     public static final S3ThroughputMetric S3DownloadThroughput = new S3ThroughputMetric(
             metricName(DOWNLOAD_THROUGHPUT_NAME_SUFFIX)) {
-        @Override
+        
         public ServiceMetricType getByteCountMetricType() {
             return S3DownloadByteCount;
         }
@@ -47,7 +47,7 @@ public class S3ServiceMetric extends SimpleMetricType implements ServiceMetricTy
             metricName(DOWNLOAD_BYTE_COUNT_NAME_SUFFIX));
     public static final S3ThroughputMetric S3UploadThroughput = new S3ThroughputMetric(
             metricName(UPLOAD_THROUGHPUT_NAME_SUFFIX)) {
-        @Override
+        
         public ServiceMetricType getByteCountMetricType() {
             return S3UploadByteCount;
         }
@@ -63,8 +63,8 @@ public class S3ServiceMetric extends SimpleMetricType implements ServiceMetricTy
 
     private final String name;
     private S3ServiceMetric(String name) { this.name = name; }
-    @Override public String name() { return name; }
-    @Override public String getServiceName() {
+     public String name() { return name; }
+     public String getServiceName() {
         return Constants.S3_SERVICE_DISPLAY_NAME;
     }
 

@@ -59,7 +59,7 @@ public final class InputSubstream extends SdkFilterInputStream {
         this.closeSourceStream = closeSourceStream;
     }
 
-    @Override
+    
     public int read() throws IOException {
         byte[] b = new byte[1];
         int bytesRead = read(b, 0, 1);
@@ -69,7 +69,7 @@ public final class InputSubstream extends SdkFilterInputStream {
         return b[0];
     }
 
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         int count = 0;
         while (currentPosition < requestedOffset) {
@@ -98,19 +98,19 @@ public final class InputSubstream extends SdkFilterInputStream {
         return bytesRead;
     }
 
-    @Override
+    
     public synchronized void mark(int readlimit) {
         markedPosition = currentPosition;
         super.mark(readlimit);
     }
 
-    @Override
+    
     public synchronized void reset() throws IOException {
         currentPosition = markedPosition;
         super.reset();
     }
 
-    @Override
+    
     public void close() throws IOException {
         // Only close the wrapped input stream if we're at the end of
         // the wrapped stream. We don't want to close the wrapped input
@@ -119,7 +119,7 @@ public final class InputSubstream extends SdkFilterInputStream {
             super.close();
     }
 
-    @Override
+    
     public int available() throws IOException {
         long bytesRemaining;
         if (currentPosition < requestedOffset)

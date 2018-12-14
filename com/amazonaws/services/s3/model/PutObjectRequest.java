@@ -164,75 +164,75 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
     /**
      * Returns a clone (as deep as possible) of this request object.
      */
-    @Override
+    
     public PutObjectRequest clone() {
         PutObjectRequest request = (PutObjectRequest) super.clone();
         return this.copyPutObjectBaseTo(request);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withBucketName(String bucketName) {
         return super.withBucketName(bucketName);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withKey(String key) {
         return super.withKey(key);
     }
 
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withStorageClass(String storageClass) {
         return super.withStorageClass(storageClass);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withStorageClass(StorageClass storageClass) {
         return super.withStorageClass(storageClass);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest  withFile(File file) {
         return super.withFile(file);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withMetadata(ObjectMetadata metadata) {
         return super.withMetadata(metadata);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest  withCannedAcl(CannedAccessControlList cannedAcl) {
         return super.withCannedAcl(cannedAcl);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withAccessControlList(
             AccessControlList accessControlList) {
         return super.withAccessControlList(accessControlList);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest  withInputStream(InputStream inputStream) {
         return super.withInputStream(inputStream);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withRedirectLocation(String redirectLocation) {
         return super.withRedirectLocation(redirectLocation);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withSSECustomerKey(SSECustomerKey sseKey) {
         return super.withSSECustomerKey(sseKey);
@@ -244,14 +244,14 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
     }
 
     @Deprecated
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withProgressListener(
             com.amazonaws.services.s3.model.ProgressListener progressListener) {
         return super.withProgressListener(progressListener);
     }
 
-    @Override
+    
     @SuppressWarnings("unchecked")
     public PutObjectRequest withSSEAwsKeyManagementParams(
             SSEAwsKeyManagementParams sseAwsKeyManagementParams) {

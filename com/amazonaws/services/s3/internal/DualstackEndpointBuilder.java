@@ -39,7 +39,7 @@ public class DualstackEndpointBuilder extends ServiceEndpointBuilder {
         this.region = region;
     }
 
-    @Override
+    
     public DualstackEndpointBuilder withRegion(Region region) {
         if (region == null) {
             throw new IllegalArgumentException("Region cannot be null");
@@ -48,7 +48,7 @@ public class DualstackEndpointBuilder extends ServiceEndpointBuilder {
         return this;
     }
 
-    @Override
+    
     public URI getServiceEndpoint() {
         String serviceEndpoint = String.format("%s.%s.%s.%s", serviceName, Constants.S3_DUALSTACK_QUALIFIER, region.getName(), region.getDomain());
         return toURI(stripProtocol(serviceEndpoint));
@@ -67,7 +67,7 @@ public class DualstackEndpointBuilder extends ServiceEndpointBuilder {
         }
     }
 
-    @Override
+    
     public Region getRegion() {
         return region;
     }

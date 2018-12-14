@@ -79,7 +79,7 @@ public class S3QueryStringSigner extends AbstractAWSSigner {
         request.addParameter("Signature", signature);
     }
 
-    @Override
+    
     protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addParameter("x-amz-security-token", credentials.getSessionToken());
     }

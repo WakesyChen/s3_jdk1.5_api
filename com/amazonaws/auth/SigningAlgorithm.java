@@ -29,7 +29,7 @@ public enum SigningAlgorithm {
     private SigningAlgorithm() {
         final String algorithmName = this.toString();
         macReference = SdkThreadLocalsRegistry.register(new ThreadLocal<Mac>() {
-            @Override
+            
             protected Mac initialValue() {
                 try {
                     return Mac.getInstance(algorithmName);

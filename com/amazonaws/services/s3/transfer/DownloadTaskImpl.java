@@ -37,14 +37,14 @@ final class DownloadTaskImpl implements
         this.getObjectRequest = getObjectRequest;
     }
 
-    @Override
+    
     public S3Object getS3ObjectStream() {
         S3Object s3Object = s3.getObject(getObjectRequest);
         download.setS3Object(s3Object);
         return s3Object;
     }
 
-    @Override
+    
     public boolean needIntegrityCheck() {
         // Don't perform the integrity check if the checksum won't matchup.
         return !(s3 instanceof AmazonS3Encryption) && !skipMd5CheckStrategy.skipClientSideValidationPerRequest(getObjectRequest);

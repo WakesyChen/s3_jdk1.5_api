@@ -91,7 +91,7 @@ class S3ObjectWrapper implements Closeable {
         s3obj.setRedirectLocation(redirectLocation);
     }
 
-    @Override public String toString() {
+     public String toString() {
         return s3obj.toString();
     }
 
@@ -138,7 +138,7 @@ class S3ObjectWrapper implements Closeable {
         return sb.toString();
     }
 
-    @Override
+    
     public void close() throws IOException {
         s3obj.close();
     }

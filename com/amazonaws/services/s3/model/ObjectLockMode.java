@@ -38,7 +38,7 @@ public enum ObjectLockMode {
         throw new IllegalArgumentException("Cannot create enum from " + objectLockModeString + " value!");
     }
 
-    @Override
+    
     public String toString() {
         return objectLockMode;
     }

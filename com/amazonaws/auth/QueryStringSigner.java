@@ -197,7 +197,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         this.overriddenDate = date;
     }
 
-    @Override
+    
     protected void addSessionCredentials(SignableRequest<?> request, AWSSessionCredentials credentials) {
         request.addParameter("SecurityToken", credentials.getSessionToken());
     }

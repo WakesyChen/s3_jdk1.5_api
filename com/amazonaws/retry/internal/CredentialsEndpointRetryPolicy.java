@@ -29,7 +29,7 @@ public interface CredentialsEndpointRetryPolicy {
 
     public static final CredentialsEndpointRetryPolicy NO_RETRY = new CredentialsEndpointRetryPolicy() {
 
-        @Override
+        
         public boolean shouldRetry(int retriesAttempted, CredentialsEndpointRetryParameters retryParams) {
             return false;
         }

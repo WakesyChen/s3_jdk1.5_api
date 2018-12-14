@@ -49,7 +49,7 @@ class LambdaConfigurationStaxUnmarshaller implements
     private LambdaConfigurationStaxUnmarshaller() {
     }
 
-    @Override
+    
     public Entry<String, NotificationConfiguration> unmarshall(StaxUnmarshallerContext context) throws Exception {
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;

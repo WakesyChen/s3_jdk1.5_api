@@ -39,28 +39,28 @@ public class ValueToStringConverters {
      * Identity converter.
      */
     public static final ValueToString<String> FROM_STRING = new ValueToString<String>() {
-        @Override
+        
         public String convert(String val) {
             return val;
         }
     };
 
     public static final ValueToString<Integer> FROM_INTEGER = new ValueToString<Integer>() {
-        @Override
+        
         public String convert(Integer val) {
             return StringUtils.fromInteger(val);
         }
     };
 
     public static final ValueToString<Long> FROM_LONG = new ValueToString<Long>() {
-        @Override
+        
         public String convert(Long val) {
             return StringUtils.fromLong(val);
         }
     };
 
     public static final ValueToString<Short> FROM_SHORT = new ValueToString<Short>() {
-        @Override
+        
         public String convert(Short val) {
             return StringUtils.fromShort(val);
         }
@@ -68,14 +68,14 @@ public class ValueToStringConverters {
 
 
     public static final ValueToString<Float> FROM_FLOAT = new ValueToString<Float>() {
-        @Override
+        
         public String convert(Float val) {
             return StringUtils.fromFloat(val);
         }
     };
 
     public static final ValueToString<Double> FROM_DOUBLE = new ValueToString<Double>() {
-        @Override
+        
         public String convert(Double val) {
             return StringUtils.fromDouble(val);
         }
@@ -85,7 +85,7 @@ public class ValueToStringConverters {
      * Marshalls boolean as a literal 'true' or 'false' string.
      */
     public static final ValueToString<Boolean> FROM_BOOLEAN = new ValueToString<Boolean>() {
-        @Override
+        
         public String convert(Boolean val) {
             return StringUtils.fromBoolean(val);
         }
@@ -95,7 +95,7 @@ public class ValueToStringConverters {
      * Marshalls date to an ISO8601 date string.
      */
     public static final ValueToString<Date> FROM_DATE = new ValueToString<Date>() {
-        @Override
+        
         public String convert(Date val) {
             return StringUtils.fromDate(val);
         }
@@ -105,7 +105,7 @@ public class ValueToStringConverters {
      * Converter for JSON value headers. JSON value headers are base-64 encoded.
      */
     public static final ValueToString<String> FROM_JSON_VALUE_HEADER = new ValueToString<String>() {
-        @Override
+        
         public String convert(String val) {
             return Base64.encodeAsString(val.getBytes(Charset.forName("utf-8")));
         }

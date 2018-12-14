@@ -40,7 +40,7 @@ abstract class NotificationConfigurationStaxUnmarshaller<T extends NotificationC
      * class but as the key name in the map of configurations in
      * {@link BucketNotificationConfiguration}
      */
-    @Override
+    
     public Entry<String, NotificationConfiguration> unmarshall(StaxUnmarshallerContext context) throws Exception {
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;

@@ -62,7 +62,7 @@ public class S3ProgressPublisher extends SDKProgressPublisher {
         // place, but such task submission is necessary to remain backward
         // compatible.
         return setLatestFutureTask(getExecutorService().submit(new Runnable() {
-            @Override public void run() {
+             public void run() {
                 listener.onPersistableTransfer(persistableTransfer);
             }
         }));

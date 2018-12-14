@@ -67,7 +67,7 @@ class Base64Codec implements Codec {
         this.alphabets = alphabets;
     }
 
-    @Override
+    
     public byte[] encode(byte[] src) {
         final int num3bytes = src.length / 3;
         final int remainder = src.length % 3;
@@ -191,7 +191,7 @@ class Base64Codec implements Codec {
         return;
     }
 
-    @Override
+    
     public byte[] decode(byte[] src, final int length) 
     {
         if (length % 4 != 0)

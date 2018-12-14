@@ -2080,7 +2080,7 @@ public class TransferManager {
      * Releasing all resources created by <code>TransferManager</code> before it
      * is being garbage collected.
      */
-    @Override
+    
     protected void finalize() throws Throwable {
         shutdownThreadPools();
     }

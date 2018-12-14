@@ -38,7 +38,7 @@ public enum ObjectLockLegalHoldStatus {
         throw new IllegalArgumentException("Cannot create enum from " + objectLockLegalHoldStatusString + " value!");
     }
 
-    @Override
+    
     public String toString() {
         return objectLockLegalHoldStatus;
     }

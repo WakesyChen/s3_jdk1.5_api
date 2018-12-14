@@ -35,7 +35,7 @@ public class SelectObjectContentResult implements Closeable {
         return this;
     }
 
-    @Override
+    
     public void close() throws IOException {
         if (payload != null) {
             payload.close();

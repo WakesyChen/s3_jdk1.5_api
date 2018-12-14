@@ -276,7 +276,7 @@ public class BucketNotificationConfiguration implements Serializable {
         return topicConfigs;
     }
 
-    @Override
+    
     public String toString() {
         return Jackson.toJsonString(this.getConfigurations());
     }
@@ -334,7 +334,7 @@ public class BucketNotificationConfiguration implements Serializable {
             return eventArray[0];
         }
 
-        @Override
+        
         public String toString() {
             return Jackson.toJsonString(this);
         }

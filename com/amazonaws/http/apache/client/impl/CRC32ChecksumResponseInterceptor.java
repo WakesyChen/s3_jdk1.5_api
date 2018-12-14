@@ -31,7 +31,7 @@ import java.io.OutputStream;
 
 public class CRC32ChecksumResponseInterceptor implements HttpResponseInterceptor {
 
-    @Override
+    
     public void process(HttpResponse response, final HttpContext context)
             throws HttpException, IOException {
         final HttpEntity entity = response.getEntity();
@@ -46,7 +46,7 @@ public class CRC32ChecksumResponseInterceptor implements HttpResponseInterceptor
             private final InputStream content = new CRC32ChecksumCalculatingInputStream(
                     wrappedEntity.getContent());
 
-            @Override
+            
             public InputStream getContent() throws IOException {
                 return content;
             }
@@ -63,7 +63,7 @@ public class CRC32ChecksumResponseInterceptor implements HttpResponseInterceptor
              *
              * @param outstream OutputStream to write contents to
              */
-            @Override
+            
             public void writeTo(OutputStream outstream) throws IOException {
                 try {
                     IOUtils.copy(this.getContent(), outstream);

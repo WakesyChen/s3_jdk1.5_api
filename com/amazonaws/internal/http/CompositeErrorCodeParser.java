@@ -32,7 +32,7 @@ public class CompositeErrorCodeParser implements ErrorCodeParser {
         this.parsers = Arrays.asList(parsers);
     }
 
-    @Override
+    
     public String parseErrorCode(HttpResponse response, JsonContent jsonContent) {
         for (ErrorCodeParser parser : parsers) {
             String errorCode = parser.parseErrorCode(response, jsonContent);

@@ -72,7 +72,7 @@ public interface MarshallingType<T> {
      * A serializer for strings that should be base-64 encoded when they are sent to AWS.
      */
     MarshallingType<String> JSON_VALUE = new MarshallingType<String>() {
-        @Override
+        
         public boolean isDefaultMarshallerForType(Class<?> type) {
             return false;
         }

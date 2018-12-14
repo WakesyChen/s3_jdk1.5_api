@@ -35,7 +35,7 @@ public class MetricFilterInputStream extends SdkFilterInputStream {
         helper = new ByteThroughputHelper(type);
     }
 
-    @Override
+    
     public int read(byte b[], int off, int len) throws IOException {
         abortIfNeeded();
         long startNano = helper.startTiming();
@@ -46,14 +46,14 @@ public class MetricFilterInputStream extends SdkFilterInputStream {
         return bytesRead;
     }
 
-    @Override
+    
     public void close() throws IOException {
         helper.reportMetrics();
         in.close();
         abortIfNeeded();
     }
 
-    @Override
+    
     public final boolean isMetricActivated() {
         return true;
     }

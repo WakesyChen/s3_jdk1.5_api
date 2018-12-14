@@ -31,17 +31,17 @@ class AnalyticsPredicateVisitorImpl implements AnalyticsPredicateVisitor {
         this.xml = xml;
     }
 
-    @Override
+    
     public void visit(AnalyticsPrefixPredicate analyticsPrefixPredicate) {
         writePrefix(xml, analyticsPrefixPredicate.getPrefix());
     }
 
-    @Override
+    
     public void visit(AnalyticsTagPredicate analyticsTagPredicate) {
         writeTag(xml, analyticsTagPredicate.getTag());
     }
 
-    @Override
+    
     public void visit(AnalyticsAndOperator analyticsAndOperator) {
         xml.start("And");
         for (AnalyticsFilterPredicate predicate : analyticsAndOperator.getOperands()) {

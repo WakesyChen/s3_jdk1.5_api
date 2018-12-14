@@ -28,7 +28,7 @@ public class SdkHttpRequestRetryHandler extends DefaultHttpRequestRetryHandler {
     public static final SdkHttpRequestRetryHandler Singleton = new SdkHttpRequestRetryHandler();
     private SdkHttpRequestRetryHandler() {}
 
-    @Override public boolean retryRequest(
+     public boolean retryRequest(
             final IOException exception,
             int executionCount,
             final HttpContext context) {

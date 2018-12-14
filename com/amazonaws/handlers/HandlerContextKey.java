@@ -26,18 +26,18 @@ import com.amazonaws.client.builder.AdvancedConfig;
  *
  *      new RequestHandler2(){
  *
- *          @Override
+ *          
  *          public void beforeRequest(Request<?> request) {
  *              request.addHandlerContext(METRICS_KEY, AWSRequestMetrics
  *                                                  .Field.HttpRequestTime.name());
  *          }
  *
- *          @Override
+ *          
  *          public void afterResponse(Request<?> request, Response<?> response) {
  *              String metricsKey = request.getHandlerContext(METRICS_KEY);
  *          }
  *
- *          @Override
+ *          
  *          public void afterError(Request<?> request, Response<?> response,
  *          Exception e) { }
  *      }
@@ -79,7 +79,7 @@ public class HandlerContextKey<T> {
         this.name = name;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -94,7 +94,7 @@ public class HandlerContextKey<T> {
         return name;
     }
 
-    @Override
+    
     public int hashCode() {
         return name.hashCode();
     }

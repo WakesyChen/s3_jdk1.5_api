@@ -331,7 +331,7 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
         return this;
     }
 
-    @Override
+    
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

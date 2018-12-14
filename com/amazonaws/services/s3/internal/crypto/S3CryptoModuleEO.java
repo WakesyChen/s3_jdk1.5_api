@@ -68,14 +68,14 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
                 encryptionMaterialsProvider, cryptoConfig);
     }
 
-    @Override
+    
     public S3Object getObjectSecurely(GetObjectRequest getObjectRequest) {
         // Should never get here, as S3 object encrypted in either EO or AE
         // format should all be handled by the AE module.
         throw new IllegalStateException();
     }
 
-    @Override
+    
     public ObjectMetadata getObjectSecurely(GetObjectRequest getObjectRequest,
             File destinationFile) {
         // Should never get here, as S3 object encrypted in either EO or AE
@@ -83,7 +83,7 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
         throw new IllegalStateException();
     }
 
-    @Override
+    
     final MultipartUploadCbcContext newUploadContext(
             InitiateMultipartUploadRequest req,
             ContentCryptoMaterial cekMaterial) {
@@ -95,7 +95,7 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
     }
 
 
-    @Override
+    
     final void updateUploadContext(MultipartUploadCbcContext uploadContext,
             SdkFilterInputStream is) {
         ByteRangeCapturingInputStream bis = (ByteRangeCapturingInputStream)is;
@@ -103,7 +103,7 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
         return;
     }
 
-    @Override
+    
     final ByteRangeCapturingInputStream wrapForMultipart(
             CipherLiteInputStream is, long partSize) {
         int blockSize = contentCryptoScheme.getBlockSizeInBytes();
@@ -112,7 +112,7 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
                 partSize);
     }
     
-    @Override
+    
     final long computeLastPartSize(UploadPartRequest request) {
         long plaintextLength;
         if (request.getFile() != null) {
@@ -130,7 +130,7 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
         return plaintextLength + offset;
     }
 
-    @Override
+    
     final CipherLite cipherLiteForNextPart(
             MultipartUploadCbcContext uploadContext) {
         CipherLite cipherLite = uploadContext.getCipherLite();
@@ -142,7 +142,7 @@ class S3CryptoModuleEO extends S3CryptoModuleBase<MultipartUploadCbcContext> {
      * Private helper methods
      */
 
-    @Override
+    
     protected final long ciphertextLength(long plaintextLength) {
         long cipherBlockSize = contentCryptoScheme.getBlockSizeInBytes();
         long offset = cipherBlockSize - (plaintextLength % cipherBlockSize);

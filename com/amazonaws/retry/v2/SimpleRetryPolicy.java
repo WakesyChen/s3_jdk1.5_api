@@ -29,12 +29,12 @@ public class SimpleRetryPolicy implements RetryPolicy {
         this.backoffStrategy = assertNotNull(backoffStrategy, "backoffStrategy");
     }
 
-    @Override
+    
     public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
         return backoffStrategy.computeDelayBeforeNextRetry(context);
     }
 
-    @Override
+    
     public boolean shouldRetry(RetryPolicyContext context) {
         return retryCondition.shouldRetry(context);
     }

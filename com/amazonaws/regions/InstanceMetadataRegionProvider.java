@@ -37,7 +37,7 @@ public class InstanceMetadataRegionProvider extends AwsRegionProvider {
     /**
      * @throws AmazonClientException if {@link SDKGlobalConfiguration#isEc2MetadataDisabled()} is true
      */
-    @Override
+    
     public String getRegion() {
         if (SDKGlobalConfiguration.isEc2MetadataDisabled()) {
             throw new AmazonClientException("AWS_EC2_METADATA_DISABLED is set to true, not loading region from EC2 Instance "

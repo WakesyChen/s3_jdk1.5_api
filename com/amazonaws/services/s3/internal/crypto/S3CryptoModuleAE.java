@@ -101,7 +101,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         return false;
     }
 
-    @Override
+    
     public S3Object getObjectSecurely(GetObjectRequest req) {
         appendUserAgent(req, USER_AGENT);
         // Adjust the crypto range to retrieve all of the cipher blocks needed to contain the user's desired
@@ -318,7 +318,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         }
     }
 
-    @Override
+    
     public ObjectMetadata getObjectSecurely(GetObjectRequest getObjectRequest,
             File destinationFile) {
         assertParameterNotNull(destinationFile,
@@ -353,7 +353,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         return s3Object.getObjectMetadata();
     }
 
-    @Override
+    
     final MultipartUploadCryptoContext newUploadContext(
             InitiateMultipartUploadRequest req, ContentCryptoMaterial cekMaterial) {
         return new MultipartUploadCryptoContext(
@@ -361,22 +361,22 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
     }
 
     //// specific overrides for uploading parts.
-    @Override
+    
     final CipherLite cipherLiteForNextPart(
             MultipartUploadCryptoContext uploadContext) {
         return uploadContext.getCipherLite();
     }
-    @Override
+    
     final SdkFilterInputStream wrapForMultipart(
             CipherLiteInputStream  is, long partSize) {
         return is;
     }
-    @Override
+    
     final long computeLastPartSize(UploadPartRequest req) {
         return req.getPartSize()
              + (contentCryptoScheme.getTagLengthInBits() / 8);
     }
-    @Override
+    
     final void updateUploadContext(MultipartUploadCryptoContext uploadContext,
             SdkFilterInputStream is) {
     }
@@ -420,7 +420,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         if (parameterValue == null) throw new IllegalArgumentException(errorMessage);
     }
 
-    @Override
+    
     protected final long ciphertextLength(long originalContentLength) {
         // Add 16 bytes for the 128-bit tag length using AES/GCM
         return originalContentLength + contentCryptoScheme.getTagLengthInBits()/8;

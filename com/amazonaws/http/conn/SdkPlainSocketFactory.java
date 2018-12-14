@@ -27,7 +27,7 @@ import java.net.Socket;
  * Socket factory for creating plain (non TLS) connections.
  */
 public class SdkPlainSocketFactory extends PlainConnectionSocketFactory {
-    @Override
+    
     public Socket createSocket(HttpContext ctx) throws IOException {
         if (HttpContextUtils.disableSocketProxy(ctx)) {
             return new Socket(Proxy.NO_PROXY);

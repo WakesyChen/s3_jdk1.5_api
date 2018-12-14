@@ -26,7 +26,7 @@ import com.amazonaws.protocol.MarshallingInfo;
 public interface JsonMarshaller<T> {
 
     JsonMarshaller<Void> NULL = new JsonMarshaller<Void>() {
-        @Override
+        
         public void marshall(Void val, JsonMarshallerContext context, MarshallingInfo marshallingInfo) {
         }
     };

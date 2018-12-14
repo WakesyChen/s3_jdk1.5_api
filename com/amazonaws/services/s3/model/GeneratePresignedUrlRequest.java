@@ -547,7 +547,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
         return this;
     }
 
-    @Override
+    
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }

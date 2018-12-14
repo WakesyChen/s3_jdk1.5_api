@@ -81,7 +81,7 @@ public class SdkStructuredPlainJsonFactory {
 
     public static final SdkStructuredJsonFactory SDK_JSON_FACTORY = new SdkStructuredJsonFactoryImpl(
             JSON_FACTORY, JSON_SCALAR_UNMARSHALLERS, JSON_CUSTOM_TYPE_UNMARSHALLERS) {
-        @Override
+        
         protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
                                                        String contentType) {
             return new SdkJsonGenerator(jsonFactory, contentType);

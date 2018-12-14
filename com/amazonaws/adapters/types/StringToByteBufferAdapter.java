@@ -23,7 +23,7 @@ import com.amazonaws.util.StringUtils;
 @SdkProtectedApi
 public class StringToByteBufferAdapter implements TypeAdapter<String, ByteBuffer> {
 
-    @Override
+    
     public ByteBuffer adapt(String source) {
         if (source == null) {
             return null;

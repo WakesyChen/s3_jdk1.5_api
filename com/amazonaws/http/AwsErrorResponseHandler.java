@@ -36,7 +36,7 @@ class AwsErrorResponseHandler implements HttpResponseHandler<AmazonServiceExcept
         this.awsRequestMetrics = awsRequestMetrics;
     }
 
-    @Override
+    
     public AmazonServiceException handle(HttpResponse response) throws Exception {
         final AmazonServiceException ase = handleAse(response);
         ase.setStatusCode(response.getStatusCode());
@@ -75,7 +75,7 @@ class AwsErrorResponseHandler implements HttpResponseHandler<AmazonServiceExcept
         }
     }
 
-    @Override
+    
     public boolean needsConnectionLeftOpen() {
         return delegate.needsConnectionLeftOpen();
     }

@@ -30,7 +30,7 @@ public class S3RestoreOutputPathHeaderHandler<T extends S3RestoreOutputPathResul
      * com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object,
      * com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public void handle(T result, HttpResponse response) {
         result.setRestoreOutputPath(response.getHeaders().get(Headers.S3_RESTORE_OUTPUT_PATH));
     }

@@ -26,17 +26,17 @@ class ResponseProgressInputStream extends ProgressInputStream {
         super(is, listener);
     }
 
-    @Override
+    
     protected void onReset() {
         publishResponseReset(getListener(), getNotifiedByteCount());
     }
 
-    @Override
+    
     protected void onEOF() {
         onNotifyBytesRead();
     }
 
-    @Override
+    
     protected void onNotifyBytesRead() {
         publishResponseBytesTransferred(getListener(), getUnnotifiedByteCount());
     }

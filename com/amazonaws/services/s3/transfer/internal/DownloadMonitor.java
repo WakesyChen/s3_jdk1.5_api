@@ -26,7 +26,7 @@ public class DownloadMonitor implements TransferMonitor {
         this.future = future;
     }
 
-    @Override
+    
     public synchronized Future<?> getFuture() {
         return future;
     }
@@ -35,7 +35,7 @@ public class DownloadMonitor implements TransferMonitor {
         this.future = future;
     }
 
-    @Override
+    
     public boolean isDone() {
         return download.isDone();
     }

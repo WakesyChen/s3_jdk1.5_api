@@ -31,7 +31,7 @@ public enum FileHeaderInfo {
     }
 
 
-    @Override
+    
     public String toString() {
         return headerInfo;
     }

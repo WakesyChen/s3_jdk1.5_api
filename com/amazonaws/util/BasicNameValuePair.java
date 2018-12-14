@@ -58,17 +58,17 @@ class BasicNameValuePair implements NameValuePair, Cloneable, Serializable {
         this.value = value;
     }
 
-    @Override
+    
     public String getName() {
         return this.name;
     }
 
-    @Override
+    
     public String getValue() {
         return this.value;
     }
 
-    @Override
+    
     public String toString() {
         // don't call complex default formatting for a simple toString
 
@@ -83,7 +83,7 @@ class BasicNameValuePair implements NameValuePair, Cloneable, Serializable {
         return buffer.toString();
     }
 
-    @Override
+    
     public boolean equals(final Object object) {
         if (this == object) {
             return true;
@@ -100,7 +100,7 @@ class BasicNameValuePair implements NameValuePair, Cloneable, Serializable {
         return obj1 == null ? obj2 == null : obj1.equals(obj2);
     }
 
-    @Override
+    
     public int hashCode() {
         int hash = HASH_SEED;
         hash = hashCode(hash, this.name);
@@ -108,7 +108,7 @@ class BasicNameValuePair implements NameValuePair, Cloneable, Serializable {
         return hash;
     }
 
-    @Override
+    
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }

@@ -19,7 +19,7 @@ import static com.amazonaws.endpointdiscovery.Constants.ENDPOINT_DISCOVERY_ENVIR
 
 public class EnvironmentVariableEndpointDiscoveryProvider implements EndpointDiscoveryProvider {
 
-    @Override
+    
     public Boolean endpointDiscoveryEnabled() {
 
         Boolean endpointDiscoveryEnabled = null;

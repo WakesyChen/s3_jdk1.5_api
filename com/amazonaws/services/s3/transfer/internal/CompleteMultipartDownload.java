@@ -40,7 +40,7 @@ public class CompleteMultipartDownload implements Callable<File> {
         this.currentPartNumber = currentPartNumber;
     }
 
-    @Override
+    
     public File call() throws Exception {
         for (Future<File> file : partFiles) {
             ServiceUtils.appendFile(file.get(), destinationFile);

@@ -90,7 +90,7 @@ public class ClasspathPropertiesFileCredentialsProvider implements AWSCredential
 
     public void refresh() {}
 
-    @Override
+    
     public String toString() {
         return getClass().getSimpleName() + "(" + credentialsFilePath + ")";
     }

@@ -28,7 +28,7 @@ public class STSProfileCredentialsServiceLoader implements ProfileCredentialsSer
     private STSProfileCredentialsServiceLoader() {
     }
 
-    @Override
+    
     public AWSCredentialsProvider getAssumeRoleCredentialsProvider(RoleInfo targetRoleInfo) {
         return new STSProfileCredentialsServiceProvider(targetRoleInfo);
     }

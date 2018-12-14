@@ -39,8 +39,8 @@ public abstract class ServiceMetricCollector {
     public boolean isEnabled() { return true; }
     /** A convenient instance of a no-op service metric collector. */
     public static final ServiceMetricCollector NONE = new ServiceMetricCollector() {
-        @Override public void collectByteThroughput(ByteThroughputProvider provider) {}
-        @Override public void collectLatency(ServiceLatencyProvider provider) {}
-        @Override public boolean isEnabled() { return false; }
+         public void collectByteThroughput(ByteThroughputProvider provider) {}
+         public void collectLatency(ServiceLatencyProvider provider) {}
+         public boolean isEnabled() { return false; }
     };
 }

@@ -27,7 +27,7 @@ public class CredentialsDefaultLocationProvider extends AwsDirectoryBasePathProv
 
     private static final String DEFAULT_CREDENTIAL_PROFILES_FILENAME = "credentials";
 
-    @Override
+    
     public File getLocation() {
         File credentialProfiles = new File(getAwsDirectory(), DEFAULT_CREDENTIAL_PROFILES_FILENAME);
         if (credentialProfiles.exists() && credentialProfiles.isFile()) {

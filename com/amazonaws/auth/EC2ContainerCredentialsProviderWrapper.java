@@ -70,12 +70,12 @@ public class EC2ContainerCredentialsProviderWrapper implements AWSCredentialsPro
         }
     }
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         return provider.getCredentials();
     }
 
-    @Override
+    
     public void refresh() {
        provider.refresh();
     }

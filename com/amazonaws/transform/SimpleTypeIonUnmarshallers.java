@@ -21,7 +21,7 @@ import java.util.Date;
 
 public class SimpleTypeIonUnmarshallers {
     public static class StringIonUnmarshaller implements Unmarshaller<String, JsonUnmarshallerContext> {
-        @Override
+        
         public String unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.readText();
         }
@@ -35,7 +35,7 @@ public class SimpleTypeIonUnmarshallers {
 
 
     public static class DoubleIonUnmarshaller implements Unmarshaller<Double, JsonUnmarshallerContext> {
-        @Override
+        
         public Double unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getDoubleValue();
         }
@@ -48,7 +48,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class IntegerIonUnmarshaller implements Unmarshaller<Integer, JsonUnmarshallerContext> {
-        @Override
+        
         public Integer unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getIntValue();
         }
@@ -61,7 +61,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class BigIntegerIonUnmarshaller implements Unmarshaller<BigInteger, JsonUnmarshallerContext> {
-        @Override
+        
         public BigInteger unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getBigIntegerValue();
         }
@@ -74,7 +74,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class BigDecimalIonUnmarshaller implements Unmarshaller<BigDecimal, JsonUnmarshallerContext> {
-        @Override
+        
         public BigDecimal unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getDecimalValue();
         }
@@ -87,7 +87,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class BooleanIonUnmarshaller implements Unmarshaller<Boolean, JsonUnmarshallerContext> {
-        @Override
+        
         public Boolean unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getBooleanValue();
         }
@@ -100,7 +100,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class FloatIonUnmarshaller implements Unmarshaller<Float, JsonUnmarshallerContext> {
-        @Override
+        
         public Float unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getFloatValue();
         }
@@ -113,7 +113,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class LongIonUnmarshaller implements Unmarshaller<Long, JsonUnmarshallerContext> {
-        @Override
+        
         public Long unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getLongValue();
         }
@@ -126,7 +126,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class ByteIonUnmarshaller implements Unmarshaller<Byte, JsonUnmarshallerContext> {
-        @Override
+        
         public Byte unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getByteValue();
         }
@@ -139,7 +139,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class DateIonUnmarshaller implements Unmarshaller<Date, JsonUnmarshallerContext> {
-        @Override
+        
         public Date unmarshall(JsonUnmarshallerContext context) throws Exception {
             return (Date) context.getJsonParser().getEmbeddedObject();
         }
@@ -152,7 +152,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class ByteBufferIonUnmarshaller implements Unmarshaller<ByteBuffer, JsonUnmarshallerContext> {
-        @Override
+        
         public ByteBuffer unmarshall(JsonUnmarshallerContext context) throws Exception {
             return (ByteBuffer) context.getJsonParser().getEmbeddedObject();
         }
@@ -165,7 +165,7 @@ public class SimpleTypeIonUnmarshallers {
     }
 
     public static class ShortIonUnmarshaller implements Unmarshaller<Short, JsonUnmarshallerContext> {
-        @Override
+        
         public Short unmarshall(JsonUnmarshallerContext context) throws Exception {
             return context.getJsonParser().getShortValue();
         }

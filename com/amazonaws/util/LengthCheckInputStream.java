@@ -85,7 +85,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
      *             if the total data length is not the same as the expected
      *             total.
      */
-    @Override
+    
     public int read() throws IOException {
         final int c = super.read();
         if (c >= 0)
@@ -102,7 +102,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
      *             if the total data length is not the same as the expected
      *             total.
      */
-    @Override
+    
     public int read(byte[] b, int off, int len) throws IOException {
         int readLen = super.read(b, off, len);
         dataLength += readLen >= 0 ? readLen : 0;
@@ -110,7 +110,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
         return readLen;
     }
 
-    @Override
+    
     public void mark(int readlimit) {
         if (markSupported()) {
             super.mark(readlimit);
@@ -120,7 +120,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
         }
     }
 
-    @Override
+    
     public void reset() throws IOException {
         if (markSupported()) {
             super.reset();
@@ -177,7 +177,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
      *             if {@link #includeSkipped} is true and the data length
      *             skipped has exceeded the expected total.
      */
-    @Override
+    
     public long skip(long n) throws IOException {
         final long skipped = super.skip(n);
         if (includeSkipped && skipped > 0) {

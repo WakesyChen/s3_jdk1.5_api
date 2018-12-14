@@ -31,17 +31,17 @@ class LifecyclePredicateVisitorImpl implements LifecyclePredicateVisitor {
         this.xml = xml;
     }
 
-    @Override
+    
     public void visit(LifecyclePrefixPredicate lifecyclePrefixPredicate) {
         writePrefix(xml, lifecyclePrefixPredicate.getPrefix());
     }
 
-    @Override
+    
     public void visit(LifecycleTagPredicate lifecycleTagPredicate) {
         writeTag(xml, lifecycleTagPredicate.getTag());
     }
 
-    @Override
+    
     public void visit(LifecycleAndOperator lifecycleAndOperator) {
         xml.start("And");
         for (LifecycleFilterPredicate predicate : lifecycleAndOperator.getOperands()) {

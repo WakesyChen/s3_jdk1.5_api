@@ -21,6 +21,6 @@ public class SimpleServiceMetricType extends SimpleMetricType implements Service
         this.name = name;
         this.serviceName = serviceName;
     }
-    @Override public String name() { return name; }
-    @Override public String getServiceName() { return serviceName; }
+     public String name() { return name; }
+     public String getServiceName() { return serviceName; }
 }

@@ -66,12 +66,12 @@ public class STSProfileCredentialsServiceProvider implements AWSCredentialsProvi
     }
 
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         return getProfileCredentialsProvider().getCredentials();
     }
 
-    @Override
+    
     public void refresh() {
         getProfileCredentialsProvider().refresh();
     }

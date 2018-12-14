@@ -37,7 +37,7 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
         this.clientConfiguration = assertNotNull(clientConfiguration, "clientConfiguration");
     }
 
-    @Override
+    
     public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
         return legacyRetryPolicy.getBackoffStrategy().delayBeforeNextRetry(
                 (AmazonWebServiceRequest) context.originalRequest(),
@@ -45,7 +45,7 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
                 context.retriesAttempted());
     }
 
-    @Override
+    
     public boolean shouldRetry(RetryPolicyContext context) {
         return !maxRetriesExceeded(context) && isRetryable(context);
     }

@@ -28,7 +28,7 @@ import java.util.UUID;
 public final class IdempotentUtils {
 
     private static DefaultValueSupplier<String> generator = new DefaultValueSupplier<String>() {
-        @Override
+        
         public String get() {
             return UUID.randomUUID().toString();
         }

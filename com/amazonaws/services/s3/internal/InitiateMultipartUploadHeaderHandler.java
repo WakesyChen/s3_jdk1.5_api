@@ -19,7 +19,7 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 
 public class InitiateMultipartUploadHeaderHandler implements HeaderHandler<InitiateMultipartUploadResult> {
-    @Override
+    
     public void handle(InitiateMultipartUploadResult result, HttpResponse response) {
         result.setAbortDate(ServiceUtils.parseRfc822Date(response.getHeaders().get(Headers.ABORT_DATE)));
         result.setAbortRuleId(response.getHeaders().get(Headers.ABORT_RULE_ID));

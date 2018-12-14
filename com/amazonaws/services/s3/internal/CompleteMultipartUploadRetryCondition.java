@@ -46,7 +46,7 @@ public class CompleteMultipartUploadRetryCondition implements RetryPolicy.RetryC
         this.maxCompleteMultipartUploadRetries = maxRetryAttempts;
     }
 
-    @Override
+    
     public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
                                AmazonClientException exception, int retriesAttempted) {
 

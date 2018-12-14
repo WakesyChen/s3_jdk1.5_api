@@ -38,7 +38,7 @@ public class CredentialsLegacyConfigLocationProvider extends AwsDirectoryBasePat
      */
     private static final String LEGACY_CONFIG_PROFILES_FILENAME = "config";
 
-    @Override
+    
     public File getLocation() {
         File legacyConfigProfiles = new File(getAwsDirectory(), LEGACY_CONFIG_PROFILES_FILENAME);
         if (legacyConfigProfiles.exists() && legacyConfigProfiles.isFile()) {

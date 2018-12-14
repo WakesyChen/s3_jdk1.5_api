@@ -34,7 +34,7 @@ import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
  */
 @ThreadSafe
 public final class EnvironmentVariableCsmConfigurationProvider implements CsmConfigurationProvider {
-    @Override
+    
     public CsmConfiguration getConfiguration() {
         String enabled = System.getenv(AWS_CSM_ENABLED_ENV_VAR);
 

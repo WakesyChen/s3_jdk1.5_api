@@ -35,22 +35,22 @@ public class ClientExecutionAbortTrackerTaskImpl implements ClientExecutionAbort
         this.future = ValidationUtils.assertNotNull(future, "future");
     }
 
-    @Override
+    
     public void setCurrentHttpRequest(HttpRequestBase newRequest) {
         task.setCurrentHttpRequest(newRequest);
     }
 
-    @Override
+    
     public boolean hasTimeoutExpired() {
         return task.hasClientExecutionAborted();
     }
 
-    @Override
+    
     public boolean isEnabled() {
         return task.isEnabled();
     }
 
-    @Override
+    
     public void cancelTask() {
         // Ensure task is canceled even if it's running as we don't want the Thread to be
         // interrupted in the caller's code

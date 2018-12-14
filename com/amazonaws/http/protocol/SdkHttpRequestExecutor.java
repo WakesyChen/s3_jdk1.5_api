@@ -35,7 +35,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
  * of the http client library, with no retries involved.
  */
 public class SdkHttpRequestExecutor extends HttpRequestExecutor {
-    @Override
+    
     protected HttpResponse doSendRequest(
         final HttpRequest request,
         final HttpClientConnection conn,
@@ -66,7 +66,7 @@ public class SdkHttpRequestExecutor extends HttpRequestExecutor {
         }
     }
 
-    @Override
+    
     protected HttpResponse doReceiveResponse(
         final HttpRequest          request,
         final HttpClientConnection conn,

@@ -301,7 +301,7 @@ public class S3Location implements Serializable, Cloneable {
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -347,7 +347,7 @@ public class S3Location implements Serializable, Cloneable {
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
@@ -363,7 +363,7 @@ public class S3Location implements Serializable, Cloneable {
         return hashCode;
     }
 
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -387,7 +387,7 @@ public class S3Location implements Serializable, Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public S3Location clone() {
         try {
             return (S3Location) super.clone();

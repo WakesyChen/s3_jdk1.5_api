@@ -36,7 +36,7 @@ public class RetryOnStatusCodeCondition implements RetryCondition {
      * @return True if the HTTP status code matches one of the provided status codes. False if it doesn't match or the request
      * failed for reasons other than an exceptional HTTP response (i.e. IOException).
      */
-    @Override
+    
     public boolean shouldRetry(RetryPolicyContext context) {
         if (context.httpStatusCode() != null) {
             for (Integer statusCode : statusCodesToRetryOn) {

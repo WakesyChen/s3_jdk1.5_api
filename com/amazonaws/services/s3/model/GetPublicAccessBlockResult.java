@@ -48,7 +48,7 @@ public class GetPublicAccessBlockResult implements Serializable, Cloneable {
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -62,7 +62,7 @@ public class GetPublicAccessBlockResult implements Serializable, Cloneable {
         return publicAccessBlockConfiguration != null ? publicAccessBlockConfiguration.equals(that.publicAccessBlockConfiguration) : that.publicAccessBlockConfiguration == null;
     }
 
-    @Override
+    
     public int hashCode() {
         return publicAccessBlockConfiguration != null ? publicAccessBlockConfiguration.hashCode() : 0;
     }
@@ -73,7 +73,7 @@ public class GetPublicAccessBlockResult implements Serializable, Cloneable {
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -84,7 +84,7 @@ public class GetPublicAccessBlockResult implements Serializable, Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public GetPublicAccessBlockResult clone() {
         try {
             return (GetPublicAccessBlockResult) super.clone();

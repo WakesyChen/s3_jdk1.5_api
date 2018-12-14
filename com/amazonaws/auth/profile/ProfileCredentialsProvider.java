@@ -127,7 +127,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
         }
     }
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         if (profilesConfigFile == null) {
             synchronized (this) {
@@ -161,7 +161,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
         return profilesConfigFile.getCredentials(profileName);
     }
 
-    @Override
+    
     public void refresh() {
         if (profilesConfigFile != null) {
             profilesConfigFile.refresh();

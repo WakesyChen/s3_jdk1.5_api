@@ -692,7 +692,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * Returns the server-side encryption algorithm when encrypting the object
      * using AWS-managed keys .
      */
-    @Override
+    
     public String getSSEAlgorithm() {
         return (String)metadata.get(Headers.SERVER_SIDE_ENCRYPTION);
     }
@@ -713,7 +713,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      *            The server-side encryption algorithm when encrypting the
      *            object using AWS-managed keys .
      */
-    @Override
+    
     public void setSSEAlgorithm(String algorithm) {
         metadata.put(Headers.SERVER_SIDE_ENCRYPTION, algorithm);
     }
@@ -730,7 +730,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     /**
      * {@inheritDoc}
      */
-    @Override
+    
     public String getSSECustomerAlgorithm() {
         return (String) metadata.get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM);
     }
@@ -740,7 +740,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * object after receiving the value in a response from S3. When sending
      * requests, use {@link SSECustomerKey} members in request objects.
      */
-    @Override
+    
     public void setSSECustomerAlgorithm(String algorithm) {
         metadata.put(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, algorithm);
     }
@@ -748,7 +748,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     /**
      * {@inheritDoc}
      */
-    @Override
+    
     public String getSSECustomerKeyMd5() {
         return (String)metadata.get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5);
     }
@@ -891,12 +891,12 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
                 .get(Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID);
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return metadata.get(Headers.REQUESTER_CHARGED_HEADER) != null;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         if (isRequesterCharged) {
             metadata.put(Headers.REQUESTER_CHARGED_HEADER, Constants.REQUESTER_PAYS);

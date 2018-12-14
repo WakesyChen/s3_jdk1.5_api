@@ -46,12 +46,12 @@ public class ProfileAssumeRoleCredentialsProvider implements AWSCredentialsProvi
         this.assumeRoleCredentialsProvider = fromAssumeRole();
     }
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         return assumeRoleCredentialsProvider.getCredentials();
     }
 
-    @Override
+    
     public void refresh() {
     }
 

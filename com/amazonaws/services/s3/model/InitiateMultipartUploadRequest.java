@@ -439,7 +439,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
         return this;
     }
 
-    @Override
+    
     public SSECustomerKey getSSECustomerKey() {
         return sseCustomerKey;
     }
@@ -482,7 +482,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * Returns the AWS Key Management System parameters used to encrypt the
      * object on server side.
      */
-    @Override
+    
     public SSEAwsKeyManagementParams getSSEAwsKeyManagementParams() {
         return sseAwsKeyManagementParams;
     }

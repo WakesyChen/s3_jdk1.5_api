@@ -99,7 +99,7 @@ public final class AmazonS3EncryptionClientBuilder extends AmazonS3Builder<Amazo
      *
      * @return Fully configured implementation of AmazonS3Encryption.
      */
-    @Override
+    
     protected AmazonS3Encryption build(AwsSyncClientParams clientParams) {
         return new AmazonS3EncryptionClient(
                 new AmazonS3EncryptionClientParamsWrapper(clientParams,

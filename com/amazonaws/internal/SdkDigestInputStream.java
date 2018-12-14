@@ -29,7 +29,7 @@ public class SdkDigestInputStream extends DigestInputStream implements
         super(stream, digest);
     }
 
-    @Override
+    
     public final boolean isMetricActivated() {
         if (in instanceof MetricAware) {
             MetricAware metricAware = (MetricAware)in;
@@ -63,7 +63,7 @@ public class SdkDigestInputStream extends DigestInputStream implements
      *                if the stream does not support seek, or if some other I/O
      *                error occurs.
      */
-    @Override
+    
     public final long skip(final long n) throws IOException {
         if (n <= 0)
             return n;
@@ -79,7 +79,7 @@ public class SdkDigestInputStream extends DigestInputStream implements
         return n;
     }
 
-    @Override
+    
     public final void release() {
         // Don't call IOUtils.release(in, null) or else could lead to infinite loop
         SdkIOUtils.closeQuietly(this);

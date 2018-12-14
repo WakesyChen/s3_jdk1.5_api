@@ -33,7 +33,7 @@ public class ClientExecutionAbortTaskImpl implements ClientExecutionAbortTask {
         this.thread = thread;
     }
 
-    @Override
+    
     public void run() {
         hasTaskExecuted = true;
         if (!thread.isInterrupted()) {
@@ -52,7 +52,7 @@ public class ClientExecutionAbortTaskImpl implements ClientExecutionAbortTask {
         return hasTaskExecuted;
     }
 
-    @Override
+    
     public boolean isEnabled() {
         return true;
     }

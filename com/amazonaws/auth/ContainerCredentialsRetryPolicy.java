@@ -39,7 +39,7 @@ class ContainerCredentialsRetryPolicy implements CredentialsEndpointRetryPolicy 
         return instance;
     }
 
-    @Override
+    
     public boolean shouldRetry(int retriesAttempted, CredentialsEndpointRetryParameters retryParams) {
         if (retriesAttempted >= MAX_RETRIES) {
             return false;

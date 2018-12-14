@@ -45,7 +45,7 @@ public abstract class RequestMetricCollector {
 
     /** A convenient instance of a no-op request metric collector. */
     public static final RequestMetricCollector NONE = new RequestMetricCollector() {
-        @Override public void collectMetrics(Request<?> request, Response<?> response) {}
-        @Override public boolean isEnabled() { return false; }
+         public void collectMetrics(Request<?> request, Response<?> response) {}
+         public boolean isEnabled() { return false; }
     };
 }

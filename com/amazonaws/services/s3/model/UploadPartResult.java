@@ -88,12 +88,12 @@ public class UploadPartResult extends SSEResultBase
         return new PartETag(partNumber, eTag);
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

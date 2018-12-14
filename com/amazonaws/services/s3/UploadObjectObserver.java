@@ -144,7 +144,7 @@ public class UploadObjectObserver {
         final OnFileDelete fileDeleteObserver = event.getFileDeleteObserver();
         appendUserAgent(reqUploadPart, AmazonS3EncryptionClient.USER_AGENT);
         futures.add(es.submit(new Callable<UploadPartResult>() {
-            @Override public UploadPartResult call() {
+             public UploadPartResult call() {
                 // Upload the ciphertext directly via the non-encrypting
                 // s3 client
                 try {

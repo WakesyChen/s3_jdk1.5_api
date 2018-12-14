@@ -33,7 +33,7 @@ public final class MetricsPrefixPredicate extends MetricsFilterPredicate {
         return prefix;
     }
 
-    @Override
+    
     public void accept(MetricsPredicateVisitor metricsPredicateVisitor) {
         metricsPredicateVisitor.visit(this);
     }

@@ -122,7 +122,7 @@ public class SetBucketReplicationConfigurationRequest extends
         return this;
     }
 
-    @Override
+    
     public String toString() {
         return Jackson.toJsonString(this);
     }

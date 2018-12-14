@@ -32,7 +32,7 @@ import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_AWS_CSM_PORT;
  */
 @ThreadSafe
 public final class SystemPropertyCsmConfigurationProvider implements CsmConfigurationProvider {
-   @Override
+   
     public CsmConfiguration getConfiguration() throws SdkClientException {
         String enabled = System.getProperty(AWS_CSM_ENABLED_SYSTEM_PROPERTY);
 

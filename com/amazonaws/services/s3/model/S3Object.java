@@ -218,19 +218,19 @@ public class S3Object implements Closeable,Serializable, S3RequesterChargedResul
      *
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    
     public void close() throws IOException {
         InputStream is = getObjectContent();
         if (is != null)
             is.close();
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

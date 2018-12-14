@@ -34,12 +34,12 @@ class AmazonS3ClientParamsWrapper extends AmazonS3ClientParams {
         this.s3ClientOptions = s3ClientOptions;
     }
 
-    @Override
+    
     public AwsSyncClientParams getClientParams() {
         return clientParams;
     }
 
-    @Override
+    
     public S3ClientOptions getS3ClientOptions() {
         return s3ClientOptions;
     }

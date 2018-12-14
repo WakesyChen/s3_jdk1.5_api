@@ -31,7 +31,7 @@ public class XmlUtils {
      */
     private static final ThreadLocal<XMLInputFactory> xmlInputFactory = SdkThreadLocalsRegistry.register(
             new ThreadLocal<XMLInputFactory>() {
-                @Override
+                
                 protected XMLInputFactory initialValue() {
                     return createXmlInputFactory();
                 }

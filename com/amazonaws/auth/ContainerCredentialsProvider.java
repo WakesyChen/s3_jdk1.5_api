@@ -67,12 +67,12 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
         this.credentialsFetcher = new EC2CredentialsFetcher(credentialsEndpointProvider);
     }
 
-    @Override
+    
     public AWSCredentials getCredentials() {
         return credentialsFetcher.getCredentials();
     }
 
-    @Override
+    
     public void refresh() {
         credentialsFetcher.refresh();
     }
@@ -83,7 +83,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
 
 
     static class ECSCredentialsEndpointProvider extends CredentialsEndpointProvider {
-        @Override
+        
         public URI getCredentialsEndpoint() throws URISyntaxException {
             String path = System.getenv(ECS_CONTAINER_CREDENTIALS_PATH);
             if (path == null) {
@@ -93,7 +93,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
 
             return new URI(ECS_CREDENTIALS_ENDPOINT + path);
         }
-        @Override
+        
         public CredentialsEndpointRetryPolicy getRetryPolicy() {
             return ContainerCredentialsRetryPolicy.getInstance();
         }
@@ -107,7 +107,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
      */
     static class FullUriCredentialsEndpointProvider extends CredentialsEndpointProvider {
 
-        @Override
+        
         public URI getCredentialsEndpoint() throws URISyntaxException {
             String fullUri = System.getenv(CONTAINER_CREDENTIALS_FULL_URI);
             if (fullUri == null || fullUri.length() == 0) {
@@ -125,7 +125,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
             return uri;
         }
 
-        @Override
+        
         public Map<String, String> getHeaders() {
             if (System.getenv(CONTAINER_AUTHORIZATION_TOKEN) != null) {
                 return Collections.singletonMap("Authorization", System.getenv(CONTAINER_AUTHORIZATION_TOKEN));

@@ -149,12 +149,12 @@ public class InitiateMultipartUploadResult extends SSEResultBase
         this.abortRuleId = abortRuleId;
     }
 
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

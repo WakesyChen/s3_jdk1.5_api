@@ -70,7 +70,7 @@ public class ClientHandlerImpl extends ClientHandler {
                 .build();
     }
 
-    @Override
+    
     public <Input, Output> Output execute(
             ClientExecutionParams<Input, Output> executionParams) {
         final Input input = executionParams.getInput();
@@ -107,7 +107,7 @@ public class ClientHandlerImpl extends ClientHandler {
         }
     }
 
-    @Override
+    
     public void shutdown() {
         client.shutdown();
     }

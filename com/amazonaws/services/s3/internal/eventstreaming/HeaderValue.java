@@ -171,7 +171,7 @@ public abstract class HeaderValue {
             this.value = value;
         }
 
-        @Override
+        
         public HeaderType getType() {
             if (value) {
                 return HeaderType.TRUE;
@@ -180,15 +180,15 @@ public abstract class HeaderValue {
             }
         }
 
-        @Override
+        
         public boolean getBoolean() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) {}
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -198,7 +198,7 @@ public abstract class HeaderValue {
             return value == that.value;
         }
 
-        @Override
+        
         public int hashCode() {
             if (value) {
                 return 1;
@@ -207,7 +207,7 @@ public abstract class HeaderValue {
             }
         }
 
-        @Override
+        
         public String toString() {
             return String.valueOf(value);
         }
@@ -220,20 +220,20 @@ public abstract class HeaderValue {
             this.value = value;
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.BYTE;
         }
 
-        @Override
+        
         public byte getByte() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) {}
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -243,12 +243,12 @@ public abstract class HeaderValue {
             return value == that.value;
         }
 
-        @Override
+        
         public int hashCode() {
             return (int) value;
         }
 
-        @Override
+        
         public String toString() {
             return String.valueOf(value);
         }
@@ -261,20 +261,20 @@ public abstract class HeaderValue {
             this.value = value;
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.SHORT;
         }
 
-        @Override
+        
         public short getShort() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) {}
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -284,12 +284,12 @@ public abstract class HeaderValue {
             return value == that.value;
         }
 
-        @Override
+        
         public int hashCode() {
             return (int) value;
         }
 
-        @Override
+        
         public String toString() {
             return String.valueOf(value);
         }
@@ -302,22 +302,22 @@ public abstract class HeaderValue {
             this.value = value;
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.INTEGER;
         }
 
-        @Override
+        
         public int getInteger() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) throws IOException {
             dos.writeInt(value);
         }
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -327,12 +327,12 @@ public abstract class HeaderValue {
             return value == that.value;
         }
 
-        @Override
+        
         public int hashCode() {
             return value;
         }
 
-        @Override
+        
         public String toString() {
             return String.valueOf(value);
         }
@@ -345,22 +345,22 @@ public abstract class HeaderValue {
             this.value = value;
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.LONG;
         }
 
-        @Override
+        
         public long getLong() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) throws IOException {
             dos.writeLong(value);
         }
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -370,12 +370,12 @@ public abstract class HeaderValue {
             return value == longValue.value;
         }
 
-        @Override
+        
         public int hashCode() {
             return (int) (value ^ (value >>> 32));
         }
 
-        @Override
+        
         public String toString() {
             return String.valueOf(value);
         }
@@ -388,22 +388,22 @@ public abstract class HeaderValue {
             this.value = ValidationUtils.assertNotNull(value, "value");
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.BYTE_ARRAY;
         }
 
-        @Override
+        
         public byte[] getByteArray() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) throws IOException {
             writeBytes(dos, value);
         }
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -413,12 +413,12 @@ public abstract class HeaderValue {
             return Arrays.equals(value, that.value);
         }
 
-        @Override
+        
         public int hashCode() {
             return Arrays.hashCode(value);
         }
 
-        @Override
+        
         public String toString() {
             return Base64.encodeAsString(value);
         }
@@ -431,22 +431,22 @@ public abstract class HeaderValue {
             this.value = ValidationUtils.assertNotNull(value, "value");
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.STRING;
         }
 
-        @Override
+        
         public String getString() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) throws IOException {
             writeString(dos, value);
         }
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -456,12 +456,12 @@ public abstract class HeaderValue {
             return value.equals(that.value);
         }
 
-        @Override
+        
         public int hashCode() {
             return value.hashCode();
         }
 
-        @Override
+        
         public String toString() {
             return '"' + value + '"';
         }
@@ -479,22 +479,22 @@ public abstract class HeaderValue {
             return new TimestampValue(new DateTime(epochMillis));
         }
 
-        @Override
+        
         public HeaderType getType() {
             return TIMESTAMP;
         }
 
-        @Override
+        
         public DateTime getTimestamp() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) throws IOException {
             dos.writeLong(value.getMillis());
         }
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -504,12 +504,12 @@ public abstract class HeaderValue {
             return value.equals(that.value);
         }
 
-        @Override
+        
         public int hashCode() {
             return value.hashCode();
         }
 
-        @Override
+        
         public String toString() {
             return value.toString();
         }
@@ -528,23 +528,23 @@ public abstract class HeaderValue {
             return new UuidValue(new UUID(msb, lsb));
         }
 
-        @Override
+        
         public HeaderType getType() {
             return HeaderType.UUID;
         }
 
-        @Override
+        
         public UUID getUuid() {
             return value;
         }
 
-        @Override
+        
         void encodeValue(DataOutputStream dos) throws IOException {
             dos.writeLong(value.getMostSignificantBits());
             dos.writeLong(value.getLeastSignificantBits());
         }
 
-        @Override
+        
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -554,12 +554,12 @@ public abstract class HeaderValue {
             return value.equals(uuidValue.value);
         }
 
-        @Override
+        
         public int hashCode() {
             return value.hashCode();
         }
 
-        @Override
+        
         public String toString() {
             return value.toString();
         }

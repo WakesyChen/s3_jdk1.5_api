@@ -57,7 +57,7 @@ public class SourceSelectionCriteria implements Serializable, Cloneable {
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -68,7 +68,7 @@ public class SourceSelectionCriteria implements Serializable, Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -92,7 +92,7 @@ public class SourceSelectionCriteria implements Serializable, Cloneable {
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
@@ -102,7 +102,7 @@ public class SourceSelectionCriteria implements Serializable, Cloneable {
         return hashCode;
     }
 
-    @Override
+    
     public SourceSelectionCriteria clone() {
         try {
             return (SourceSelectionCriteria) super.clone();

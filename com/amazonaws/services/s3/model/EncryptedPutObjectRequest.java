@@ -55,7 +55,7 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
         super(bucketName, key, input, metadata);
     }
 
-    @Override
+    
     public Map<String, String> getMaterialsDescription() {
         return materialsDescription;
     }
@@ -83,7 +83,7 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
     /**
      * Returns a clone (as deep as possible) of this request object.
      */
-    @Override
+    
     public EncryptedPutObjectRequest clone() {
         EncryptedPutObjectRequest cloned = (EncryptedPutObjectRequest) super.clone();
         final Map<String, String> materialsDescription = getMaterialsDescription();

@@ -27,7 +27,7 @@ public class ServerSideEncryptionHeaderHandler <T extends ServerSideEncryptionRe
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object, com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public void handle(T result, HttpResponse response) {
         result.setSSEAlgorithm(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION));
         result.setSSECustomerAlgorithm(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM));

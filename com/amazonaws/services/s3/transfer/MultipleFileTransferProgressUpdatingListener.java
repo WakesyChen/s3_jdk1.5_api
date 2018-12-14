@@ -35,13 +35,13 @@ final class MultipleFileTransferProgressUpdatingListener extends
         this.progressListenerChain = progressListenerChain;
     }
 
-    @Override
+    
     public void progressChanged(ProgressEvent progressEvent) {
         super.progressChanged(progressEvent);
         progressListenerChain.progressChanged(progressEvent);
     }
 
-    @Override
+    
     public boolean isSyncCallSafe() {
         return progressListenerChain == null
             || progressListenerChain.isSyncCallSafe();

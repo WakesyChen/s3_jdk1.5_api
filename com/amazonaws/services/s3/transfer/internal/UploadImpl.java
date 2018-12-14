@@ -73,7 +73,7 @@ public class UploadImpl extends AbstractTransfer implements Upload {
      *
      * @see com.amazonaws.services.s3.transfer.Upload#pause()
      */
-    @Override
+    
     public PersistableUpload pause() throws PauseException {
         PauseResult<PersistableUpload> pauseResult = pause(true);
         if (pauseResult.getPauseStatus() != PauseStatus.SUCCESS) {
@@ -97,7 +97,7 @@ public class UploadImpl extends AbstractTransfer implements Upload {
      *
      * @see com.amazonaws.services.s3.transfer.Upload#tryPause(boolean)
      */
-    @Override
+    
     public PauseResult<PersistableUpload> tryPause(boolean forceCancelTransfers) {
         return pause(forceCancelTransfers);
     }
@@ -107,7 +107,7 @@ public class UploadImpl extends AbstractTransfer implements Upload {
      *
      * @see com.amazonaws.services.s3.transfer.Upload#abort()
      */
-    @Override
+    
     public void abort() {
         UploadMonitor uploadMonitor = (UploadMonitor) monitor;
         uploadMonitor.performAbort();

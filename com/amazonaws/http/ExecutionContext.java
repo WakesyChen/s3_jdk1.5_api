@@ -75,7 +75,7 @@ public class ExecutionContext {
         awsRequestMetrics = isMetricEnabled ? new AWSRequestMetricsFullSupport() : new AWSRequestMetrics();
         this.awsClient = awsClient;
         this.signerProvider = new SignerProvider() {
-            @Override
+            
             public Signer getSigner(SignerProviderContext context) {
                 return getSignerByURI(context.getUri());
             }

@@ -41,7 +41,7 @@ public final class SignerAsRequestSigner implements RequestSigner {
     /**
      * @see RequestSigner#sign(SignableRequest)
      */
-    @Override
+    
     public void sign(SignableRequest<?> request) {
         signer.sign(request, credentialsProvider.getCredentials());
     }

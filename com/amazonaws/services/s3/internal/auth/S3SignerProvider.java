@@ -40,7 +40,7 @@ public class S3SignerProvider extends SignerProvider {
         this.signer = defaultSigner;
     }
 
-    @Override
+    
     public Signer getSigner(SignerProviderContext signerProviderContext) {
         URI uri = signerProviderContext.getUri();
 

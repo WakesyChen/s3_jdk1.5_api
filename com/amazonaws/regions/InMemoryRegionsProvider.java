@@ -38,12 +38,12 @@ public class InMemoryRegionsProvider extends AbstractRegionMetadataProvider {
                 (regions));
     }
 
-    @Override
+    
     public List<Region> getRegions() {
         return Collections.unmodifiableList(new ArrayList<Region>(regions));
     }
 
-    @Override
+    
     public Region getRegion(String regionName) {
         for (Region region : regions) {
             if (region.getName().equals(regionName)) {
@@ -53,7 +53,7 @@ public class InMemoryRegionsProvider extends AbstractRegionMetadataProvider {
         return null;
     }
 
-    @Override
+    
     public List<Region> getRegionsForService(String serviceName) {
         final List<Region> results = new LinkedList<Region>();
 
@@ -66,7 +66,7 @@ public class InMemoryRegionsProvider extends AbstractRegionMetadataProvider {
         return results;
     }
 
-    @Override
+    
     public String toString() {
         return regions.toString();
     }

@@ -92,7 +92,7 @@ public class RegionMetadata {
         return provider.getRegionByEndpoint(endpoint);
     }
 
-    @Override
+    
     public String toString() {
         return provider.toString();
     }

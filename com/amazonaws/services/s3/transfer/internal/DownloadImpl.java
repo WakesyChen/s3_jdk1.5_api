@@ -159,7 +159,7 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      * This method is also responsible for firing COMPLETED signal to the
      * listeners.
      */
-    @Override
+    
     public void setState(TransferState state) {
         super.setState(state);
 
@@ -200,7 +200,7 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      *
      * @see com.amazonaws.services.s3.transfer.Download#pause()
      */
-    @Override
+    
     public PersistableDownload pause() throws PauseException {
         boolean forceCancel = true;
         TransferState currentState = getState();

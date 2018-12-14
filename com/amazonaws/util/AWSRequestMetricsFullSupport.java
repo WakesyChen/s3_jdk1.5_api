@@ -79,14 +79,14 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
      * 
      * @see AwsSdkMetrics
      */
-    @Override
+    
     public void startEvent(String eventName) {
         /* This will overwrite past events */
         eventsBeingProfiled.put
             (eventName, TimingInfo.startTimingFullSupport(System.currentTimeMillis(), System.nanoTime()));
     }
 
-    @Override
+    
     public void startEvent(MetricType f) {
         startEvent(f.name());
     }
@@ -99,7 +99,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
      * @param eventName
      *            - The name of the event to start
      */
-    @Override
+    
     public void endEvent(String eventName) {
         TimingInfo event = eventsBeingProfiled.get(eventName);
         /* Somebody tried to end an event that was not started. */
@@ -117,7 +117,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
                 event.getEndTimeNano()));
     }
 
-    @Override
+    
     public void endEvent(MetricType f) {
         endEvent(f.name());
     }
@@ -134,22 +134,22 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
      * @param event
      *            - The name of the event to count
      */
-    @Override
+    
     public void incrementCounter(String event) {
         timingInfo.incrementCounter(event);
     }
 
-    @Override
+    
     public void incrementCounter(MetricType f) {
         incrementCounter(f.name());
     }
     
-    @Override
+    
     public void setCounter(String counterName, long count) {
         timingInfo.setCounter(counterName, count);
     }
 
-    @Override
+    
     public void setCounter(MetricType f, long count) {
         setCounter(f.name(), count);
     }
@@ -168,7 +168,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
      * @param value
      *            The property value
      */
-    @Override
+    
     public void addProperty(String propertyName, Object value) {
         List<Object> propertyList = properties.get(propertyName);
         if (propertyList == null) {
@@ -179,12 +179,12 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
         propertyList.add(value);
     }
 
-    @Override
+    
     public void addProperty(MetricType f, Object value) {
         addProperty(f.name(), value);
     }
 
-    @Override
+    
     public void log() {
         if (latencyLogger.isDebugEnabled()) {
             StringBuilder builder = new StringBuilder();
@@ -209,18 +209,18 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
         builder.append(key).append(KEY_VALUE_SEPARATOR).append(value).append(COMMA_SEPARATOR);
     }
 
-    @Override
+    
     public List<Object> getProperty(String propertyName){
     	return properties.get(propertyName);
     }
 
-    @Override
+    
     public List<Object> getProperty(MetricType f){
         return getProperty(f.name());
     }
 
     /** Always returns true. */
-    @Override
+    
     public final boolean isEnabled() {
         return true;
     }

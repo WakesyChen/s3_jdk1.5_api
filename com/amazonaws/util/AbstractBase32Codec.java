@@ -34,7 +34,7 @@ abstract class AbstractBase32Codec implements Codec {
         this.alphabets = alphabets;
     }
 
-    @Override
+    
     public final byte[] encode(byte[] src) {
         final int num5bytes = src.length / 5;
         final int remainder = src.length % 5;
@@ -227,7 +227,7 @@ abstract class AbstractBase32Codec implements Codec {
         return;
     }
     
-    @Override
+    
     public final byte[] decode(byte[] src, final int length) 
     {
         if (length % 8 != 0)

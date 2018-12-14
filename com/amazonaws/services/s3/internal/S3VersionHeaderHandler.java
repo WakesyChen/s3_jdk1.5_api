@@ -30,7 +30,7 @@ public class S3VersionHeaderHandler<T extends S3VersionResult> implements Header
      * com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object,
      * com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public void handle(T result, HttpResponse response) {
         result.setVersionId(response.getHeaders().get(Headers.S3_VERSION_ID));
     }

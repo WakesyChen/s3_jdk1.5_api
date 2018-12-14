@@ -28,5 +28,5 @@ public abstract class S3SyncProgressListener extends SyncProgressListener
      * {@link #onPersistableTransfer(com.amazonaws.services.s3.transfer.PersistableTransfer)}
      * is.
      */
-    @Override public void progressChanged(ProgressEvent progressEvent) {}
+     public void progressChanged(ProgressEvent progressEvent) {}
 }

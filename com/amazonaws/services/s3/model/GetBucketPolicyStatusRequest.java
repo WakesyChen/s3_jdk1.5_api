@@ -49,7 +49,7 @@ public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implem
         return this;
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -63,7 +63,7 @@ public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implem
         return bucketName != null ? bucketName.equals(that.bucketName) : that.bucketName == null;
     }
 
-    @Override
+    
     public int hashCode() {
         return bucketName != null ? bucketName.hashCode() : 0;
     }
@@ -74,7 +74,7 @@ public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implem
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -85,7 +85,7 @@ public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implem
         return sb.toString();
     }
 
-    @Override
+    
     public GetBucketPolicyStatusRequest clone() {
         return (GetBucketPolicyStatusRequest) super.clone();
     }

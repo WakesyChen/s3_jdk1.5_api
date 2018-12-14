@@ -29,12 +29,12 @@ public class HttpFailureStatusAcceptor<Output> extends WaiterAcceptor<Output> {
         this.waiterState = waiterState;
     }
 
-    @Override
+    
     public boolean matches(AmazonServiceException ase) {
         return expectedStatusCode == ase.getStatusCode();
     }
 
-    @Override
+    
     public WaiterState getState() {
         return waiterState;
     }

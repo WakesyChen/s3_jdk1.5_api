@@ -69,7 +69,7 @@ public class CompleteMultipartCopy implements Callable<CopyResult> {
         this.monitor = monitor;
     }
 
-    @Override
+    
     public CopyResult call() throws Exception {
         CompleteMultipartUploadResult res;
 

@@ -47,7 +47,7 @@ public final class InstructionFileId extends S3ObjectId {
      * Always throws {@link UnsupportedOperationException} since an instruction
      * file itself cannot further have an instruction file.
      */
-    @Override
+    
     public InstructionFileId instructionFileId() {
         throw new UnsupportedOperationException();
     }
@@ -56,7 +56,7 @@ public final class InstructionFileId extends S3ObjectId {
      * Always throws {@link UnsupportedOperationException} since an instruction
      * file itself cannot further have an instruction file.
      */
-    @Override
+    
     public InstructionFileId instructionFileId(String suffix) {
         throw new UnsupportedOperationException();
     }

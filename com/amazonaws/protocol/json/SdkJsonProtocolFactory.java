@@ -49,12 +49,12 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
         createErrorUnmarshallers();
     }
 
-    @Override
+    
     public StructuredJsonGenerator createGenerator() {
         return getSdkFactory().createWriter(getContentType());
     }
 
-    @Override
+    
     public String getContentType() {
         return getContentTypeResolver().resolveContentType(metadata);
     }

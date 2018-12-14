@@ -40,7 +40,7 @@ public class AbortedException extends SdkClientException {
      * {@inheritDoc}
      * An aborted exception is not intended to be retried.
      */
-    @Override
+    
     public boolean isRetryable() {
         return false;
     }

@@ -365,7 +365,7 @@ public class RoleInfo implements Cloneable {
      * @return A string representation of this object.
      * @see java.lang.Object#toString()
      */
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -379,7 +379,7 @@ public class RoleInfo implements Cloneable {
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
@@ -411,7 +411,7 @@ public class RoleInfo implements Cloneable {
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
@@ -429,7 +429,7 @@ public class RoleInfo implements Cloneable {
         return hashCode;
     }
 
-    @Override
+    
     public RoleInfo clone() {
         try {
             return (RoleInfo) super.clone();

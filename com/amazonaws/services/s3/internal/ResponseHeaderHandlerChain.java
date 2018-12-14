@@ -39,7 +39,7 @@ public class ResponseHeaderHandlerChain <T> extends S3XmlResponseHandler<T> {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.internal.S3XmlResponseHandler#handle(com.amazonaws.http.HttpResponse)
      */
-    @Override
+    
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         AmazonWebServiceResponse<T> awsResponse = super.handle(response);
         

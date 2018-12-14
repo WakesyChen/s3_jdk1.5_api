@@ -34,12 +34,12 @@ public class NullAsEmptyBodyProtocolRequestMarshaller<OrigRequest> implements Pr
         this.delegate = delegate;
     }
 
-    @Override
+    
     public void startMarshalling() {
         delegate.startMarshalling();
     }
 
-    @Override
+    
     public <V> void marshall(V val, MarshallingInfo<V> marshallingInfo) {
         // If the payload member is null then don't marshall it (since it will become an explicit null)
         if (marshallingInfo.isExplicitPayloadMember() && val == null) {
@@ -48,7 +48,7 @@ public class NullAsEmptyBodyProtocolRequestMarshaller<OrigRequest> implements Pr
         delegate.marshall(val, marshallingInfo);
     }
 
-    @Override
+    
     public Request<OrigRequest> finishMarshalling() {
         return delegate.finishMarshalling();
     }

@@ -191,7 +191,7 @@ public class SelectObjectContentEventStream implements Closeable {
     private class SelectEventIterator extends LazyLoadedIterator<SelectObjectContentEvent> {
         private final MessageDecoder decoder = new MessageDecoder();
 
-        @Override
+        
         protected Collection<SelectObjectContentEvent> getNext() throws IOException {
             List<SelectObjectContentEvent> next = new ArrayList<SelectObjectContentEvent>();
             byte[] payload = new byte[256];
@@ -230,7 +230,7 @@ public class SelectObjectContentEventStream implements Closeable {
             this.additionalVisitor = additionalVisitor;
         }
 
-        @Override
+        
         protected Collection<? extends InputStream> getNext() {
             // Always return a single empty input stream at first. This allows the user to wrap this in a sequence input stream
             // without taking forever to initialize (sequence input streams are not lazily loaded).
@@ -249,7 +249,7 @@ public class SelectObjectContentEventStream implements Closeable {
 
                 // Create an input stream to the content of any records events we find.
                 event.visit(new SelectObjectContentEventVisitor() {
-                    @Override
+                    
                     public void visit(RecordsEvent event) {
                         ByteBuffer records = event.getPayload();
                         if (records != null) {
@@ -268,12 +268,12 @@ public class SelectObjectContentEventStream implements Closeable {
             return result;
         }
 
-        @Override
+        
         public boolean hasMoreElements() {
             return super.hasNext();
         }
 
-        @Override
+        
         public InputStream nextElement() {
             return super.next();
         }
@@ -287,13 +287,13 @@ public class SelectObjectContentEventStream implements Closeable {
         private final Queue<T> next = new ArrayDeque<T>();
         private boolean isDone = false;
 
-        @Override
+        
         public boolean hasNext() {
             advanceIfNeeded();
             return !isDone;
         }
 
-        @Override
+        
         public T next() {
             advanceIfNeeded();
 
@@ -304,7 +304,7 @@ public class SelectObjectContentEventStream implements Closeable {
             return next.poll();
         }
 
-        @Override
+        
         public void remove() {
             throw new UnsupportedOperationException();
         }

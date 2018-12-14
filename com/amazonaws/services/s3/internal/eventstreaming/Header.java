@@ -55,7 +55,7 @@ class Header {
         value.encode(dos);
     }
 
-    @Override
+    
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -66,14 +66,14 @@ class Header {
         return value.equals(header.value);
     }
 
-    @Override
+    
     public int hashCode() {
         int result = name.hashCode();
         result = 31 * result + value.hashCode();
         return result;
     }
 
-    @Override
+    
     public String toString() {
         return "Header{"
             + "name='" + name + '\''

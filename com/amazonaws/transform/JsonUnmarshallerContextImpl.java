@@ -107,26 +107,26 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         this.httpResponse = httpResponse;
     }
 
-    @Override
+    
     public String getHeader(String header) {
         if (httpResponse == null) return null;
 
         return httpResponse.getHeaders().get(header);
     }
 
-    @Override
+    
     public HttpResponse getHttpResponse() {
         return httpResponse;
     }
 
-    @Override
+    
     public int getCurrentDepth() {
         int depth = stack.size();
         if (currentField != null) depth++;
         return depth;
     }
 
-    @Override
+    
     public String readText() throws IOException {
 
         if (isInsideResponseHeader()) {
@@ -154,17 +154,17 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         }
     }
 
-    @Override
+    
     public boolean isInsideResponseHeader() {
         return currentToken == null && nextToken == null;
     }
 
-    @Override
+    
     public boolean isStartOfDocument() {
         return jsonParser == null || jsonParser.getCurrentToken() == null;
     }
 
-    @Override
+    
     public boolean testExpression(String expression) {
         if (expression.equals(".")) {
             return true;
@@ -178,7 +178,7 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         }
     }
 
-    @Override
+    
     public String getCurrentParentElement() {
         String parentElement;
         if (currentField != null) {
@@ -191,7 +191,7 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         return parentElement;
     }
 
-    @Override
+    
     public boolean testExpression(String expression, int stackDepth) {
         if (expression.equals(".")) {
             return true;
@@ -201,7 +201,7 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         }
     }
 
-    @Override
+    
     public JsonToken nextToken() throws IOException {
         // Use the value from the nextToken field if
         // we've already populated it to peek ahead.
@@ -215,7 +215,7 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         return token;
     }
 
-    @Override
+    
     public JsonToken peek() throws IOException {
         if (nextToken != null) return nextToken;
 
@@ -223,32 +223,32 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         return nextToken;
     }
 
-    @Override
+    
     public JsonParser getJsonParser() {
         return jsonParser;
     }
 
-    @Override
+    
     public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    @Override
+    
     public void setCurrentHeader(String currentHeader) {
         this.currentHeader = currentHeader;
     }
 
-    @Override
+    
     public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type) {
         return (Unmarshaller<T, JsonUnmarshallerContext>) unmarshallerMap.get(type);
     }
 
-    @Override
+    
     public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type, UnmarshallerType unmarshallerType) {
         return (Unmarshaller<T, JsonUnmarshallerContext>) customUnmarshallerMap.get(unmarshallerType);
     }
 
-    @Override
+    
     public JsonToken getCurrentToken() {
         return currentToken;
     }
@@ -283,7 +283,7 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         }
     }
 
-    @Override
+    
     public String toString() {
         StringBuilder stackString = new StringBuilder();
 
@@ -300,7 +300,7 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
         return stackString.length() == 0 ? "/" : stackString.toString();
     }
 
-    @Override
+    
     public String getLastParsedParentElement() {
         return lastParsedParentElement;
     }

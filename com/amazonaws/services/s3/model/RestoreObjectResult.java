@@ -41,12 +41,12 @@ public class RestoreObjectResult implements Serializable, S3RequesterChargedResu
      * @return if the requester is charged for conducting this operation from
      * Requester Pays Buckets.
      */
-    @Override
+    
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    @Override
+    
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }
@@ -54,17 +54,17 @@ public class RestoreObjectResult implements Serializable, S3RequesterChargedResu
     /**
      * @return the path in the provided S3 output location where Select results will be restored to.
      */
-    @Override
+    
     public String getRestoreOutputPath() {
         return restoreOutputPath;
     }
 
-    @Override
+    
     public void setRestoreOutputPath(String restoreOutputPath) {
         this.restoreOutputPath = restoreOutputPath;
     }
 
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
@@ -75,7 +75,7 @@ public class RestoreObjectResult implements Serializable, S3RequesterChargedResu
         return sb.toString();
     }
 
-    @Override
+    
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -95,7 +95,7 @@ public class RestoreObjectResult implements Serializable, S3RequesterChargedResu
         return true;
     }
 
-    @Override
+    
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;

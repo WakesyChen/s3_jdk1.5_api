@@ -137,7 +137,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.threadPool = threadPool;
     }
 
-    @Override
+    
     public UploadResult call() throws Exception {
         try {
             UploadResult result = multipartUploadCallable.call();

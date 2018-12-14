@@ -321,7 +321,7 @@ public class ReplicationRule implements Serializable {
         return this;
     }
 
-    @Override
+    
     public String toString() {
         return Jackson.toJsonString(this);
     }

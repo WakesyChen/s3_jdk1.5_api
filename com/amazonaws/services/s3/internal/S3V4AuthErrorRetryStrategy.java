@@ -61,7 +61,7 @@ public class S3V4AuthErrorRetryStrategy implements AuthErrorRetryStrategy {
         this.sigV4RetryPredicate = isSigV4Retryable;
     }
 
-    @Override
+    
     public AuthRetryParameters shouldRetryWithAuthParam(Request<?> request,
                                                         HttpResponse response,
                                                         AmazonServiceException ase) {

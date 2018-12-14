@@ -173,7 +173,7 @@ public class ProgressEvent {
         legacyEventCodes.put(ProgressEventType.TRANSFER_PART_FAILED_EVENT,       PART_FAILED_EVENT_CODE);
     }
     
-    @Override
+    
     public String toString() {
         return eventType + ", bytes: " + bytes;
     }
