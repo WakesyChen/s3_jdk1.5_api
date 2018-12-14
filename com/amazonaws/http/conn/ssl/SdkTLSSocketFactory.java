@@ -55,7 +55,7 @@ public class SdkTLSSocketFactory extends SSLConnectionSocketFactory {
     private final ShouldClearSslSessionPredicate shouldClearSslSessionsPredicate;
 
     public SdkTLSSocketFactory(final SSLContext sslContext, final HostnameVerifier hostnameVerifier) {
-        super(sslContext, hostnameVerifier);
+        super(sslContext);
         if (sslContext == null) {
             throw new IllegalArgumentException(
                     "sslContext must not be null. " + "Use SSLContext.getDefault() if you are unsure.");

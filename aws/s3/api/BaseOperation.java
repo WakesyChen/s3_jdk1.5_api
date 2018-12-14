@@ -40,7 +40,7 @@ public class BaseOperation {
 				AWSCredentials credentials = new BasicAWSCredentials(access_key, secret_key);
 				ClientConfiguration connconfig = new ClientConfiguration();
 	            connconfig.setProtocol(Protocol.HTTP);
-//	            connconfig.setSignerOverride("S3SignerType");
+	            connconfig.setSignerOverride("S3SignerType");
 	            s3client = new  AmazonS3Client(credentials, connconfig);
 	            s3client.setEndpoint(endpoint);
 	            log.info("Create s3 connection successfully!");

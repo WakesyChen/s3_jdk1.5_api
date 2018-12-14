@@ -16,10 +16,14 @@ import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
+import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
+import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 //import com.amazonaws.services.s3.model.Tag;
@@ -27,7 +31,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 //import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
 //import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 //import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
-
+import com.amazonaws.services.s3.model.ObjectTagging;
 
 import aws.s3.utils.CommonUtils;
 
@@ -133,48 +137,52 @@ public class ObjectOperation extends BaseOperation {
 	    }
 	
 	
-//	/* 设置标签--上传后*/
-//	public static void setTags(String bucket_name, String object_key, List<Tag> new_tags) {
-//		try {
-//		   SetObjectTaggingRequest sotr = new SetObjectTaggingRequest(bucket_name, object_key, null);
-//		   // todo: tag不能增量添加，只能每次拿到之前的，然后全量put
-//		   List<Tag> old_tags = getTags(bucket_name, object_key);
-//		   new_tags.forEach(tag -> log.info("set tag " + tag.getKey() + " : " + tag.getValue()));
-//		   sotr.setTagging(new ObjectTagging(new_tags));
-//		   s3client.setObjectTagging(sotr);
-//		   log.info("set new tag successfully!");
-//			} catch (AmazonServiceException e) {
-//        	 e.printStackTrace();
-//           }
-//	}
+	/* 设置标签--上传后*/
+	public static void setTags(String bucket_name, String object_key, List<Tag> new_tags) {
+		try {
+		   SetObjectTaggingRequest sotr = new SetObjectTaggingRequest(bucket_name, object_key, null);
+		   // todo: tag不能增量添加，只能每次拿到之前的，然后全量put
+		   List<Tag> old_tags = getTags(bucket_name, object_key);
+		   for(Tag tag : old_tags) {
+			   log.info("set tag " + tag.getKey() + " : " + tag.getValue());
+		   }
+		   sotr.setTagging(new ObjectTagging(new_tags));
+		   s3client.setObjectTagging(sotr);
+		   log.info("set new tag successfully!");
+			} catch (AmazonServiceException e) {
+        	 e.printStackTrace();
+           }
+	}
 	
 	
-//	/* 设置标签--上传时*/
-//	public static void setTagsWhenUpload(String bucket_name, String object_key, String file_path,  List<Tag> new_tags) {
-//		try {
-//			PutObjectRequest por = new PutObjectRequest(bucket_name, object_key,  new File(file_path));
-//			por.setTagging(new ObjectTagging(new_tags));
-//			s3client.putObject(por);
-//		   log.info("set new tag successfully!");
-//			} catch (AmazonServiceException e) {
-//        	 e.printStackTrace();
-//           }
-//	}
-//	
-//	
-//	/* 获取标签*/
-//	public static  List<Tag> getTags(String bucket_name, String object_key) {
-//		 List<Tag> tags = null;
-//		try {
-//		   GetObjectTaggingRequest gotr = new GetObjectTaggingRequest(bucket_name, object_key);
-//		   GetObjectTaggingResult result =  s3client.getObjectTagging(gotr);
-//		   tags =  result.getTagSet();
-//		   tags.forEach(tag -> log.info("get tag> " +tag.getKey()+ " : " + tag.getValue()));
-//        } catch (AmazonServiceException e) {
-//        	 e.printStackTrace();
-//           }
-//		return tags;
-//	}
+	/* 设置标签--上传时*/
+	public static void setTagsWhenUpload(String bucket_name, String object_key, String file_path,  List<Tag> new_tags) {
+		try {
+			PutObjectRequest por = new PutObjectRequest(bucket_name, object_key,  new File(file_path));
+			por.setTagging(new ObjectTagging(new_tags));
+			s3client.putObject(por);
+		   log.info("set new tag successfully!");
+			} catch (AmazonServiceException e) {
+        	 e.printStackTrace();
+           }
+	}
+	
+	
+	/* 获取标签*/
+	public static  List<Tag> getTags(String bucket_name, String object_key) {
+		 List<Tag> tags = null;
+		try {
+		   GetObjectTaggingRequest gotr = new GetObjectTaggingRequest(bucket_name, object_key);
+		   GetObjectTaggingResult result =  s3client.getObjectTagging(gotr);
+		   tags =  result.getTagSet();
+		   for(Tag tag : tags) {
+			  log.info("get tag> " +tag.getKey()+ " : " + tag.getValue());
+		   }
+        } catch (AmazonServiceException e) {
+        	 e.printStackTrace();
+           }
+		return tags;
+	}
 	
 	
 	/*设置元数据*/
@@ -223,14 +231,14 @@ public class ObjectOperation extends BaseOperation {
 		String target_file = System.getProperty("user.dir") + "\\test_resource\\common.log_temp";
 		String object_keys[] = {"test_resource/common.log", "test_resource/common.log2"};
 		Map<String, String> data_map = new HashMap<String, String>();
-//		List<Tag> new_tags = new ArrayList<Tag>();
+		List<Tag> new_tags = new ArrayList<Tag>();
 		for(int i =0; i <2; i ++) {
-//			new_tags.add(new Tag("name"+i, "wakesy"+i));
+			new_tags.add(new Tag("name"+i, "wakesy"+i));
 			data_map.put("name"+i, "wakesy"+i);
 		}
 		ObjectOperation object_operation =new ObjectOperation();
 		
-//		putObject(bucket, object_key, local_file); 
+//		putObject(bucket, object_key2, local_file); 
 //		copyObject(bucket, "test_resource/common.log", "wakesy2", "test_resource/common.log4");
 //		getObject(bucket, object_key, target_file);
 //		deleteObject(bucket, object_key2);
@@ -238,10 +246,10 @@ public class ObjectOperation extends BaseOperation {
 //		getMetaData(bucket, object_key, "name");
 		
 //		setTags(bucket, object_key, new_tags);  
-//		setTagsWhenUpload(bucket, object_key, local_file, new_tags);
-//		getTags(bucket, object_key);		
+		setTagsWhenUpload(bucket, object_key, local_file, new_tags);
+		getTags(bucket, object_key);		
 
-//		uploadDir(upload_dir);
+//		uploadDir(upload_dir);  // bug about cn-encoding in upload_path
 		listObjects(bucket, "");
 	}
 

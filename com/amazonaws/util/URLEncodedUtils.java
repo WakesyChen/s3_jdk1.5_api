@@ -285,7 +285,7 @@ class URLEncodedUtils {
         if (content == null) {
             return null;
         }
-        return urlEncode(content, charset != null ? Charset.forName(charset) : StringUtils.UTF8, URLENCODER, true);
+        return urlEncode(content, charset != null ? Charset.forName(charset) : Charset.forName(StringUtils.UTF8), URLENCODER, true);
     }
 
     /**
@@ -303,7 +303,7 @@ class URLEncodedUtils {
         if (content == null) {
             return null;
         }
-        return urlEncode(content, charset != null ? charset : StringUtils.UTF8, URLENCODER, true);
+        return urlEncode(content, charset != null ? charset : Charset.forName(StringUtils.UTF8), URLENCODER, true);
     }
 
     /**

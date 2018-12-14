@@ -70,8 +70,7 @@ public class ApacheConnectionManagerFactory implements
                 new DelegatingDnsResolver(settings.getDnsResolver()),
                 settings.getConnectionPoolTTL(),
                 TimeUnit.MILLISECONDS);
-
-        cm.setValidateAfterInactivity(settings.getValidateAfterInactivityMillis());
+//        cm.setValidateAfterInactivity(settings.getValidateAfterInactivityMillis());
         cm.setDefaultMaxPerRoute(settings.getMaxConnections());
         cm.setMaxTotal(settings.getMaxConnections());
         cm.setDefaultSocketConfig(buildSocketConfig(settings));

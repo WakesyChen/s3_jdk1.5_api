@@ -1,0 +1,22 @@
+下载地址： http://archive.apache.org/dist/httpcomponents/httpclient/binary/ 
+httpcomponents-client-4.3.6-bin.zip
+
+commons-codec-1.6.jar
+commons-logging-1.1.3.jar
+fluent-hc-4.3.6.jar
+httpmime-4.3.6.jar
+httpclient-4.3.6.jar
+httpclient-cache-4.3.6.jar
+httpcore-4.3.3.jar
+jackson-core-2.1.4.jar 
+jackson-databind-2.1.4.jar 
+jackson-annotations-2.1.4.jar 
+javax.xml.stream-1.0.1.jar 
+log4j-1.2.14.jar 
+wstx-asl-3.2.7.jar 
+jmespath-java-1.11.294.jar 
+joda-time-2.8.1.jar 
+log4j-core-2.11.0.jar 
+log4j-api-2.11.0.jar 
+javax.xml.bind.jar 
+stax-api-1.0.1.jar
