@@ -22,8 +22,8 @@ public class PropertyUtil {
 		   	InputStreamReader inputStreamReader;
 		   	String value = "";
 			try {
-//				inputStreamReader = new InputStreamReader(new FileInputStream(configPath), "utf-8");
-				InputStream inputStream = new FileInputStream(configPath);
+//				inputStreamReader = new InputStreamReader(new FileInputStream(configPath), "utf-8"); // jdk1.5b不能这样指定编码, 中文解析会乱码
+				InputStream inputStream = new FileInputStream(configPath); 
 				properties.load(inputStream);
 				value =  properties.getProperty(keyName, "");
 				System.out.println(keyName + " : " + value);

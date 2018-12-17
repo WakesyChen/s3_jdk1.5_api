@@ -17,6 +17,8 @@ package com.amazonaws.protocol.json.internal;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.StringUtils;
+
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Date;
 
@@ -107,7 +109,13 @@ public class ValueToStringConverters {
     public static final ValueToString<String> FROM_JSON_VALUE_HEADER = new ValueToString<String>() {
         
         public String convert(String val) {
-            return Base64.encodeAsString(val.getBytes(Charset.forName("utf-8")));
+            try {
+				return Base64.encodeAsString(val.getBytes("utf-8"));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return val;
         }
     };
 }
